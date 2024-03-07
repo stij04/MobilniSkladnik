@@ -42,7 +42,9 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Odznaky',
+            FFLocalizations.of(context).getText(
+              'sejepopn' /* Odznaky */,
+            ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
@@ -86,7 +88,9 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                             ),
                           ),
                           Text(
-                            'Hello World',
+                            FFLocalizations.of(context).getText(
+                              'p7yxuyzu' /* Hello World */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                         ],

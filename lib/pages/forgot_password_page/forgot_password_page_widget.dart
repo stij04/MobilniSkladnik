@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -60,7 +61,9 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
         title: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
           child: Text(
-            'Back',
+            FFLocalizations.of(context).getText(
+              'avb5b8xt' /* Zpět */,
+            ),
             style: FlutterFlowTheme.of(context).displaySmall.override(
                   fontFamily: 'Outfit',
                   fontSize: 16.0,
@@ -115,7 +118,9 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Back',
+                            FFLocalizations.of(context).getText(
+                              'xmgqfntb' /* Zpět */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                         ),
@@ -126,14 +131,18 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  'Forgot Password',
+                  FFLocalizations.of(context).getText(
+                    'qvgb4o0l' /* Zapomenuté heslo */,
+                  ),
                   style: FlutterFlowTheme.of(context).headlineMedium,
                 ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                 child: Text(
-                  'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
+                  FFLocalizations.of(context).getText(
+                    'qrzr6yqt' /* Zašleme vám e-mail s odkazem n... */,
+                  ),
                   style: FlutterFlowTheme.of(context).labelMedium,
                 ),
               ),
@@ -147,9 +156,13 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
                     autofillHints: const [AutofillHints.email],
                     obscureText: false,
                     decoration: InputDecoration(
-                      labelText: 'Your email address...',
+                      labelText: FFLocalizations.of(context).getText(
+                        '5imytm96' /* Vaše emailová adresa... */,
+                      ),
                       labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                      hintText: 'Enter your email...',
+                      hintText: FFLocalizations.of(context).getText(
+                        't8shlyp9' /* Zadejte svůj e-mail... */,
+                      ),
                       hintStyle: FlutterFlowTheme.of(context).labelMedium,
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -215,7 +228,9 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
                         context: context,
                       );
                     },
-                    text: 'Send Link',
+                    text: FFLocalizations.of(context).getText(
+                      'izxe0xlq' /* Poslat odkaz */,
+                    ),
                     options: FFButtonOptions(
                       width: 270.0,
                       height: 50.0,

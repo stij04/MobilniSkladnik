@@ -42,7 +42,9 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Žebříček',
+            FFLocalizations.of(context).getText(
+              'z4ashohh' /* Žebříček */,
+            ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
@@ -73,7 +75,9 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'Filtr',
+                          FFLocalizations.of(context).getText(
+                            'ribplouj' /* Filtr */,
+                          ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ),
@@ -96,7 +100,9 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '1. místo',
+                        FFLocalizations.of(context).getText(
+                          '0iquucv0' /* 1. místo */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                     ),

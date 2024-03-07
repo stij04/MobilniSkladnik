@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "254777759671",
+    "project_id": "mobilniskladnik-32a85",
+    "storage_bucket": "mobilniskladnik-32a85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254777759671:android:919543a86a23da53b23a32",
+        "android_client_info": {
+          "package_name": "com.mycompany.mobilniskladnik"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCDL2HV3UE1A1Fjuw4v6HdNoI1M3qXmaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -67,7 +67,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             ),
           ),
           title: Text(
-            'Domovská stránka',
+            FFLocalizations.of(context).getText(
+              'l7o6231s' /* Domovská stránka */,
+            ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
@@ -175,7 +177,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Jan',
+                                          FFLocalizations.of(context).getText(
+                                            '3dhm2sh8' /* Jan */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
@@ -190,7 +194,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
-                                            'Štípek',
+                                            FFLocalizations.of(context).getText(
+                                              'gs35e2t2' /* Štípek */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -206,7 +212,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
-                                            'alias',
+                                            FFLocalizations.of(context).getText(
+                                              'svmjpcxs' /* alias */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -215,7 +223,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           ),
                                         ),
                                         Text(
-                                          'Woshoust',
+                                          FFLocalizations.of(context).getText(
+                                            '2s0i3uem' /* Woshoust */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
@@ -246,7 +256,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Sezóna',
+                                    FFLocalizations.of(context).getText(
+                                      '27ovvae7' /* Sezóna */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -259,7 +271,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
-                                      'Hello World',
+                                      FFLocalizations.of(context).getText(
+                                        '1zc0pnmi' /* Hello World */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -316,7 +330,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Text(
-                                            'Body',
+                                            FFLocalizations.of(context).getText(
+                                              '8fb5lxgv' /* Body */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -331,7 +347,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Text(
-                                              'Hello World',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'bovdvawt' /* Hello World */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium,
@@ -362,7 +381,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Text(
-                                            'Úroveň',
+                                            FFLocalizations.of(context).getText(
+                                              'ssbbzh7q' /* Úroveň */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -377,7 +398,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Text(
-                                              'Hello World',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'u4kwtbm7' /* Hello World */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium,
@@ -422,7 +446,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Text(
-                                            'Game coin',
+                                            FFLocalizations.of(context).getText(
+                                              'zr3uv6vg' /* Herní měna */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -437,7 +463,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Text(
-                                              'Hello World',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '2vj19pk0' /* Hello World */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium,
@@ -468,7 +497,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Text(
-                                            'Žebříček',
+                                            FFLocalizations.of(context).getText(
+                                              'x39rr9sk' /* Žebříček */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -483,7 +514,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Text(
-                                              'Hello World',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ohj89w7i' /* Hello World */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium,

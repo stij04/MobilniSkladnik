@@ -42,7 +42,9 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Odměny',
+            FFLocalizations.of(context).getText(
+              'o3gj3re7' /* Odměny */,
+            ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
@@ -86,7 +88,9 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                             ),
                           ),
                           Text(
-                            'Hello World',
+                            FFLocalizations.of(context).getText(
+                              'qoua5fhf' /* Hello World */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                         ],

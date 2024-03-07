@@ -107,18 +107,40 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
                   child: Container(
-                    width: 200.0,
-                    height: 70.0,
+                    width: MediaQuery.sizeOf(context).width * 0.8,
+                    height: 100.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Text(
-                      'brand.ai',
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Outfit',
-                            color: Colors.white,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        SelectionArea(
+                            child: Text(
+                          FFLocalizations.of(context).getText(
+                            '9yjlvdmr' /* Mobilní */,
                           ),
+                          style: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .override(
+                                fontFamily: 'Outfit',
+                                color: Colors.white,
+                              ),
+                        )),
+                        SelectionArea(
+                            child: Text(
+                          FFLocalizations.of(context).getText(
+                            'bdehk8ux' /* skladník */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .override(
+                                fontFamily: 'Outfit',
+                                color: Colors.white,
+                              ),
+                        )),
+                      ],
                     ),
                   ),
                 ),
@@ -149,7 +171,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              'Vítejte zpět!',
+                              FFLocalizations.of(context).getText(
+                                'aofvzt9o' /* Vítejte zpět! */,
+                              ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -161,7 +185,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 24.0),
                               child: Text(
-                                'Vyplňte níže uvedené informace, abyste získali přístup ke svému účtu.',
+                                FFLocalizations.of(context).getText(
+                                  'j3avg6pr' /* Vyplňte níže uvedené informace... */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -182,7 +208,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                   autofillHints: const [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Email',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'u43wq1g4' /* Email */,
+                                    ),
                                     labelStyle:
                                         FlutterFlowTheme.of(context).labelLarge,
                                     enabledBorder: OutlineInputBorder(
@@ -245,7 +274,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                   autofillHints: const [AutofillHints.password],
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
-                                    labelText: 'Heslo',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'pnskayw3' /* Heslo */,
+                                    ),
                                     labelStyle:
                                         FlutterFlowTheme.of(context).labelLarge,
                                     enabledBorder: OutlineInputBorder(
@@ -316,7 +348,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                 onPressed: () {
                                   print('Button pressed ...');
                                 },
-                                text: 'Přihlásit',
+                                text: FFLocalizations.of(context).getText(
+                                  'xq3syzkz' /* Přihlásit */,
+                                ),
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 44.0,
@@ -349,10 +383,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                 textScaleFactor:
                                     MediaQuery.of(context).textScaleFactor,
                                 text: TextSpan(
-                                  children: const [
+                                  children: [
                                     TextSpan(
-                                      text: 'Zapomněli jste heslo? ',
-                                      style: TextStyle(),
+                                      text: FFLocalizations.of(context).getText(
+                                        '6iwhxv0i' /* Zapomněli jste heslo?  */,
+                                      ),
+                                      style: const TextStyle(),
                                     )
                                   ],
                                   style: FlutterFlowTheme.of(context)
