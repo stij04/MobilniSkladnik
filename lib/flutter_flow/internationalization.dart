@@ -111,21 +111,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Domovská stránka',
       'en': 'Home page',
     },
-    '3dhm2sh8': {
-      'cs': 'Jan',
-      'en': '',
-    },
-    'gs35e2t2': {
-      'cs': 'Štípek',
-      'en': '',
-    },
     'svmjpcxs': {
       'cs': 'alias',
       'en': 'alias',
-    },
-    '2s0i3uem': {
-      'cs': 'Woshoust',
-      'en': '',
     },
     '27ovvae7': {
       'cs': 'Sezóna',
@@ -139,10 +127,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Body',
       'en': 'Points',
     },
-    'bovdvawt': {
-      'cs': 'Hello World',
-      'en': '',
-    },
     'ssbbzh7q': {
       'cs': 'Úroveň',
       'en': 'Level',
@@ -154,10 +138,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'zr3uv6vg': {
       'cs': 'Herní měna',
       'en': 'Game coin',
-    },
-    '2vj19pk0': {
-      'cs': 'Hello World',
-      'en': '',
     },
     'x39rr9sk': {
       'cs': 'Žebříček',
@@ -315,6 +295,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'f2xnn0zb': {
       'cs': 'Domů',
       'en': 'Home',
+    },
+  },
+  // PointsHistoryPage
+  {
+    'shf6clzz': {
+      'cs': 'Filtr',
+      'en': 'Filter',
+    },
+    'lprz0jfp': {
+      'cs': 'Získáno',
+      'en': '1st place',
+    },
+    'ttc0qy2h': {
+      'cs': ' b',
+      'en': '',
+    },
+    'vvkmj2bd': {
+      'cs': 'Body',
+      'en': '1st place',
+    },
+    'fnx6moks': {
+      'cs': 'Historie získaných bodů',
+      'en': 'Leaderboard',
+    },
+    'brevg0mw': {
+      'cs': 'Žebříček',
+      'en': 'Leaderboard',
     },
   },
   // Miscellaneous

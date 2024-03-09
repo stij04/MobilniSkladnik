@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -345,8 +346,21 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  GoRouter.of(context).prepareAuthEvent();
+
+                                  final user =
+                                      await authManager.signInWithEmail(
+                                    context,
+                                    _model.emailAddressController.text,
+                                    _model.passwordController.text,
+                                  );
+                                  if (user == null) {
+                                    return;
+                                  }
+
+                                  context.goNamedAuth(
+                                      'HomePage', context.mounted);
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'xq3syzkz' /* Přihlásit */,
@@ -380,8 +394,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 12.0),
                               child: RichText(
-                                textScaleFactor:
-                                    MediaQuery.of(context).textScaleFactor,
+                                textScaler: MediaQuery.of(context).textScaler,
                                 text: TextSpan(
                                   children: [
                                     TextSpan(

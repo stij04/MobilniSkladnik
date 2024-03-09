@@ -125,6 +125,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ForgotPasswordPage',
           path: '/forgotPasswordPage',
           builder: (context, params) => const ForgotPasswordPageWidget(),
+        ),
+        FFRoute(
+          name: 'PointsHistoryPage',
+          path: '/pointsHistoryPage',
+          builder: (context, params) => const PointsHistoryPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -8,3 +8,5 @@ export '/pages/profile_page/profile_page_widget.dart' show ProfilePageWidget;
 export '/pages/login_page/login_page_widget.dart' show LoginPageWidget;
 export '/pages/forgot_password_page/forgot_password_page_widget.dart'
     show ForgotPasswordPageWidget;
+export '/pages/points_history_page/points_history_page_widget.dart'
+    show PointsHistoryPageWidget;

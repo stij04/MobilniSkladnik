@@ -1,3 +1,18 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "vykon",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "VykUziId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "VykDatum",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
 }
