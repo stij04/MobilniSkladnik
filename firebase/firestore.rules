@@ -14,5 +14,19 @@ service cloud.firestore {
       allow write: if false;
       allow delete: if false;
     }
+
+    match /oceneni/{document} {
+      allow create: if false;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /zisk_oceneni/{document} {
+      allow create: if false;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
   }
 }

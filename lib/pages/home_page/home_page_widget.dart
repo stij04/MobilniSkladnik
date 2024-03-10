@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
@@ -136,7 +137,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Expanded(
-                            flex: 3,
+                            flex: 2,
                             child: Card(
                               clipBehavior: Clip.antiAliasWithSaveLayer,
                               color: FlutterFlowTheme.of(context).alternate,
@@ -183,69 +184,60 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        AuthUserStreamWidget(
-                                          builder: (context) => Text(
-                                            valueOrDefault(
-                                                currentUserDocument?.uziJmeno,
-                                                ''),
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineSmall
-                                                .override(
-                                                  fontFamily: 'Roboto',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 20.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              currentUserDisplayName,
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleLarge
+                                                  .override(
+                                                    fontFamily: 'Roboto',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    fontSize: 26.0,
+                                                    fontWeight: FontWeight.w800,
+                                                  ),
+                                            ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 8.0, 0.0, 8.0),
+                                                  0.0, 0.0, 0.0, 4.0),
                                           child: AuthUserStreamWidget(
                                             builder: (context) => Text(
                                               valueOrDefault(
-                                                  currentUserDocument
-                                                      ?.uziPrijmeni,
+                                                  currentUserDocument?.uziJmeno,
                                                   ''),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .headlineSmall
+                                                      .titleLarge
                                                       .override(
                                                         fontFamily: 'Roboto',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                                        fontSize: 18.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                       ),
                                             ),
                                           ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 8.0, 0.0, 8.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'svmjpcxs' /* alias */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Roboto',
-                                                ),
-                                          ),
-                                        ),
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            currentUserDisplayName,
+                                            valueOrDefault(
+                                                currentUserDocument
+                                                    ?.uziPrijmeni,
+                                                ''),
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
                                                 .override(
                                                   fontFamily: 'Roboto',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
+                                                  fontSize: 18.0,
+                                                  fontWeight: FontWeight.bold,
                                                 ),
                                           ),
                                         ),
@@ -324,6 +316,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '8fb5lxgv' /* Body */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
+                                ),
                                 Expanded(
                                   flex: 1,
                                   child: InkWell(
@@ -344,49 +351,103 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(5.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
                                           children: [
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '8fb5lxgv' /* Body */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        fontFamily: 'Roboto',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                      ),
-                                            ),
                                             Padding(
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                  .fromSTEB(0.0, 8.0, 0.0, 8.0),
                                               child: AuthUserStreamWidget(
-                                                builder: (context) => Text(
-                                                  valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.uziBody,
-                                                          0.0)
-                                                      .toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                builder: (context) => RichText(
+                                                  textScaler:
+                                                      MediaQuery.of(context)
+                                                          .textScaler,
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text: valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.uziBody,
+                                                                0.0)
+                                                            .toString(),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Roboto',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  fontSize:
+                                                                      26.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w800,
+                                                                ),
+                                                      ),
+                                                      TextSpan(
+                                                        text:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'tbmift75' /*  B */,
+                                                        ),
+                                                        style: const TextStyle(),
+                                                      )
+                                                    ],
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Roboto',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 26.0,
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                        ),
+                                                  ),
                                                 ),
+                                              ),
+                                            ),
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: SvgPicture.asset(
+                                                'assets/images/points.svg',
+                                                width: 30.0,
+                                                height: 30.0,
+                                                fit: BoxFit.contain,
                                               ),
                                             ),
                                           ],
                                         ),
                                       ),
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 8.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '9zlup11i' /* Úroveň */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 18.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                     ),
                                   ),
                                 ),
@@ -476,32 +537,95 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         children: [
                                           Text(
                                             FFLocalizations.of(context).getText(
-                                              'zr3uv6vg' /* Herní měna */,
+                                              'zr3uv6vg' /* Mince skladu */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .headlineSmall
+                                                .bodyMedium
                                                 .override(
                                                   fontFamily: 'Roboto',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
+                                                  fontWeight: FontWeight.bold,
                                                 ),
                                           ),
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 8.0, 0.0, 0.0),
-                                            child: AuthUserStreamWidget(
-                                              builder: (context) => Text(
-                                                valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.uziMena,
-                                                        0.0)
-                                                    .toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
-                                              ),
+                                            padding: const EdgeInsets.all(5.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 8.0, 0.0, 8.0),
+                                                  child: AuthUserStreamWidget(
+                                                    builder: (context) =>
+                                                        RichText(
+                                                      textScaler:
+                                                          MediaQuery.of(context)
+                                                              .textScaler,
+                                                      text: TextSpan(
+                                                        children: [
+                                                          TextSpan(
+                                                            text: valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.uziMena,
+                                                                    0.0)
+                                                                .toString(),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Roboto',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  fontSize:
+                                                                      26.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w800,
+                                                                ),
+                                                          ),
+                                                          TextSpan(
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'ehe9cz27' /*  MS */,
+                                                            ),
+                                                            style: const TextStyle(),
+                                                          )
+                                                        ],
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Roboto',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  fontSize:
+                                                                      26.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w800,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/currency.svg',
+                                                    width: 30.0,
+                                                    height: 30.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ],

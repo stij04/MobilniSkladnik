@@ -7,7 +7,6 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -98,9 +97,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'LeaderboardPage',
           path: '/leaderboardPage',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'LeaderboardPage')
-              : const LeaderboardPageWidget(),
+          builder: (context, params) => const LeaderboardPageWidget(),
         ),
         FFRoute(
           name: 'RewardPage',
@@ -310,15 +307,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: const Color(0xFFF6FCFC),
+                  child: Image.asset(
+                    'assets/images/launcher_icon.webp',
+                    fit: BoxFit.contain,
                   ),
                 )
               : page;

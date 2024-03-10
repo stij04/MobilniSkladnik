@@ -111,10 +111,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Domovská stránka',
       'en': 'Home page',
     },
-    'svmjpcxs': {
-      'cs': 'alias',
-      'en': 'alias',
-    },
     '27ovvae7': {
       'cs': 'Sezóna',
       'en': 'Season',
@@ -127,6 +123,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Body',
       'en': 'Points',
     },
+    'tbmift75': {
+      'cs': ' B',
+      'en': '',
+    },
+    'ychee8n3': {
+      'cs': 'a',
+      'en': '',
+    },
+    '9zlup11i': {
+      'cs': 'Úroveň',
+      'en': 'Points',
+    },
     'ssbbzh7q': {
       'cs': 'Úroveň',
       'en': 'Level',
@@ -136,8 +144,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'zr3uv6vg': {
-      'cs': 'Herní měna',
+      'cs': 'Mince skladu',
       'en': 'Game coin',
+    },
+    'ehe9cz27': {
+      'cs': ' MS',
+      'en': '',
+    },
+    '4criz5k3': {
+      'cs': 'Hello World',
+      'en': '',
     },
     'x39rr9sk': {
       'cs': 'Žebříček',
@@ -154,7 +170,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // BadgesPage
   {
-    'p7yxuyzu': {
+    '031z9e1c': {
+      'cs': 'Získané odznaky',
+      'en': '',
+    },
+    '4hffo68x': {
+      'cs': 'Získáno dne: ',
+      'en': '',
+    },
+    '7bfpfoxl': {
+      'cs': 'Hello World',
+      'en': '',
+    },
+    'ei8uqq50': {
+      'cs': '+ ',
+      'en': '',
+    },
+    'dv6minds': {
+      'cs': ' GC',
+      'en': '',
+    },
+    'nwhvrus1': {
+      'cs': 'Hello World',
+      'en': '',
+    },
+    'w6mr7rmk': {
+      'cs': 'Dostupné odznaky',
+      'en': '',
+    },
+    'yrvtlk09': {
+      'cs': '+ ',
+      'en': '',
+    },
+    'f5il9pvb': {
+      'cs': ' GC',
+      'en': '',
+    },
+    'zkidffsj': {
       'cs': 'Hello World',
       'en': '',
     },
