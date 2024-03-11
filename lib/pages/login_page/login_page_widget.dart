@@ -145,8 +145,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Outfit',
+                                  fontFamily: 'Roboto',
                                   color: Colors.white,
+                                  fontWeight: FontWeight.w900,
                                 ),
                           )),
                           SelectionArea(
@@ -157,8 +158,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Outfit',
+                                  fontFamily: 'Roboto',
                                   color: Colors.white,
+                                  fontWeight: FontWeight.w900,
                                 ),
                           )),
                         ],
@@ -196,11 +198,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                   'aofvzt9o' /* Vítejte zpět! */,
                                 ),
                                 textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .displaySmall
-                                    .override(
-                                      fontFamily: 'Roboto',
-                                    ),
+                                style:
+                                    FlutterFlowTheme.of(context).displaySmall,
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -210,11 +209,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                     'j3avg6pr' /* Vyplňte níže uvedené informace... */,
                                   ),
                                   textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Roboto',
-                                      ),
+                                  style:
+                                      FlutterFlowTheme.of(context).labelMedium,
                                 ),
                               ),
                               Padding(
@@ -275,11 +271,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                       fillColor: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Roboto',
-                                        ),
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyLarge,
                                     keyboardType: TextInputType.emailAddress,
                                     validator: _model
                                         .emailAddressControllerValidator
@@ -361,11 +354,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                         ),
                                       ),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Roboto',
-                                        ),
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyLarge,
                                     validator: _model
                                         .passwordControllerValidator
                                         .asValidator(context),
@@ -408,7 +398,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                         .override(
                                           fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
-                                              .tertiary,
+                                              .primaryBtnText,
                                         ),
                                     elevation: 3.0,
                                     borderSide: const BorderSide(
@@ -419,28 +409,68 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                   ),
                                 ),
                               ),
-
-                              // You will have to add an action on this rich text to go to your login page.
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 0.0, 12.0),
-                                child: RichText(
-                                  textScaler: MediaQuery.of(context).textScaler,
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          '6iwhxv0i' /* Zapomněli jste heslo?  */,
-                                        ),
-                                        style: const TextStyle(),
-                                      )
-                                    ],
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Roboto',
-                                        ),
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    var confirmDialogResponse =
+                                        await showDialog<bool>(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: const Text('Upozornění'),
+                                                  content: const Text(
+                                                      'Opravdu se chcete přihlásit k demo účtu?'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              false),
+                                                      child: const Text('Ne'),
+                                                    ),
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              true),
+                                                      child: const Text('Ano'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ) ??
+                                            false;
+                                    if (confirmDialogResponse) {
+                                      GoRouter.of(context).prepareAuthEvent();
+
+                                      final user =
+                                          await authManager.signInWithEmail(
+                                        context,
+                                        'sobotka@example.com',
+                                        '123456',
+                                      );
+                                      if (user == null) {
+                                        return;
+                                      }
+                                    } else {
+                                      return;
+                                    }
+
+                                    context.goNamedAuth(
+                                        'HomePage', context.mounted);
+                                  },
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'pn5npwvg' /* Přihlásit se k demo účtu */,
+                                    ),
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                 ),
                               ),

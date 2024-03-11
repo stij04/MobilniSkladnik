@@ -159,6 +159,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Žebříček',
       'en': 'Leaderboard',
     },
+    'caluxgf0': {
+      'cs': 'Žebříček',
+      'en': 'Leaderboard',
+    },
     'ohj89w7i': {
       'cs': 'Hello World',
       'en': '',
@@ -170,6 +174,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // BadgesPage
   {
+    'sejepopn': {
+      'cs': 'Odznaky',
+      'en': 'Badges',
+    },
     '031z9e1c': {
       'cs': 'Získané odznaky',
       'en': '',
@@ -187,7 +195,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'dv6minds': {
-      'cs': ' GC',
+      'cs': ' MS',
       'en': '',
     },
     'nwhvrus1': {
@@ -203,16 +211,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'f5il9pvb': {
-      'cs': ' GC',
+      'cs': ' MS',
       'en': '',
     },
     'zkidffsj': {
       'cs': 'Hello World',
       'en': '',
-    },
-    'sejepopn': {
-      'cs': 'Odznaky',
-      'en': 'Badges',
     },
     'tbxgqiyx': {
       'cs': 'Odznaky',
@@ -240,13 +244,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // RewardPage
   {
-    'qoua5fhf': {
-      'cs': 'Hello World',
-      'en': '',
-    },
     'o3gj3re7': {
       'cs': 'Odměny',
       'en': 'Rewards',
+    },
+    'qoua5fhf': {
+      'cs': 'Hello World',
+      'en': '',
     },
     'fvdfdqds': {
       'cs': 'Odměny',
@@ -303,9 +307,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Přihlásit',
       'en': 'Log in',
     },
-    '6iwhxv0i': {
-      'cs': 'Zapomněli jste heslo? ',
-      'en': 'Did you forget the password?',
+    'pn5npwvg': {
+      'cs': 'Přihlásit se k demo účtu',
+      'en': '',
     },
     '3h8eyxg2': {
       'cs': 'Domů',

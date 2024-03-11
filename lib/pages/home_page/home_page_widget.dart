@@ -44,27 +44,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
-          leading: InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.pushNamed('BadgesPage');
-            },
-            child: Container(
-              width: 100.0,
-              height: 100.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondary,
-              ),
-              child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
-                child: FaIcon(
-                  FontAwesomeIcons.solidBell,
-                  color: FlutterFlowTheme.of(context).primary,
-                  size: 24.0,
-                ),
+          leading: Container(
+            width: 100.0,
+            height: 100.0,
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).secondary,
+            ),
+            child: Align(
+              alignment: const AlignmentDirectional(0.0, 0.0),
+              child: FaIcon(
+                FontAwesomeIcons.solidBell,
+                color: FlutterFlowTheme.of(context).primary,
+                size: 24.0,
               ),
             ),
           ),
@@ -516,6 +507,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'zr3uv6vg' /* Mince skladu */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
+                                ),
                                 Expanded(
                                   flex: 1,
                                   child: Card(
@@ -535,17 +541,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
                                         children: [
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              'zr3uv6vg' /* Mince skladu */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                          ),
                                           Padding(
                                             padding: const EdgeInsets.all(5.0),
                                             child: Column(
@@ -633,6 +628,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     ),
                                   ),
                                 ),
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 8.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'x39rr9sk' /* Žebříček */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 18.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                  ),
+                                ),
                                 Expanded(
                                   flex: 1,
                                   child: Card(
@@ -654,7 +668,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         children: [
                                           Text(
                                             FFLocalizations.of(context).getText(
-                                              'x39rr9sk' /* Žebříček */,
+                                              'caluxgf0' /* Žebříček */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall

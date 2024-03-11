@@ -65,7 +65,7 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
               'avb5b8xt' /* Zpět */,
             ),
             style: FlutterFlowTheme.of(context).displaySmall.override(
-                  fontFamily: 'Outfit',
+                  fontFamily: 'Roboto',
                   fontSize: 16.0,
                 ),
           ),

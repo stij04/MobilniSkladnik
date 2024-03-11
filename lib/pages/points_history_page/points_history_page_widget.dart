@@ -177,10 +177,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                                         'lprz0jfp' /* Získáno */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Roboto',
-                                          ),
+                                          .bodyMedium,
                                     ),
                                   ),
                                   Expanded(
@@ -194,13 +191,14 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                                             TextSpan(
                                               text: listViewVykonRecord.vykBody
                                                   .toString(),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Roboto',
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
                                             ),
                                             TextSpan(
                                               text: FFLocalizations.of(context)
@@ -237,10 +235,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                                           'undefined',
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Roboto',
-                                            ),
+                                            .bodyMedium,
                                       ),
                                     ),
                                   ),

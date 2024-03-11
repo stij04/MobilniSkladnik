@@ -1,6 +1,8 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reward_page_model.dart';
 export 'reward_page_model.dart';
 
@@ -41,6 +43,21 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
+          leading: Container(
+            width: 100.0,
+            height: 100.0,
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).secondary,
+            ),
+            child: Align(
+              alignment: const AlignmentDirectional(0.0, 0.0),
+              child: FaIcon(
+                FontAwesomeIcons.solidBell,
+                color: FlutterFlowTheme.of(context).primary,
+                size: 24.0,
+              ),
+            ),
+          ),
           title: Text(
             FFLocalizations.of(context).getText(
               'o3gj3re7' /* Odměny */,
@@ -52,7 +69,36 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: const [],
+          actions: [
+            InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () async {
+                GoRouter.of(context).prepareAuthEvent();
+                await authManager.signOut();
+                GoRouter.of(context).clearRedirectLocation();
+
+                context.goNamedAuth('LoginPage', context.mounted);
+              },
+              child: Container(
+                width: 60.0,
+                height: 100.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondary,
+                ),
+                child: Align(
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.signOutAlt,
+                    color: FlutterFlowTheme.of(context).primary,
+                    size: 24.0,
+                  ),
+                ),
+              ),
+            ),
+          ],
           centerTitle: true,
           elevation: 2.0,
         ),
