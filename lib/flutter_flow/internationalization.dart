@@ -248,8 +248,60 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Odměny',
       'en': 'Rewards',
     },
-    'qoua5fhf': {
-      'cs': 'Hello World',
+    '9gi2k5l4': {
+      'cs': 'Seřazeno podle (A-Z)',
+      'en': '',
+    },
+    'owt24gfb': {
+      'cs': 'Seřazeno podle (A-Z)',
+      'en': '',
+    },
+    'aa8phhbd': {
+      'cs': 'Seřazeno od nejnižší ceny',
+      'en': '',
+    },
+    'gp4vd3wl': {
+      'cs': 'Seřazeno od nejvyšší ceny',
+      'en': '',
+    },
+    'y7ug6cr6': {
+      'cs': 'Search for an item...',
+      'en': '',
+    },
+    'bnqq3u31': {
+      'cs': ' MS',
+      'en': '',
+    },
+    'nsrf77oz': {
+      'cs': '1500 MS',
+      'en': '',
+    },
+    'rvyk3q3t': {
+      'cs': 'Koupit',
+      'en': '',
+    },
+    'gt2tf0ch': {
+      'cs': ' MS',
+      'en': '',
+    },
+    'tql5lqtj': {
+      'cs': '1500 MS',
+      'en': '',
+    },
+    '22v8potr': {
+      'cs': 'Koupit',
+      'en': '',
+    },
+    'z6xm9zho': {
+      'cs': ' MS',
+      'en': '',
+    },
+    'ecpq0odp': {
+      'cs': '1500 MS',
+      'en': '',
+    },
+    '7qlp8ebh': {
+      'cs': 'Koupit',
       'en': '',
     },
     'fvdfdqds': {
@@ -259,6 +311,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // ProfilePage
   {
+    '0a2r82cb': {
+      'cs': 'Profil',
+      'en': 'Profile',
+    },
     'j56hso0k': {
       'cs': 'Světlý režim',
       'en': 'Light Mode',
@@ -266,10 +322,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'k7b1rpxk': {
       'cs': 'Tmavý režim',
       'en': 'Dark Mode',
-    },
-    '0a2r82cb': {
-      'cs': 'Profil',
-      'en': 'Profile',
     },
     'qu2gy17n': {
       'cs': 'Profil',
