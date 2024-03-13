@@ -117,7 +117,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                   Expanded(
                     child: Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).tertiary,
                       elevation: 4.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
@@ -146,22 +146,20 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
                                     fontFamily: 'Roboto',
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.normal,
                                   ),
                           icon: FaIcon(
                             FontAwesomeIcons.angleDown,
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
                           ),
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          fillColor: FlutterFlowTheme.of(context).alternate,
                           elevation: 2.0,
-                          borderColor:
-                              FlutterFlowTheme.of(context).backgroundComponents,
-                          borderWidth: 2.0,
+                          borderColor: FlutterFlowTheme.of(context).alternate,
+                          borderWidth: 0.0,
                           borderRadius: 8.0,
                           margin: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 4.0, 16.0, 4.0),
+                              16.0, 0.0, 16.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: true,
                           isSearchable: false,
@@ -327,67 +325,143 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                             ),
                                                       ),
                                                     ),
-                                                    FFButtonWidget(
-                                                      onPressed: () {
-                                                        print(
-                                                            'Button pressed ...');
-                                                      },
-                                                      text: FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'rvyk3q3t' /* Koupit */,
-                                                      ),
-                                                      options: FFButtonOptions(
-                                                        width:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .width *
-                                                                0.322,
-                                                        height: 30.0,
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    24.0,
-                                                                    0.0,
-                                                                    24.0,
-                                                                    0.0),
-                                                        iconPadding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .buttonBackground,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          FFButtonWidget(
+                                                        onPressed: (valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.uziMena,
+                                                                    0.0) <
+                                                                listViewOdmenaRecord
+                                                                    .odmCena)
+                                                            ? null
+                                                            : () async {
+                                                                var confirmDialogResponse =
+                                                                    await showDialog<
+                                                                            bool>(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              title: const Text('Nákup'),
+                                                                              content: const Text('Opravdu chcete koupit tuto odměnu?'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                  child: const Text('Ne'),
+                                                                                ),
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                  child: const Text('Ano'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        ) ??
+                                                                        false;
+                                                                if (confirmDialogResponse) {
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: const Text(
+                                                                            'Info'),
+                                                                        content:
+                                                                            const Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                const Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                } else {
+                                                                  return;
+                                                                }
+
+                                                                await currentUserReference!
+                                                                    .update({
+                                                                  ...mapToFirestore(
+                                                                    {
+                                                                      'UziMena':
+                                                                          FieldValue.increment(
+                                                                              -(listViewOdmenaRecord.odmCena)),
+                                                                    },
+                                                                  ),
+                                                                });
+                                                              },
+                                                        text:
+                                                            FFLocalizations.of(
                                                                     context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  fontSize:
-                                                                      12.0,
-                                                                  letterSpacing:
-                                                                      0.5,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                        elevation: 3.0,
-                                                        borderSide: const BorderSide(
-                                                          color: Colors
-                                                              .transparent,
-                                                          width: 1.0,
+                                                                .getText(
+                                                          'rvyk3q3t' /* Koupit */,
                                                         ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width *
+                                                                  0.322,
+                                                          height: 30.0,
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      24.0,
+                                                                      0.0,
+                                                                      24.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .buttonBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Roboto',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBtnText,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                    letterSpacing:
+                                                                        0.5,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                          disabledColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .disabledButton,
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
@@ -556,67 +630,143 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                             ),
                                                       ),
                                                     ),
-                                                    FFButtonWidget(
-                                                      onPressed: () {
-                                                        print(
-                                                            'Button pressed ...');
-                                                      },
-                                                      text: FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '22v8potr' /* Koupit */,
-                                                      ),
-                                                      options: FFButtonOptions(
-                                                        width:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .width *
-                                                                0.322,
-                                                        height: 30.0,
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    24.0,
-                                                                    0.0,
-                                                                    24.0,
-                                                                    0.0),
-                                                        iconPadding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .buttonBackground,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          FFButtonWidget(
+                                                        onPressed: (valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.uziMena,
+                                                                    0.0) <
+                                                                listViewOdmenaRecord
+                                                                    .odmCena)
+                                                            ? null
+                                                            : () async {
+                                                                var confirmDialogResponse =
+                                                                    await showDialog<
+                                                                            bool>(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              title: const Text('Nákup'),
+                                                                              content: const Text('Opravdu chcete koupit tuto odměnu?'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                  child: const Text('Ne'),
+                                                                                ),
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                  child: const Text('Ano'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        ) ??
+                                                                        false;
+                                                                if (confirmDialogResponse) {
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: const Text(
+                                                                            'Info'),
+                                                                        content:
+                                                                            const Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                const Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                } else {
+                                                                  return;
+                                                                }
+
+                                                                await currentUserReference!
+                                                                    .update({
+                                                                  ...mapToFirestore(
+                                                                    {
+                                                                      'UziMena':
+                                                                          FieldValue.increment(
+                                                                              -(listViewOdmenaRecord.odmCena)),
+                                                                    },
+                                                                  ),
+                                                                });
+                                                              },
+                                                        text:
+                                                            FFLocalizations.of(
                                                                     context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  fontSize:
-                                                                      12.0,
-                                                                  letterSpacing:
-                                                                      0.5,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                        elevation: 3.0,
-                                                        borderSide: const BorderSide(
-                                                          color: Colors
-                                                              .transparent,
-                                                          width: 1.0,
+                                                                .getText(
+                                                          'fnqh4uny' /* Koupit */,
                                                         ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width *
+                                                                  0.322,
+                                                          height: 30.0,
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      24.0,
+                                                                      0.0,
+                                                                      24.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .buttonBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Roboto',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBtnText,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                    letterSpacing:
+                                                                        0.5,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                          disabledColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .disabledButton,
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
@@ -785,67 +935,143 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                             ),
                                                       ),
                                                     ),
-                                                    FFButtonWidget(
-                                                      onPressed: () {
-                                                        print(
-                                                            'Button pressed ...');
-                                                      },
-                                                      text: FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '7qlp8ebh' /* Koupit */,
-                                                      ),
-                                                      options: FFButtonOptions(
-                                                        width:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .width *
-                                                                0.322,
-                                                        height: 30.0,
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    24.0,
-                                                                    0.0,
-                                                                    24.0,
-                                                                    0.0),
-                                                        iconPadding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .buttonBackground,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          FFButtonWidget(
+                                                        onPressed: (valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.uziMena,
+                                                                    0.0) <
+                                                                listViewOdmenaRecord
+                                                                    .odmCena)
+                                                            ? null
+                                                            : () async {
+                                                                var confirmDialogResponse =
+                                                                    await showDialog<
+                                                                            bool>(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              title: const Text('Nákup'),
+                                                                              content: const Text('Opravdu chcete koupit tuto odměnu?'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                  child: const Text('Ne'),
+                                                                                ),
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                  child: const Text('Ano'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        ) ??
+                                                                        false;
+                                                                if (confirmDialogResponse) {
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: const Text(
+                                                                            'Info'),
+                                                                        content:
+                                                                            const Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                const Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                } else {
+                                                                  return;
+                                                                }
+
+                                                                await currentUserReference!
+                                                                    .update({
+                                                                  ...mapToFirestore(
+                                                                    {
+                                                                      'UziMena':
+                                                                          FieldValue.increment(
+                                                                              -(listViewOdmenaRecord.odmCena)),
+                                                                    },
+                                                                  ),
+                                                                });
+                                                              },
+                                                        text:
+                                                            FFLocalizations.of(
                                                                     context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  fontSize:
-                                                                      12.0,
-                                                                  letterSpacing:
-                                                                      0.5,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                        elevation: 3.0,
-                                                        borderSide: const BorderSide(
-                                                          color: Colors
-                                                              .transparent,
-                                                          width: 1.0,
+                                                                .getText(
+                                                          'm3043r4x' /* Koupit */,
                                                         ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width *
+                                                                  0.322,
+                                                          height: 30.0,
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      24.0,
+                                                                      0.0,
+                                                                      24.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .buttonBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Roboto',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBtnText,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                    letterSpacing:
+                                                                        0.5,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                          disabledColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .disabledButton,
+                                                        ),
                                                       ),
                                                     ),
                                                   ],

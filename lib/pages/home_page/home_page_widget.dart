@@ -649,51 +649,63 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ),
                                 Expanded(
                                   flex: 1,
-                                  child: Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    elevation: 2.0,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              'caluxgf0' /* Žebříček */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineSmall
-                                                .override(
-                                                  fontFamily: 'Roboto',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 8.0, 0.0, 0.0),
-                                            child: Text(
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('LeaderboardPage');
+                                    },
+                                    child: Card(
+                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      elevation: 2.0,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'ohj89w7i' /* Hello World */,
+                                                'caluxgf0' /* Žebříček */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily: 'Roboto',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                      ),
                                             ),
-                                          ),
-                                        ],
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'ohj89w7i' /* Hello World */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),

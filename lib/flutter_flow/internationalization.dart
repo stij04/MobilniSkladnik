@@ -225,17 +225,69 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // LeaderboardPage
   {
-    'ribplouj': {
-      'cs': 'Filtr',
-      'en': 'Filter',
-    },
-    '0iquucv0': {
-      'cs': '1. místo',
-      'en': '1st place',
-    },
     'z4ashohh': {
       'cs': 'Žebříček',
       'en': 'Leaderboard',
+    },
+    'mjn2637n': {
+      'cs': ' B',
+      'en': '',
+    },
+    'o4a8zf4k': {
+      'cs': 'Hello World',
+      'en': '',
+    },
+    'h9diujwt': {
+      'cs': '2',
+      'en': '',
+    },
+    'nugp44d9': {
+      'cs': ' B',
+      'en': '',
+    },
+    'xda2qh44': {
+      'cs': 'Hello World',
+      'en': '',
+    },
+    'gbmgj6tb': {
+      'cs': '1',
+      'en': '',
+    },
+    'o7ngyap7': {
+      'cs': ' B',
+      'en': '',
+    },
+    't9peqwnf': {
+      'cs': 'Hello World',
+      'en': '',
+    },
+    '4an8xcwl': {
+      'cs': '3',
+      'en': '',
+    },
+    '3tislpl4': {
+      'cs': '. místo',
+      'en': '',
+    },
+    'a7orttoe': {
+      'cs': '. místo',
+      'en': '',
+    },
+    'uw1gvwux': {
+      'cs': ' B',
+      'en': '',
+    },
+    '0w6f25t1': {
+      'cs': '1. místo',
+      'en': '1st place',
+    },
+    'j9pvqigq': {
+      'cs': ' B',
+      'en': '',
+    },
+    '7jc2te99': {
+      'cs': '1. místo',
+      'en': '1st place',
     },
     'wnw7f38f': {
       'cs': 'Žebříček',
@@ -288,7 +340,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': '1500 MS',
       'en': '',
     },
-    '22v8potr': {
+    'fnqh4uny': {
       'cs': 'Koupit',
       'en': '',
     },
@@ -300,7 +352,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': '1500 MS',
       'en': '',
     },
-    '7qlp8ebh': {
+    'm3043r4x': {
       'cs': 'Koupit',
       'en': '',
     },
