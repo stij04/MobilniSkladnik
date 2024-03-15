@@ -20,6 +20,62 @@ int? renumerIndexInList(int? indexInList) {
   return indexInList + 4;
 }
 
+String getCurrentLevelName(
+  List<UrovenRecord>? levels,
+  double? uziBody,
+) {
+  if (levels == null || uziBody == null || levels.isEmpty) {
+    return "–";
+  }
+
+  levels.sort((a, b) => a.uroHranice.compareTo(b.uroHranice));
+
+  if (uziBody <= levels.first.uroHranice) {
+    return levels.first.uroNazev;
+  }
+
+  if (uziBody >= levels.last.uroHranice) {
+    return levels.last.uroNazev;
+  }
+
+  for (int i = 0; i < levels.length - 1; i++) {
+    if (uziBody >= levels[i].uroHranice && uziBody < levels[i + 1].uroHranice) {
+      return levels[i].uroNazev;
+    }
+  }
+
+  return "–";
+}
+
+String getNextLevel(
+  List<UrovenRecord>? levels,
+  double? uziBody,
+) {
+  if (levels == null || uziBody == null || levels.isEmpty) {
+    return "–";
+  }
+
+  levels.sort((a, b) => a.uroHranice.compareTo(b.uroHranice));
+
+  if (uziBody <= levels.first.uroHranice) {
+    return levels.first.uroPoradi.toString() + " – " + levels.first.uroNazev;
+  }
+
+  if (uziBody >= levels.last.uroHranice) {
+    return "dosažena maximální úroveň";
+  }
+
+  for (int i = 0; i < levels.length - 1; i++) {
+    if (uziBody >= levels[i].uroHranice && uziBody < levels[i + 1].uroHranice) {
+      return levels[i + 1].uroPoradi.toString() +
+          " – " +
+          levels[i + 1].uroNazev;
+    }
+  }
+
+  return "–";
+}
+
 int getCurrentPozitionByUziId(
   List<UsersRecord> items,
   int uziId,
@@ -48,6 +104,54 @@ List<UsersRecord>? removeFirstItems(
   }
 }
 
+double getRemainingPoints(
+  List<UrovenRecord>? levels,
+  double? uziBody,
+) {
+  if (levels == null ||
+      uziBody == null ||
+      levels.isEmpty ||
+      uziBody <= levels.first.uroHranice ||
+      uziBody >= levels.last.uroHranice) {
+    return 0;
+  }
+
+  for (int i = 0; i < levels.length - 1; i++) {
+    if (uziBody >= levels[i].uroHranice && uziBody < levels[i + 1].uroHranice) {
+      return levels[i + 1].uroHranice - uziBody;
+    }
+  }
+
+  return 0;
+}
+
+int getCurrentLevelNumber(
+  List<UrovenRecord>? levels,
+  double? uziBody,
+) {
+  if (levels == null || uziBody == null || levels.isEmpty) {
+    return 1;
+  }
+
+  levels.sort((a, b) => a.uroHranice.compareTo(b.uroHranice));
+
+  if (uziBody <= levels.first.uroHranice) {
+    return levels.first.uroPoradi;
+  }
+
+  if (uziBody >= levels.last.uroHranice) {
+    return levels.last.uroPoradi;
+  }
+
+  for (int i = 0; i < levels.length - 1; i++) {
+    if (uziBody >= levels[i].uroHranice && uziBody < levels[i + 1].uroHranice) {
+      return levels[i].uroPoradi;
+    }
+  }
+
+  return 1;
+}
+
 UsersRecord getItemFromIndex(
   List<UsersRecord> items,
   int index,
@@ -57,4 +161,35 @@ UsersRecord getItemFromIndex(
   } else {
     return items.first;
   }
+}
+
+double getProgressValue(
+  List<UrovenRecord>? levels,
+  double? uziBody,
+) {
+  if (levels == null || uziBody == null || levels.isEmpty) {
+    return 0;
+  }
+
+  levels.sort((a, b) => a.uroHranice.compareTo(b.uroHranice));
+
+  if (uziBody <= levels.first.uroHranice) {
+    return 0;
+  }
+
+  if (uziBody >= levels.last.uroHranice) {
+    return 1;
+  }
+
+  for (int i = 0; i < levels.length - 1; i++) {
+    if (uziBody >= levels[i].uroHranice && uziBody < levels[i + 1].uroHranice) {
+      double differenceBetweenLimits =
+          levels[i + 1].uroHranice - levels[i].uroHranice;
+      double progressFromLastLimit = uziBody - levels[i].uroHranice;
+
+      return progressFromLastLimit / differenceBetweenLimits;
+    }
+  }
+
+  return 0;
 }

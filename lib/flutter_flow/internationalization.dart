@@ -135,14 +135,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Aktuální úroveň',
       'en': 'Points',
     },
-    'ssbbzh7q': {
-      'cs': 'Úroveň',
-      'en': 'Level',
-    },
-    'u4kwtbm7': {
-      'cs': 'Hello World',
-      'en': '',
-    },
     'zr3uv6vg': {
       'cs': 'Získané mince',
       'en': 'Game coin',
@@ -332,11 +324,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Koupit',
       'en': '',
     },
-    'gt2tf0ch': {
+    'pdpjp536': {
       'cs': ' MS',
       'en': '',
     },
-    'tql5lqtj': {
+    'v30vqmdv': {
       'cs': '1500 MS',
       'en': '',
     },
@@ -344,11 +336,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Koupit',
       'en': '',
     },
-    'z6xm9zho': {
+    '2gi2lcvx': {
       'cs': ' MS',
       'en': '',
     },
-    'ecpq0odp': {
+    'dlyo7hk0': {
       'cs': '1500 MS',
       'en': '',
     },
@@ -480,6 +472,61 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Leaderboard',
     },
     'brevg0mw': {
+      'cs': 'Žebříček',
+      'en': 'Leaderboard',
+    },
+  },
+  // LevelPage
+  {
+    'hrcpgo2o': {
+      'cs': 'Úrovně',
+      'en': 'Leaderboard',
+    },
+    '8ejxvqwo': {
+      'cs': 'Další úroveň: ',
+      'en': '',
+    },
+    '0qvw8ppm': {
+      'cs': 'Další úroveň: 7 - Lídr skladu',
+      'en': '',
+    },
+    'al0y6t07': {
+      'cs': 'Pro další úroveň zbývá získat: ',
+      'en': '',
+    },
+    'wy007f6v': {
+      'cs': ' B',
+      'en': '',
+    },
+    'a8pz2qa7': {
+      'cs': 'Pro další úroveň zbývá získat: 650 bodů',
+      'en': '',
+    },
+    '3kg2746e': {
+      'cs': '+ ',
+      'en': '',
+    },
+    '3h1stjxf': {
+      'cs': ' MS',
+      'en': '',
+    },
+    'qghl5s1h': {
+      'cs': 'Hello World',
+      'en': '',
+    },
+    '5wyzk7i5': {
+      'cs': 'Po nasbírání ',
+      'en': '',
+    },
+    'sip59qzb': {
+      'cs': ' bodů',
+      'en': '',
+    },
+    'k7c1o8fb': {
+      'cs': 'Hello World',
+      'en': '',
+    },
+    '2zyqv62w': {
       'cs': 'Žebříček',
       'en': 'Leaderboard',
     },

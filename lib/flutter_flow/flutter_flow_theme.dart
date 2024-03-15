@@ -63,6 +63,7 @@ abstract class FlutterFlowTheme {
   late Color disabledButton;
   late Color gradientLeaderboardTop;
   late Color gradientLeaderboardBottom;
+  late Color levelNotReached;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -161,6 +162,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color disabledButton = const Color(0xFFD2D2D2);
   late Color gradientLeaderboardTop = const Color(0xFF78A3E9);
   late Color gradientLeaderboardBottom = const Color(0xFF3562A3);
+  late Color levelNotReached = const Color(0xFFD2D2D2);
 }
 
 abstract class Typography {
@@ -342,6 +344,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color disabledButton = const Color(0xFFD2D2D2);
   late Color gradientLeaderboardTop = const Color(0xFF78A3E9);
   late Color gradientLeaderboardBottom = const Color(0xFF3562A3);
+  late Color levelNotReached = const Color(0xFF57636C);
 }
 
 extension TextStyleHelper on TextStyle {

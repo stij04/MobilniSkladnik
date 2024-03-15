@@ -127,6 +127,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'PointsHistoryPage',
           path: '/pointsHistoryPage',
           builder: (context, params) => const PointsHistoryPageWidget(),
+        ),
+        FFRoute(
+          name: 'LevelPage',
+          path: '/levelPage',
+          builder: (context, params) => const LevelPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

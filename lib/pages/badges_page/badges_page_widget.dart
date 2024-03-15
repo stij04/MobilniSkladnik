@@ -288,7 +288,10 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                                           context)
                                                                       .primary,
                                                                   fontSize:
-                                                                      20.0,
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                 ),
                                                           ),
                                                           Padding(
@@ -398,12 +401,17 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                                         ),
                                                                   ),
                                                                   TextSpan(
-                                                                    text: valueOrDefault<
-                                                                        String>(
+                                                                    text:
+                                                                        formatNumber(
                                                                       cardOceneniRecord
-                                                                          .oceMena
-                                                                          .toString(),
-                                                                      'undefined',
+                                                                          .oceMena,
+                                                                      formatType:
+                                                                          FormatType
+                                                                              .custom,
+                                                                      format:
+                                                                          '',
+                                                                      locale:
+                                                                          '',
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -438,7 +446,17 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                                 ],
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium,
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Roboto',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
                                                               ),
                                                             ),
                                                           ),
@@ -678,12 +696,17 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                                         ),
                                                                   ),
                                                                   TextSpan(
-                                                                    text: valueOrDefault<
-                                                                        String>(
+                                                                    text:
+                                                                        formatNumber(
                                                                       listViewOceneniRecord
-                                                                          .oceMena
-                                                                          .toString(),
-                                                                      'undefined',
+                                                                          .oceMena,
+                                                                      formatType:
+                                                                          FormatType
+                                                                              .custom,
+                                                                      format:
+                                                                          '',
+                                                                      locale:
+                                                                          '',
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -718,7 +741,17 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                                 ],
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium,
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Roboto',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
                                                               ),
                                                             ),
                                                           ],
