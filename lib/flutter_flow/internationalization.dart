@@ -120,7 +120,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '8fb5lxgv': {
-      'cs': 'Body',
+      'cs': 'Získané body',
       'en': 'Points',
     },
     'tbmift75': {
@@ -132,7 +132,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '9zlup11i': {
-      'cs': 'Úroveň',
+      'cs': 'Aktuální úroveň',
       'en': 'Points',
     },
     'ssbbzh7q': {
@@ -144,7 +144,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'zr3uv6vg': {
-      'cs': 'Mince skladu',
+      'cs': 'Získané mince',
       'en': 'Game coin',
     },
     'ehe9cz27': {
@@ -156,16 +156,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'x39rr9sk': {
-      'cs': 'Žebříček',
+      'cs': 'Pozice v žebříčku',
       'en': 'Leaderboard',
     },
-    'caluxgf0': {
-      'cs': 'Žebříček',
-      'en': 'Leaderboard',
-    },
-    'ohj89w7i': {
-      'cs': 'Hello World',
+    '0ipzu7o4': {
+      'cs': '. místo',
       'en': '',
+    },
+    'xj8mfgue': {
+      'cs': 'Žebříček',
+      'en': 'Leaderboard',
     },
     'mlaqyuk7': {
       'cs': 'Domů',

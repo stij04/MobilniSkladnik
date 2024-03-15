@@ -20,6 +20,19 @@ int? renumerIndexInList(int? indexInList) {
   return indexInList + 4;
 }
 
+int getCurrentPozitionByUziId(
+  List<UsersRecord> items,
+  int uziId,
+) {
+  for (int i = 0; i < items.length; i++) {
+    if (items[i].uziId == uziId) {
+      return i + 1;
+    }
+  }
+
+  return -1;
+}
+
 List<UsersRecord>? removeFirstItems(
   List<UsersRecord>? items,
   int numberOfItems,
