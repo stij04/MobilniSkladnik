@@ -132,6 +132,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'LevelPage',
           path: '/levelPage',
           builder: (context, params) => const LevelPageWidget(),
+        ),
+        FFRoute(
+          name: 'EditNicknamePage',
+          path: '/editNicknamePage',
+          builder: (context, params) => const EditNicknamePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

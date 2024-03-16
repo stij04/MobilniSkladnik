@@ -11,3 +11,5 @@ export '/pages/forgot_password_page/forgot_password_page_widget.dart'
 export '/pages/points_history_page/points_history_page_widget.dart'
     show PointsHistoryPageWidget;
 export '/pages/level_page/level_page_widget.dart' show LevelPageWidget;
+export '/pages/edit_nickname_page/edit_nickname_page_widget.dart'
+    show EditNicknamePageWidget;

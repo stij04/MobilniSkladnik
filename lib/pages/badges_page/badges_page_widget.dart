@@ -594,7 +594,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                   Clip.antiAliasWithSaveLayer,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .alternate,
                                               elevation: 2.0,
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:

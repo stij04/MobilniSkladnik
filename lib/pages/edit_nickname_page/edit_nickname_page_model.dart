@@ -1,19 +1,15 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'profile_page_widget.dart' show ProfilePageWidget;
+import 'edit_nickname_page_widget.dart' show EditNicknamePageWidget;
 import 'package:flutter/material.dart';
 
-class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
-  ///  Local state fields for this page.
-
-  String? avatarUrl;
-
-  bool isReturnButtonDisabled = true;
-
-  bool isSaveButtonDisabled = true;
-
+class EditNicknamePageModel extends FlutterFlowModel<EditNicknamePageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for nickname widget.
+  FocusNode? nicknameFocusNode;
+  TextEditingController? nicknameController;
+  String? Function(BuildContext, String?)? nicknameControllerValidator;
 
   /// Initialization and disposal methods.
 
@@ -23,6 +19,8 @@ class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
+    nicknameFocusNode?.dispose();
+    nicknameController?.dispose();
   }
 
   /// Action blocks are added here.

@@ -348,15 +348,59 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // ProfilePage
   {
     '0a2r82cb': {
-      'cs': 'Profil',
+      'cs': 'Můj profil',
       'en': 'Profile',
     },
-    'mdib5zra': {
-      'cs': 'Vygenerovat nového avatara',
+    'sz2hhdla': {
+      'cs': 'Avatar',
       'en': '',
     },
-    'jdjj3165': {
-      'cs': 'Upravit přezdívku',
+    '56bcopar': {
+      'cs': 'Generovat nového avatara',
+      'en': '',
+    },
+    'gv8vohcd': {
+      'cs': 'Uložit',
+      'en': '',
+    },
+    'd99fe29l': {
+      'cs': 'Vtátit zpět',
+      'en': '',
+    },
+    'y1xcrmbe': {
+      'cs': 'Osobní údaje',
+      'en': '',
+    },
+    'f5ikp2nj': {
+      'cs': 'Jméno: ',
+      'en': '',
+    },
+    '8186cve1': {
+      'cs': ' ',
+      'en': '',
+    },
+    'gsiwxv0l': {
+      'cs': 'Jméno:',
+      'en': '',
+    },
+    'a0lz1vdg': {
+      'cs': 'Email: ',
+      'en': '',
+    },
+    '5s5ccxud': {
+      'cs': 'Email:',
+      'en': '',
+    },
+    'ns4hggmw': {
+      'cs': 'Přezdívka: ',
+      'en': '',
+    },
+    'rmkkqng4': {
+      'cs': 'Přezdívka:',
+      'en': '',
+    },
+    'jp5yrdcy': {
+      'cs': 'Nastavení aplikace',
       'en': '',
     },
     'j56hso0k': {
@@ -366,10 +410,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'k7b1rpxk': {
       'cs': 'Tmavý režim',
       'en': 'Dark Mode',
-    },
-    'rpsf591m': {
-      'cs': 'Change Password',
-      'en': '',
     },
     'qu2gy17n': {
       'cs': 'Profil',
@@ -531,6 +571,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '2zyqv62w': {
+      'cs': 'Žebříček',
+      'en': 'Leaderboard',
+    },
+  },
+  // EditNicknamePage
+  {
+    'ih0tj89d': {
+      'cs': 'Upravit přezdívku',
+      'en': 'Leaderboard',
+    },
+    'x1tkz7fe': {
+      'cs': 'Zde můžete upravit svou přezdívku',
+      'en': '',
+    },
+    'zq1boycl': {
+      'cs': '',
+      'en': 'Email',
+    },
+    '3vn6cp4g': {
+      'cs': 'Zvolte si přezdívku...',
+      'en': '',
+    },
+    'bbzdfh9z': {
+      'cs': 'Uložit',
+      'en': '',
+    },
+    '0h8w2cxz': {
       'cs': 'Žebříček',
       'en': 'Leaderboard',
     },

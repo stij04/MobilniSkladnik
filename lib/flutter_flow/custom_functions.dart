@@ -242,3 +242,13 @@ SezonaRecord? getCurrentSeason(List<SezonaRecord>? seasons) {
 
   return null;
 }
+
+String generateNewAvatar() {
+  const baseUrl = 'https://api.dicebear.com/7.x/personas/svg?seed=';
+  const avatarStyle =
+      '&mouth=bigSmile,lips,smile,smirk&body=rounded,checkered,squared';
+
+  final seed = math.Random().nextInt(1000000).toString();
+
+  return baseUrl + seed + avatarStyle;
+}
