@@ -11,6 +11,7 @@ import 'schema/oceneni_record.dart';
 import 'schema/zisk_oceneni_record.dart';
 import 'schema/odmena_record.dart';
 import 'schema/uroven_record.dart';
+import 'schema/sezona_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -24,6 +25,7 @@ export 'schema/oceneni_record.dart';
 export 'schema/zisk_oceneni_record.dart';
 export 'schema/odmena_record.dart';
 export 'schema/uroven_record.dart';
+export 'schema/sezona_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -242,6 +244,43 @@ Future<List<UrovenRecord>> queryUrovenRecordOnce({
     queryCollectionOnce(
       UrovenRecord.collection,
       UrovenRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query SezonaRecords (as a Stream and as a Future).
+Future<int> querySezonaRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SezonaRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SezonaRecord>> querySezonaRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SezonaRecord.collection,
+      SezonaRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SezonaRecord>> querySezonaRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SezonaRecord.collection,
+      SezonaRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

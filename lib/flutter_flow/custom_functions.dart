@@ -89,6 +89,35 @@ int getCurrentPozitionByUziId(
   return -1;
 }
 
+double getSeasonProgressValue(List<SezonaRecord>? seasons) {
+  if (seasons == null || seasons.isEmpty) {
+    return 0;
+  }
+
+  DateTime now = DateTime.now();
+
+  for (SezonaRecord season in seasons) {
+    if (season.sezStart == null || season.sezKonec == null) {
+      continue;
+    }
+
+    if (now.isAfter(season.sezStart!) && now.isBefore(season.sezKonec!)) {
+      DateTime start = season.sezStart!;
+      DateTime end = season.sezKonec!;
+      Duration totalDuration = end.difference(start);
+      Duration progressDuration = now.difference(start);
+
+      if (totalDuration.inDays == 0) {
+        return 0;
+      }
+
+      return progressDuration.inDays / totalDuration.inDays;
+    }
+  }
+
+  return 0;
+}
+
 List<UsersRecord>? removeFirstItems(
   List<UsersRecord>? items,
   int numberOfItems,
@@ -192,4 +221,24 @@ double getProgressValue(
   }
 
   return 0;
+}
+
+SezonaRecord? getCurrentSeason(List<SezonaRecord>? seasons) {
+  if (seasons == null || seasons.isEmpty) {
+    return null;
+  }
+
+  DateTime now = DateTime.now();
+
+  for (SezonaRecord season in seasons) {
+    if (season.sezStart == null || season.sezKonec == null) {
+      continue;
+    }
+
+    if (now.isAfter(season.sezStart!) && now.isBefore(season.sezKonec!)) {
+      return season;
+    }
+  }
+
+  return null;
 }

@@ -3,7 +3,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -186,6 +185,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           child: AuthUserStreamWidget(
                                             builder: (context) => Text(
                                               currentUserDisplayName,
+                                              maxLines: 1,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .titleLarge
@@ -194,7 +194,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    fontSize: 32.0,
+                                                    fontSize: 34.0,
                                                     fontWeight: FontWeight.w800,
                                                   ),
                                             ),
@@ -209,6 +209,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               valueOrDefault(
                                                   currentUserDocument?.uziJmeno,
                                                   ''),
+                                              maxLines: 1,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
@@ -227,6 +228,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 currentUserDocument
                                                     ?.uziPrijmeni,
                                                 ''),
+                                            maxLines: 1,
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
                                                 .override(
@@ -245,42 +247,202 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           ),
                           Expanded(
                             flex: 1,
-                            child: Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.of(context).alternate,
-                              elevation: 2.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                            child: StreamBuilder<List<SezonaRecord>>(
+                              stream: querySezonaRecord(
+                                queryBuilder: (sezonaRecord) =>
+                                    sezonaRecord.orderBy('SezStart'),
                               ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      '27ovvae7' /* Sezóna */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Roboto',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
                                         ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 8.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '1zc0pnmi' /* Hello World */,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
                                     ),
+                                  );
+                                }
+                                List<SezonaRecord> cardSezonaRecordList =
+                                    snapshot.data!;
+                                return Card(
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                ],
-                              ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        flex: 1,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Expanded(
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/season.svg',
+                                                    width: double.infinity,
+                                                    height: 84.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex: 3,
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 16.0, 8.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  functions
+                                                      .getCurrentSeason(
+                                                          cardSezonaRecordList
+                                                              .toList())
+                                                      ?.sezNazev,
+                                                  '–',
+                                                ),
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Roboto',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 22.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 8.0, 0.0, 8.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: Text(
+                                                        valueOrDefault<String>(
+                                                          dateTimeFormat(
+                                                            'dd.MM.yyyy',
+                                                            functions
+                                                                .getCurrentSeason(
+                                                                    cardSezonaRecordList
+                                                                        .toList())
+                                                                ?.sezStart,
+                                                            locale: FFLocalizations
+                                                                    .of(context)
+                                                                .languageCode,
+                                                          ),
+                                                          '–',
+                                                        ),
+                                                        maxLines: 1,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Roboto',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: Text(
+                                                        valueOrDefault<String>(
+                                                          dateTimeFormat(
+                                                            'dd.MM.yyyy',
+                                                            functions
+                                                                .getCurrentSeason(
+                                                                    cardSezonaRecordList
+                                                                        .toList())
+                                                                ?.sezKonec,
+                                                            locale: FFLocalizations
+                                                                    .of(context)
+                                                                .languageCode,
+                                                          ),
+                                                          '–',
+                                                        ),
+                                                        maxLines: 1,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Roboto',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              LinearPercentIndicator(
+                                                percent: functions
+                                                    .getSeasonProgressValue(
+                                                        cardSezonaRecordList
+                                                            .toList()),
+                                                lineHeight: 12.0,
+                                                animation: true,
+                                                animateFromLastPercent: true,
+                                                progressColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .buttonBackground,
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiary,
+                                                barRadius: const Radius.circular(8.0),
+                                                padding: EdgeInsets.zero,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ],
@@ -317,6 +479,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     FFLocalizations.of(context).getText(
                                       '8fb5lxgv' /* Získané body */,
                                     ),
+                                    maxLines: 1,
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -352,9 +515,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: SvgPicture.asset(
+                                                'assets/images/points.svg',
+                                                width: 40.0,
+                                                height: 40.0,
+                                                fit: BoxFit.contain,
+                                              ),
+                                            ),
                                             Padding(
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 8.0),
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 0.0),
                                               child: AuthUserStreamWidget(
                                                 builder: (context) => RichText(
                                                   textScaler:
@@ -384,7 +558,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                           context)
                                                                       .primary,
                                                                   fontSize:
-                                                                      26.0,
+                                                                      24.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w800,
@@ -397,7 +571,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 .getText(
                                                           'tbmift75' /*  B */,
                                                         ),
-                                                        style: const TextStyle(),
+                                                        style: TextStyle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                          fontSize: 24.0,
+                                                        ),
                                                       )
                                                     ],
                                                     style: FlutterFlowTheme.of(
@@ -408,22 +589,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          fontSize: 26.0,
+                                                          fontSize: 24.0,
                                                           fontWeight:
                                                               FontWeight.w800,
                                                         ),
                                                   ),
+                                                  maxLines: 1,
                                                 ),
-                                              ),
-                                            ),
-                                            ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              child: SvgPicture.asset(
-                                                'assets/images/points.svg',
-                                                width: 30.0,
-                                                height: 30.0,
-                                                fit: BoxFit.contain,
                                               ),
                                             ),
                                           ],
@@ -441,6 +613,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       FFLocalizations.of(context).getText(
                                         '9zlup11i' /* Aktuální úroveň */,
                                       ),
+                                      maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -500,43 +673,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.start,
+                                                  MainAxisAlignment.center,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.center,
                                               children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 8.0),
-                                                  child: AuthUserStreamWidget(
-                                                    builder: (context) =>
-                                                        AutoSizeText(
-                                                      functions.getCurrentLevelName(
-                                                          cardUrovenRecordList
-                                                              .toList(),
-                                                          valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.uziBody,
-                                                              0.0)),
-                                                      maxLines: 1,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Roboto',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                ),
                                                 AuthUserStreamWidget(
                                                   builder: (context) =>
                                                       CircularPercentIndicator(
@@ -551,8 +691,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     radius: MediaQuery.sizeOf(
                                                                 context)
                                                             .width *
-                                                        0.1,
-                                                    lineWidth: 10.0,
+                                                        0.115,
+                                                    lineWidth: 15.0,
                                                     animation: true,
                                                     animateFromLastPercent:
                                                         true,
@@ -615,6 +755,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     FFLocalizations.of(context).getText(
                                       'zr3uv6vg' /* Získané mince */,
                                     ),
+                                    maxLines: 1,
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -648,10 +789,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/currency.svg',
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 8.0, 0.0, 8.0),
+                                                          0.0, 10.0, 0.0, 0.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) =>
                                                         RichText(
@@ -676,7 +828,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                           context)
                                                                       .primary,
                                                                   fontSize:
-                                                                      26.0,
+                                                                      24.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w800,
@@ -688,7 +840,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 .getText(
                                                               'ehe9cz27' /*  MS */,
                                                             ),
-                                                            style: const TextStyle(),
+                                                            style: TextStyle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w800,
+                                                              fontSize: 24.0,
+                                                            ),
                                                           )
                                                         ],
                                                         style:
@@ -702,24 +862,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                           context)
                                                                       .primary,
                                                                   fontSize:
-                                                                      26.0,
+                                                                      24.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w800,
                                                                 ),
                                                       ),
+                                                      maxLines: 1,
                                                     ),
-                                                  ),
-                                                ),
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: SvgPicture.asset(
-                                                    'assets/images/currency.svg',
-                                                    width: 30.0,
-                                                    height: 30.0,
-                                                    fit: BoxFit.contain,
                                                   ),
                                                 ),
                                               ],
@@ -739,6 +889,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       FFLocalizations.of(context).getText(
                                         'x39rr9sk' /* Pozice v žebříčku */,
                                       ),
+                                      maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -802,10 +953,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.center,
                                               children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/leaderboard.svg',
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 8.0, 0.0, 8.0),
+                                                          0.0, 10.0, 0.0, 0.0),
                                                   child: RichText(
                                                     textScaler:
                                                         MediaQuery.of(context)
@@ -831,7 +993,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                fontSize: 26.0,
+                                                                fontSize: 24.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w800,
@@ -843,7 +1005,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               .getText(
                                                             '0ipzu7o4' /* . místo */,
                                                           ),
-                                                          style: const TextStyle(),
+                                                          style: TextStyle(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            fontWeight:
+                                                                FontWeight.w800,
+                                                            fontSize: 24.0,
+                                                          ),
                                                         )
                                                       ],
                                                       style:
@@ -856,23 +1025,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                fontSize: 26.0,
+                                                                fontSize: 24.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w800,
                                                               ),
                                                     ),
-                                                  ),
-                                                ),
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: SvgPicture.asset(
-                                                    'assets/images/leaderboard.svg',
-                                                    width: 30.0,
-                                                    height: 30.0,
-                                                    fit: BoxFit.contain,
+                                                    maxLines: 1,
                                                   ),
                                                 ),
                                               ],

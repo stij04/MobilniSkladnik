@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>MobilniSkladnik</string>
+	<string>Mobilní skladník</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -59,7 +59,8 @@
 	<true/>
 
 
-
+	<key>PermissionGroupNotification</key>
+    <string>Zasílání notifikací z aplikace</string>
 
 
 	<key>UILaunchStoryboardName</key>

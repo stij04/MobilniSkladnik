@@ -111,14 +111,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Domovská stránka',
       'en': 'Home page',
     },
-    '27ovvae7': {
-      'cs': 'Sezóna',
-      'en': 'Season',
-    },
-    '1zc0pnmi': {
-      'cs': 'Hello World',
-      'en': '',
-    },
     '8fb5lxgv': {
       'cs': 'Získané body',
       'en': 'Points',
@@ -359,6 +351,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Profil',
       'en': 'Profile',
     },
+    'mdib5zra': {
+      'cs': 'Vygenerovat nového avatara',
+      'en': '',
+    },
+    'jdjj3165': {
+      'cs': 'Upravit přezdívku',
+      'en': '',
+    },
     'j56hso0k': {
       'cs': 'Světlý režim',
       'en': 'Light Mode',
@@ -366,6 +366,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'k7b1rpxk': {
       'cs': 'Tmavý režim',
       'en': 'Dark Mode',
+    },
+    'rpsf591m': {
+      'cs': 'Change Password',
+      'en': '',
     },
     'qu2gy17n': {
       'cs': 'Profil',
@@ -522,7 +526,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': ' bodů',
       'en': '',
     },
-    'k7c1o8fb': {
+    'ezkpqvz1': {
       'cs': 'Hello World',
       'en': '',
     },
@@ -533,6 +537,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Miscellaneous
   {
+    'wk0ihg61': {
+      'cs': 'Zasílání notifikací z aplikace',
+      'en': '',
+    },
     '4wconsxu': {
       'cs': '',
       'en': '',
