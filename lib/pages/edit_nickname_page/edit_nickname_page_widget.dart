@@ -3,10 +3,13 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'edit_nickname_page_model.dart';
 export 'edit_nickname_page_model.dart';
 
@@ -66,7 +69,7 @@ class _EditNicknamePageWidgetState extends State<EditNicknamePageWidget> {
                 color: FlutterFlowTheme.of(context).secondary,
               ),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: FaIcon(
                   FontAwesomeIcons.arrowLeft,
                   color: FlutterFlowTheme.of(context).primary,
@@ -86,7 +89,7 @@ class _EditNicknamePageWidgetState extends State<EditNicknamePageWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -103,13 +106,13 @@ class _EditNicknamePageWidgetState extends State<EditNicknamePageWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'x1tkz7fe' /* Zde můžete upravit svou přezdí... */,
@@ -125,20 +128,20 @@ class _EditNicknamePageWidgetState extends State<EditNicknamePageWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 4.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 4.0),
                         child: AuthUserStreamWidget(
-                          builder: (context) => SizedBox(
+                          builder: (context) => Container(
                             width: double.infinity,
                             child: TextFormField(
                               controller: _model.nicknameController,
                               focusNode: _model.nicknameFocusNode,
                               onChanged: (_) => EasyDebounce.debounce(
                                 '_model.nicknameController',
-                                const Duration(milliseconds: 2000),
+                                Duration(milliseconds: 2000),
                                 () => setState(() {}),
                               ),
                               autofocus: true,
-                              autofillHints: const [AutofillHints.username],
+                              autofillHints: [AutofillHints.username],
                               textCapitalization: TextCapitalization.words,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -194,7 +197,7 @@ class _EditNicknamePageWidgetState extends State<EditNicknamePageWidget> {
                                           _model.nicknameController?.clear();
                                           setState(() {});
                                         },
-                                        child: const Icon(
+                                        child: Icon(
                                           Icons.clear,
                                           color: Color(0xFF757575),
                                           size: 22.0,
@@ -233,9 +236,9 @@ class _EditNicknamePageWidgetState extends State<EditNicknamePageWidget> {
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).buttonBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -247,7 +250,7 @@ class _EditNicknamePageWidgetState extends State<EditNicknamePageWidget> {
                                 fontSize: 16.0,
                               ),
                           elevation: 2.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                           ),
                           borderRadius: BorderRadius.circular(12.0),

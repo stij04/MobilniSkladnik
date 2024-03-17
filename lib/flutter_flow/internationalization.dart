@@ -113,11 +113,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8fb5lxgv': {
       'cs': 'Získané body',
-      'en': 'Points',
+      'en': 'Points earned',
     },
     'tbmift75': {
       'cs': ' B',
-      'en': '',
+      'en': ' B',
     },
     'ychee8n3': {
       'cs': 'a',
@@ -125,15 +125,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9zlup11i': {
       'cs': 'Aktuální úroveň',
-      'en': 'Points',
+      'en': 'Current level',
     },
     'zr3uv6vg': {
       'cs': 'Získané mince',
-      'en': 'Game coin',
+      'en': 'Earned coins',
     },
     'ehe9cz27': {
       'cs': ' MS',
-      'en': '',
+      'en': ' MS',
     },
     '4criz5k3': {
       'cs': 'Hello World',
@@ -141,11 +141,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'x39rr9sk': {
       'cs': 'Pozice v žebříčku',
-      'en': 'Leaderboard',
+      'en': 'Ranking position',
     },
     '0ipzu7o4': {
       'cs': '. místo',
-      'en': '',
+      'en': '. place',
     },
     'xj8mfgue': {
       'cs': 'Žebříček',
@@ -164,11 +164,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '031z9e1c': {
       'cs': 'Získané odznaky',
-      'en': '',
+      'en': 'Badges earned',
     },
     '4hffo68x': {
       'cs': 'Získáno dne: ',
-      'en': '',
+      'en': 'Obtained on: ',
     },
     '7bfpfoxl': {
       'cs': 'Hello World',
@@ -176,11 +176,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ei8uqq50': {
       'cs': '+ ',
-      'en': '',
+      'en': '+ ',
     },
     'dv6minds': {
       'cs': ' MS',
-      'en': '',
+      'en': ' MS',
     },
     'nwhvrus1': {
       'cs': 'Hello World',
@@ -188,15 +188,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'w6mr7rmk': {
       'cs': 'Dostupné odznaky',
-      'en': '',
+      'en': 'All available badges',
     },
     'yrvtlk09': {
       'cs': '+ ',
-      'en': '',
+      'en': '+ ',
     },
     'f5il9pvb': {
       'cs': ' MS',
-      'en': '',
+      'en': ' MS',
     },
     'zkidffsj': {
       'cs': 'Hello World',
@@ -215,7 +215,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mjn2637n': {
       'cs': ' B',
-      'en': '',
+      'en': ' B',
     },
     'o4a8zf4k': {
       'cs': 'Hello World',
@@ -223,11 +223,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'h9diujwt': {
       'cs': '2',
-      'en': '',
+      'en': '2',
     },
     'nugp44d9': {
       'cs': ' B',
-      'en': '',
+      'en': ' B',
     },
     'xda2qh44': {
       'cs': 'Hello World',
@@ -235,11 +235,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gbmgj6tb': {
       'cs': '1',
-      'en': '',
+      'en': '1',
     },
     'o7ngyap7': {
       'cs': ' B',
-      'en': '',
+      'en': ' B',
     },
     't9peqwnf': {
       'cs': 'Hello World',
@@ -247,19 +247,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4an8xcwl': {
       'cs': '3',
-      'en': '',
+      'en': '3',
     },
     '3tislpl4': {
       'cs': '. místo',
-      'en': '',
+      'en': '. place',
     },
     'a7orttoe': {
       'cs': '. místo',
-      'en': '',
+      'en': '. place',
     },
     'uw1gvwux': {
       'cs': ' B',
-      'en': '',
+      'en': ' B',
     },
     '0w6f25t1': {
       'cs': '1. místo',
@@ -267,7 +267,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'j9pvqigq': {
       'cs': ' B',
-      'en': '',
+      'en': ' B',
     },
     '7jc2te99': {
       'cs': '1. místo',
@@ -286,27 +286,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9gi2k5l4': {
       'cs': 'Seřazeno podle (A-Z)',
-      'en': '',
+      'en': 'Sorted by (A-Z)',
     },
     'owt24gfb': {
       'cs': 'Seřazeno podle (A-Z)',
-      'en': '',
+      'en': 'Sorted by (A-Z)',
     },
     'aa8phhbd': {
       'cs': 'Seřazeno od nejnižší ceny',
-      'en': '',
+      'en': 'Sorted from lowest price',
     },
     'gp4vd3wl': {
       'cs': 'Seřazeno od nejvyšší ceny',
-      'en': '',
+      'en': 'Sorted from highest price',
     },
     'y7ug6cr6': {
-      'cs': 'Search for an item...',
-      'en': '',
+      'cs': 'Vyhledat položku...',
+      'en': 'Search for an item...',
     },
     'bnqq3u31': {
       'cs': ' MS',
-      'en': '',
+      'en': ' MS',
     },
     'nsrf77oz': {
       'cs': '1500 MS',
@@ -314,11 +314,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rvyk3q3t': {
       'cs': 'Koupit',
-      'en': '',
+      'en': 'Buy',
     },
     'pdpjp536': {
       'cs': ' MS',
-      'en': '',
+      'en': ' MS',
     },
     'v30vqmdv': {
       'cs': '1500 MS',
@@ -326,11 +326,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fnqh4uny': {
       'cs': 'Koupit',
-      'en': '',
+      'en': 'Buy',
     },
     '2gi2lcvx': {
       'cs': ' MS',
-      'en': '',
+      'en': ' MS',
     },
     'dlyo7hk0': {
       'cs': '1500 MS',
@@ -338,7 +338,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm3043r4x': {
       'cs': 'Koupit',
-      'en': '',
+      'en': 'Buy',
     },
     'fvdfdqds': {
       'cs': 'Odměny',
@@ -349,59 +349,59 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '0a2r82cb': {
       'cs': 'Můj profil',
-      'en': 'Profile',
+      'en': 'My Profile',
     },
     'sz2hhdla': {
       'cs': 'Avatar',
-      'en': '',
+      'en': 'Avatar',
     },
     '56bcopar': {
       'cs': 'Generovat nového avatara',
-      'en': '',
+      'en': 'Generate a new avatar',
     },
     'gv8vohcd': {
       'cs': 'Uložit',
-      'en': '',
+      'en': 'Save',
     },
     'd99fe29l': {
       'cs': 'Vtátit zpět',
-      'en': '',
+      'en': 'Previous',
     },
     'y1xcrmbe': {
       'cs': 'Osobní údaje',
-      'en': '',
+      'en': 'Personal Information',
     },
     'f5ikp2nj': {
       'cs': 'Jméno: ',
-      'en': '',
+      'en': 'Name: ',
     },
     '8186cve1': {
       'cs': ' ',
-      'en': '',
+      'en': ' ',
     },
     'gsiwxv0l': {
       'cs': 'Jméno:',
-      'en': '',
+      'en': 'Name:',
     },
     'a0lz1vdg': {
       'cs': 'Email: ',
-      'en': '',
+      'en': 'Email: ',
     },
     '5s5ccxud': {
       'cs': 'Email:',
-      'en': '',
+      'en': 'Email: ',
     },
     'ns4hggmw': {
       'cs': 'Přezdívka: ',
-      'en': '',
+      'en': 'Nickname: ',
     },
     'rmkkqng4': {
       'cs': 'Přezdívka:',
-      'en': '',
+      'en': 'Nickname: ',
     },
     'jp5yrdcy': {
       'cs': 'Nastavení aplikace',
-      'en': '',
+      'en': 'App Settings',
     },
     'j56hso0k': {
       'cs': 'Světlý režim',
@@ -447,9 +447,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Přihlásit',
       'en': 'Log in',
     },
+    'rbbohlob': {
+      'cs': 'Přihlásit',
+      'en': 'Log in',
+    },
     'pn5npwvg': {
       'cs': 'Přihlásit se k demo účtu',
-      'en': '',
+      'en': 'Log in to a demo account',
     },
     '3h8eyxg2': {
       'cs': 'Domů',
@@ -524,11 +528,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'hrcpgo2o': {
       'cs': 'Úrovně',
-      'en': 'Leaderboard',
+      'en': 'Levels',
     },
     '8ejxvqwo': {
       'cs': 'Další úroveň: ',
-      'en': '',
+      'en': 'Next level: ',
     },
     '0qvw8ppm': {
       'cs': 'Další úroveň: 7 - Lídr skladu',
@@ -536,11 +540,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'al0y6t07': {
       'cs': 'Pro další úroveň zbývá získat: ',
-      'en': '',
+      'en': 'For the next level, it remains to get: ',
     },
     'wy007f6v': {
       'cs': ' B',
-      'en': '',
+      'en': ' B',
     },
     'a8pz2qa7': {
       'cs': 'Pro další úroveň zbývá získat: 650 bodů',
@@ -548,11 +552,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3kg2746e': {
       'cs': '+ ',
-      'en': '',
+      'en': '+ ',
     },
     '3h1stjxf': {
       'cs': ' MS',
-      'en': '',
+      'en': ' MS',
     },
     'qghl5s1h': {
       'cs': 'Hello World',
@@ -560,11 +564,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5wyzk7i5': {
       'cs': 'Po nasbírání ',
-      'en': '',
+      'en': 'After collecting ',
     },
     'sip59qzb': {
       'cs': ' bodů',
-      'en': '',
+      'en': ' points',
     },
     'ezkpqvz1': {
       'cs': 'Hello World',
@@ -579,23 +583,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ih0tj89d': {
       'cs': 'Upravit přezdívku',
-      'en': 'Leaderboard',
+      'en': 'Edit nickname',
     },
     'x1tkz7fe': {
       'cs': 'Zde můžete upravit svou přezdívku',
-      'en': '',
+      'en': 'You can edit your nickname here',
     },
     'zq1boycl': {
       'cs': '',
-      'en': 'Email',
+      'en': '',
     },
     '3vn6cp4g': {
       'cs': 'Zvolte si přezdívku...',
-      'en': '',
+      'en': 'Choose a nickname...',
     },
     'bbzdfh9z': {
       'cs': 'Uložit',
-      'en': '',
+      'en': 'Save',
     },
     '0h8w2cxz': {
       'cs': 'Žebříček',
@@ -606,51 +610,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'wk0ihg61': {
       'cs': 'Zasílání notifikací z aplikace',
-      'en': '',
+      'en': 'Sending notifications from the application',
     },
     '4wconsxu': {
-      'cs': '',
-      'en': '',
+      'cs': 'Zadané přihlašovací údaje nejsou správné',
+      'en': 'Login information is incorrect',
     },
     '7pqvm9od': {
-      'cs': '',
-      'en': '',
+      'cs': 'Email pro obnovení hesla byl odeslán!',
+      'en': 'Password reset email sent!',
     },
     'x9pthrbz': {
-      'cs': '',
-      'en': '',
+      'cs': 'Email je povinný!',
+      'en': 'Email required!',
     },
     'pw9y7z04': {
-      'cs': '',
-      'en': '',
+      'cs': 'Telefonní číslo je povinné a musí začínat znakem +.',
+      'en': 'Phone number required and has to start with +.',
     },
     '7jiu4tlx': {
-      'cs': '',
-      'en': '',
+      'cs': 'Hesla se neshodují',
+      'en': 'Passwords don\'t match',
     },
     'z2umwqcw': {
-      'cs': '',
-      'en': '',
+      'cs': 'Zadejte ověřovací SMS kód',
+      'en': 'Enter SMS verification code',
     },
     'fgwaz367': {
-      'cs': '',
-      'en': '',
+      'cs':
+          'Od posledního přihlášení uplynulo příliš dlouho. Před smazáním účtu se znovu přihlaste.',
+      'en':
+          'Too long since most recent sign in. Sign in again before deleting your account.',
     },
     '9o7kwr5g': {
-      'cs': '',
-      'en': '',
+      'cs':
+          'Od posledního přihlášení uplynula příliš dlouhá doba. Před aktualizací e-mailu se znovu přihlaste.',
+      'en':
+          'Too long since most recent sign in. Sign in again before updating your email.',
     },
     '3d8x02t0': {
-      'cs': '',
-      'en': '',
+      'cs': 'Email s potvrzením změny e-mailu byl odeslán!',
+      'en': 'Email change confirmation email sent!',
     },
     '15gst236': {
-      'cs': '',
-      'en': '',
+      'cs': 'Teto email již používá jiný účet',
+      'en': 'Email already in use by another account',
     },
     '4yof8dhh': {
-      'cs': '',
-      'en': '',
+      'cs': 'Zadané přihlašovací údaje nejsou správné',
+      'en': 'Login information is incorrect',
     },
     'dhcbqr70': {
       'cs': '',

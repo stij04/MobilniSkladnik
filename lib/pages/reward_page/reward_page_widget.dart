@@ -5,9 +5,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'reward_page_model.dart';
 export 'reward_page_model.dart';
 
@@ -55,7 +59,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
               color: FlutterFlowTheme.of(context).secondary,
             ),
             child: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: FaIcon(
                 FontAwesomeIcons.solidBell,
                 color: FlutterFlowTheme.of(context).primary,
@@ -94,7 +98,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                   color: FlutterFlowTheme.of(context).secondary,
                 ),
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: FaIcon(
                     FontAwesomeIcons.signOutAlt,
                     color: FlutterFlowTheme.of(context).primary,
@@ -121,12 +125,12 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 2.0),
                           child: Card(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -173,7 +177,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 0.0,
                               borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -224,7 +228,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -246,7 +250,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                             Expanded(
                                               flex: 2,
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 0.0, 0.0),
                                                 child: Column(
@@ -259,7 +263,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -294,7 +298,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -388,16 +392,16 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
                                                                                 return AlertDialog(
-                                                                                  title: const Text('Nákup'),
-                                                                                  content: const Text('Opravdu chcete koupit tuto odměnu?'),
+                                                                                  title: Text('Nákup'),
+                                                                                  content: Text('Opravdu chcete koupit tuto odměnu?'),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: const Text('Ne'),
+                                                                                      child: Text('Ne'),
                                                                                     ),
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: const Text('Ano'),
+                                                                                      child: Text('Ano'),
                                                                                     ),
                                                                                   ],
                                                                                 );
@@ -412,13 +416,13 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                             (alertDialogContext) {
                                                                           return AlertDialog(
                                                                             title:
-                                                                                const Text('Info'),
+                                                                                Text('Info'),
                                                                             content:
-                                                                                const Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
+                                                                                Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                child: const Text('Ok'),
+                                                                                child: Text('Ok'),
                                                                               ),
                                                                             ],
                                                                           );
@@ -452,14 +456,14 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                   0.322,
                                                               height: 30.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -486,7 +490,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
@@ -505,7 +509,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                       ],
                                                     ),
                                                   ].divide(
-                                                      const SizedBox(height: 5.0)),
+                                                      SizedBox(height: 5.0)),
                                                 ),
                                               ),
                                             ),
@@ -560,7 +564,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -582,7 +586,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                             Expanded(
                                               flex: 2,
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 0.0, 0.0),
                                                 child: Column(
@@ -595,7 +599,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -630,7 +634,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -724,16 +728,16 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
                                                                                 return AlertDialog(
-                                                                                  title: const Text('Nákup'),
-                                                                                  content: const Text('Opravdu chcete koupit tuto odměnu?'),
+                                                                                  title: Text('Nákup'),
+                                                                                  content: Text('Opravdu chcete koupit tuto odměnu?'),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: const Text('Ne'),
+                                                                                      child: Text('Ne'),
                                                                                     ),
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: const Text('Ano'),
+                                                                                      child: Text('Ano'),
                                                                                     ),
                                                                                   ],
                                                                                 );
@@ -748,13 +752,13 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                             (alertDialogContext) {
                                                                           return AlertDialog(
                                                                             title:
-                                                                                const Text('Info'),
+                                                                                Text('Info'),
                                                                             content:
-                                                                                const Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
+                                                                                Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                child: const Text('Ok'),
+                                                                                child: Text('Ok'),
                                                                               ),
                                                                             ],
                                                                           );
@@ -788,14 +792,14 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                   0.322,
                                                               height: 30.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -822,7 +826,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
@@ -841,7 +845,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                       ],
                                                     ),
                                                   ].divide(
-                                                      const SizedBox(height: 5.0)),
+                                                      SizedBox(height: 5.0)),
                                                 ),
                                               ),
                                             ),
@@ -896,7 +900,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -918,7 +922,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                             Expanded(
                                               flex: 2,
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 0.0, 0.0),
                                                 child: Column(
@@ -931,7 +935,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -966,7 +970,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1060,16 +1064,16 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
                                                                                 return AlertDialog(
-                                                                                  title: const Text('Nákup'),
-                                                                                  content: const Text('Opravdu chcete koupit tuto odměnu?'),
+                                                                                  title: Text('Nákup'),
+                                                                                  content: Text('Opravdu chcete koupit tuto odměnu?'),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: const Text('Ne'),
+                                                                                      child: Text('Ne'),
                                                                                     ),
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: const Text('Ano'),
+                                                                                      child: Text('Ano'),
                                                                                     ),
                                                                                   ],
                                                                                 );
@@ -1084,13 +1088,13 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                             (alertDialogContext) {
                                                                           return AlertDialog(
                                                                             title:
-                                                                                const Text('Info'),
+                                                                                Text('Info'),
                                                                             content:
-                                                                                const Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
+                                                                                Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                child: const Text('Ok'),
+                                                                                child: Text('Ok'),
                                                                               ),
                                                                             ],
                                                                           );
@@ -1124,14 +1128,14 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                   0.322,
                                                               height: 30.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1158,7 +1162,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
@@ -1177,7 +1181,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                       ],
                                                     ),
                                                   ].divide(
-                                                      const SizedBox(height: 5.0)),
+                                                      SizedBox(height: 5.0)),
                                                 ),
                                               ),
                                             ),

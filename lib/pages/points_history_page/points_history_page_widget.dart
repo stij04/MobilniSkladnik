@@ -2,8 +2,12 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'points_history_page_model.dart';
 export 'points_history_page_model.dart';
 
@@ -61,7 +65,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                 color: FlutterFlowTheme.of(context).secondary,
               ),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: FaIcon(
                   FontAwesomeIcons.arrowLeft,
                   color: FlutterFlowTheme.of(context).primary,
@@ -81,7 +85,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -102,7 +106,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'shf6clzz' /* Filtr */,
@@ -135,7 +139,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: Padding(
-                            padding: const EdgeInsets.all(10.0),
+                            padding: EdgeInsets.all(10.0),
                             child: SizedBox(
                               width: 50.0,
                               height: 50.0,
@@ -166,7 +170,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -182,7 +186,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: RichText(
                                         textScaler:
                                             MediaQuery.of(context).textScaler,
@@ -205,7 +209,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                                                   .getText(
                                                 'ttc0qy2h' /*  b */,
                                               ),
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             )
@@ -223,7 +227,7 @@ class _PointsHistoryPageWidgetState extends State<PointsHistoryPageWidget> {
                                   Expanded(
                                     flex: 1,
                                     child: Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
                                           dateTimeFormat(

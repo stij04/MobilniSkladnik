@@ -2,10 +2,14 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:provider/provider.dart';
 import 'level_page_model.dart';
 export 'level_page_model.dart';
 
@@ -61,7 +65,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                 color: FlutterFlowTheme.of(context).secondary,
               ),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: FaIcon(
                   FontAwesomeIcons.arrowLeft,
                   color: FlutterFlowTheme.of(context).primary,
@@ -81,7 +85,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -109,7 +113,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
               }
               List<UrovenRecord> containerUrovenRecordList = snapshot.data!;
               return Container(
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -121,7 +125,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           color: FlutterFlowTheme.of(context).alternate,
@@ -134,7 +138,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 16.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) =>
@@ -172,9 +176,9 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 6.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Text(
@@ -194,9 +198,9 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 4.0),
                                   child: RichText(
                                     textScaler:
@@ -218,7 +222,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                               valueOrDefault(
                                                   currentUserDocument?.uziBody,
                                                   0.0)),
-                                          style: const TextStyle(
+                                          style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                           ),
                                         )
@@ -230,9 +234,9 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
                                   child: RichText(
                                     textScaler:
@@ -260,7 +264,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                             format: '',
                                             locale: '',
                                           ),
-                                          style: const TextStyle(
+                                          style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
@@ -269,7 +273,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                               .getText(
                                             'wy007f6v' /*  B */,
                                           ),
-                                          style: const TextStyle(
+                                          style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                           ),
                                         )
@@ -294,7 +298,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Card(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             color: FlutterFlowTheme.of(context).alternate,
@@ -303,7 +307,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 8.0),
                               child: Builder(
                                 builder: (context) {
@@ -326,13 +330,13 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                               height: urovneIndex == 0
                                                   ? 60.0
                                                   : 80.0,
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Stack(
                                                 children: [
                                                   if (urovneIndex != 0)
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, -1.0),
                                                       child:
                                                           AuthUserStreamWidget(
@@ -364,7 +368,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                     ),
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 1.0),
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
@@ -423,11 +427,11 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                             ),
                                                           ),
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               urovneItem
@@ -461,7 +465,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                           Expanded(
                                             flex: 3,
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       8.0, 0.0, 16.0, 0.0),
                                               child: Column(
@@ -615,7 +619,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                                 locale: '',
                                                               ),
                                                               style:
-                                                                  const TextStyle(),
+                                                                  TextStyle(),
                                                             ),
                                                             TextSpan(
                                                               text: FFLocalizations
@@ -624,7 +628,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                                 'sip59qzb' /*  bodů */,
                                                               ),
                                                               style:
-                                                                  const TextStyle(),
+                                                                  TextStyle(),
                                                             )
                                                           ],
                                                           style: FlutterFlowTheme
@@ -634,7 +638,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                       ),
                                                     ],
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ),

@@ -4,8 +4,12 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../auth_manager.dart';
+import '../base_auth_user_provider.dart';
+import '../../flutter_flow/flutter_flow_util.dart';
 
 import '/backend/backend.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:stream_transform/stream_transform.dart';
 import 'anonymous_auth.dart';
 import 'apple_auth.dart';
 import 'email_auth.dart';
@@ -71,9 +75,10 @@ class FirebaseAuthManager extends AuthManager
       if (e.code == 'requires-recent-login') {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text(
-                  'Too long since most recent sign in. Sign in again before deleting your account.')),
+          SnackBar(
+              content: Text(FFLocalizations.of(context).getText(
+            'fgwaz367' /* Od posledního přihlášení uplyn... */,
+          ))),
         );
       }
     }
@@ -95,9 +100,10 @@ class FirebaseAuthManager extends AuthManager
       if (e.code == 'requires-recent-login') {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text(
-                  'Too long since most recent sign in. Sign in again before updating your email.')),
+          SnackBar(
+              content: Text(FFLocalizations.of(context).getText(
+            '9o7kwr5g' /* Od posledního přihlášení uplyn... */,
+          ))),
         );
       }
     }
@@ -113,12 +119,18 @@ class FirebaseAuthManager extends AuthManager
     } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: ${e.message!}')),
+        SnackBar(
+            content: Text(FFLocalizations.of(context).getText(
+          '4wconsxu' /* Zadané přihlašovací údaje nejs... */,
+        ))),
       );
       return null;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Password reset email sent')),
+      SnackBar(
+          content: Text(FFLocalizations.of(context).getText(
+        '7pqvm9od' /* Email pro obnovení hesla byl o... */,
+      ))),
     );
   }
 
@@ -184,7 +196,9 @@ class FirebaseAuthManager extends AuthManager
       } else if (phoneAuthManager.phoneAuthError != null) {
         final e = phoneAuthManager.phoneAuthError!;
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Error: ${e.message!}'),
+          content: Text(FFLocalizations.of(context).getText(
+            '4wconsxu' /* Zadané přihlašovací údaje nejs... */,
+          )),
         ));
         phoneAuthManager.update(() => phoneAuthManager.phoneAuthError = null);
       }
@@ -213,7 +227,7 @@ class FirebaseAuthManager extends AuthManager
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: phoneNumber,
       timeout:
-          const Duration(seconds: 0), // Skips Android's default auto-verification
+          Duration(seconds: 0), // Skips Android's default auto-verification
       verificationCompleted: (phoneAuthCredential) async {
         await FirebaseAuth.instance.signInWithCredential(phoneAuthCredential);
         phoneAuthManager.update(() {
@@ -290,11 +304,15 @@ class FirebaseAuthManager extends AuthManager
           : MobilniSkladnikFirebaseUser.fromUserCredential(userCredential);
     } on FirebaseAuthException catch (e) {
       final errorMsg = switch (e.code) {
-        'email-already-in-use' =>
-          'Error: The email is already in use by a different account',
-        'INVALID_LOGIN_CREDENTIALS' =>
-          'Error: The supplied auth credential is incorrect, malformed or has expired',
-        _ => 'Error: ${e.message!}',
+        'email-already-in-use' => FFLocalizations.of(context).getText(
+            '15gst236' /* Teto email již používá jiný úč... */,
+          ),
+        'INVALID_LOGIN_CREDENTIALS' => FFLocalizations.of(context).getText(
+            '4yof8dhh' /* Zadané přihlašovací údaje nejs... */,
+          ),
+        _ => FFLocalizations.of(context).getText(
+            '4wconsxu' /* Zadané přihlašovací údaje nejs... */,
+          ),
       };
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(

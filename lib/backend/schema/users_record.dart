@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class UsersRecord extends FirestoreRecord {
   UsersRecord._(
-    super.reference,
-    super.data,
-  ) {
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -76,6 +76,11 @@ class UsersRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
+  // "fcmToken" field.
+  String? _fcmToken;
+  String get fcmToken => _fcmToken ?? '';
+  bool hasFcmToken() => _fcmToken != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _uid = snapshotData['uid'] as String?;
@@ -89,6 +94,7 @@ class UsersRecord extends FirestoreRecord {
     _photoUrl = snapshotData['photo_url'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
+    _fcmToken = snapshotData['fcmToken'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -137,6 +143,7 @@ Map<String, dynamic> createUsersRecordData({
   String? photoUrl,
   DateTime? createdTime,
   String? phoneNumber,
+  String? fcmToken,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -152,6 +159,7 @@ Map<String, dynamic> createUsersRecordData({
       'photo_url': photoUrl,
       'created_time': createdTime,
       'phone_number': phoneNumber,
+      'fcmToken': fcmToken,
     }.withoutNulls,
   );
 
@@ -174,7 +182,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.displayName == e2?.displayName &&
         e1?.photoUrl == e2?.photoUrl &&
         e1?.createdTime == e2?.createdTime &&
-        e1?.phoneNumber == e2?.phoneNumber;
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.fcmToken == e2?.fcmToken;
   }
 
   @override
@@ -190,7 +199,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.displayName,
         e?.photoUrl,
         e?.createdTime,
-        e?.phoneNumber
+        e?.phoneNumber,
+        e?.fcmToken
       ]);
 
   @override
