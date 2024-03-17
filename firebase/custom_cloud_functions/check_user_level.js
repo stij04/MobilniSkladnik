@@ -10,6 +10,7 @@ exports.checkUserLevel = functions
 
     const newValue = change.after.data();
     const oldValue = change.before.data();
+    const uid = context.params.uid;
 
     const levels = await admin.firestore().collection("uroven").get();
     let newLevel = null;
@@ -47,7 +48,18 @@ exports.checkUserLevel = functions
           .send(message)
           .then((response) => {
             console.log("Úspěšně odeslaná notifikace:", response);
-            return null;
+
+            const notificationData = {
+              uid: uid,
+              title: message.notification.title,
+              body: message.notification.body,
+              timestamp: admin.firestore.FieldValue.serverTimestamp(),
+            };
+
+            return admin
+              .firestore()
+              .collection("notifications")
+              .add(notificationData);
           })
           .catch((error) => {
             console.log("Chyba při odesílání notifikace:", error);

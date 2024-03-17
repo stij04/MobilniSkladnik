@@ -51,6 +51,7 @@ dependencies:
   firebase_performance_web: 0.1.4+24
   flutter_animate: 4.1.1+1
   flutter_cache_manager: 3.3.1
+  flutter_keyboard_visibility: 5.2.0
   flutter_svg: 2.0.9
   font_awesome_flutter: 10.6.0
   from_css_color: 2.0.0

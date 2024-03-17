@@ -388,16 +388,28 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
                                                                                 return AlertDialog(
-                                                                                  title: const Text('Nákup'),
-                                                                                  content: const Text('Opravdu chcete koupit tuto odměnu?'),
+                                                                                  title: Text(FFLocalizations.of(context).getVariableText(
+                                                                                    csText: 'Nákup',
+                                                                                    enText: 'Purchase',
+                                                                                  )),
+                                                                                  content: Text(FFLocalizations.of(context).getVariableText(
+                                                                                    csText: 'Opravdu chcete zakoupit tuto odměnu?',
+                                                                                    enText: 'Are you sure you want to buy this reward?',
+                                                                                  )),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: const Text('Ne'),
+                                                                                      child: Text(FFLocalizations.of(context).getVariableText(
+                                                                                        csText: 'Ne',
+                                                                                        enText: 'No',
+                                                                                      )),
                                                                                     ),
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: const Text('Ano'),
+                                                                                      child: Text(FFLocalizations.of(context).getVariableText(
+                                                                                        csText: 'Ano',
+                                                                                        enText: 'Yes',
+                                                                                      )),
                                                                                     ),
                                                                                   ],
                                                                                 );
@@ -414,7 +426,10 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                             title:
                                                                                 const Text('Info'),
                                                                             content:
-                                                                                const Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
+                                                                                Text(FFLocalizations.of(context).getVariableText(
+                                                                              csText: 'Žádost o nákup odměny byla odeslána vašemu nadřízenému.',
+                                                                              enText: 'A reward purchase request has been sent to your supervisor.',
+                                                                            )),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext),
@@ -724,16 +739,28 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
                                                                                 return AlertDialog(
-                                                                                  title: const Text('Nákup'),
-                                                                                  content: const Text('Opravdu chcete koupit tuto odměnu?'),
+                                                                                  title: Text(FFLocalizations.of(context).getVariableText(
+                                                                                    csText: 'Nákup',
+                                                                                    enText: 'Purchase',
+                                                                                  )),
+                                                                                  content: Text(FFLocalizations.of(context).getVariableText(
+                                                                                    csText: 'Opravdu chcete zakoupit tuto odměnu?',
+                                                                                    enText: 'Are you sure you want to buy this reward?',
+                                                                                  )),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: const Text('Ne'),
+                                                                                      child: Text(FFLocalizations.of(context).getVariableText(
+                                                                                        csText: 'Ne',
+                                                                                        enText: 'No',
+                                                                                      )),
                                                                                     ),
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: const Text('Ano'),
+                                                                                      child: Text(FFLocalizations.of(context).getVariableText(
+                                                                                        csText: 'Ano',
+                                                                                        enText: 'Yes',
+                                                                                      )),
                                                                                     ),
                                                                                   ],
                                                                                 );
@@ -750,7 +777,10 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                             title:
                                                                                 const Text('Info'),
                                                                             content:
-                                                                                const Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
+                                                                                Text(FFLocalizations.of(context).getVariableText(
+                                                                              csText: 'Žádost o nákup odměny byla odeslána vašemu nadřízenému.',
+                                                                              enText: 'A reward purchase request has been sent to your supervisor.',
+                                                                            )),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext),
@@ -1060,16 +1090,28 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
                                                                                 return AlertDialog(
-                                                                                  title: const Text('Nákup'),
-                                                                                  content: const Text('Opravdu chcete koupit tuto odměnu?'),
+                                                                                  title: Text(FFLocalizations.of(context).getVariableText(
+                                                                                    csText: 'Nákup',
+                                                                                    enText: 'Purchase',
+                                                                                  )),
+                                                                                  content: Text(FFLocalizations.of(context).getVariableText(
+                                                                                    csText: 'Opravdu chcete zakoupit tuto odměnu?',
+                                                                                    enText: 'Are you sure you want to buy this reward?',
+                                                                                  )),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: const Text('Ne'),
+                                                                                      child: Text(FFLocalizations.of(context).getVariableText(
+                                                                                        csText: 'Ne',
+                                                                                        enText: 'No',
+                                                                                      )),
                                                                                     ),
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: const Text('Ano'),
+                                                                                      child: Text(FFLocalizations.of(context).getVariableText(
+                                                                                        csText: 'Ano',
+                                                                                        enText: 'Yes',
+                                                                                      )),
                                                                                     ),
                                                                                   ],
                                                                                 );
@@ -1086,7 +1128,10 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                             title:
                                                                                 const Text('Info'),
                                                                             content:
-                                                                                const Text('Žádost o nákup odměny byla odeslána vašemu nadřízenému.'),
+                                                                                Text(FFLocalizations.of(context).getVariableText(
+                                                                              csText: 'Žádost o nákup odměny byla odeslána vašemu nadřízenému.',
+                                                                              enText: 'A reward purchase request has been sent to your supervisor.',
+                                                                            )),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext),

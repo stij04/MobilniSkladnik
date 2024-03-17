@@ -167,10 +167,13 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: Image.network(
-                                          _model.avatarUrl != null &&
-                                                  _model.avatarUrl != ''
-                                              ? _model.avatarUrl!
-                                              : currentUserPhoto,
+                                          valueOrDefault<String>(
+                                            _model.avatarUrl != null &&
+                                                    _model.avatarUrl != ''
+                                                ? _model.avatarUrl
+                                                : currentUserPhoto,
+                                            'https://creazilla-store.fra1.digitaloceanspaces.com/emojis/50481/person-emoji-clipart-md.png',
+                                          ),
                                           width: 300.0,
                                           height: 202.0,
                                           fit: BoxFit.contain,

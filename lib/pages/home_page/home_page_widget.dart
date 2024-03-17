@@ -160,7 +160,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 child: Image.network(
-                                                  currentUserPhoto,
+                                                  valueOrDefault<String>(
+                                                    currentUserPhoto,
+                                                    'https://creazilla-store.fra1.digitaloceanspaces.com/emojis/50481/person-emoji-clipart-md.png',
+                                                  ),
                                                   width: 300.0,
                                                   height: 202.0,
                                                   fit: BoxFit.cover,
