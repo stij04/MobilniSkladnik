@@ -447,10 +447,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Přihlásit',
       'en': 'Log in',
     },
-    'rbbohlob': {
-      'cs': 'Přihlásit',
-      'en': 'Log in',
-    },
     'pn5npwvg': {
       'cs': 'Přihlásit se k demo účtu',
       'en': 'Log in to a demo account',

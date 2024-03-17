@@ -2,13 +2,9 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'leaderboard_page_model.dart';
 export 'leaderboard_page_model.dart';
 
@@ -64,7 +60,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                 color: FlutterFlowTheme.of(context).secondary,
               ),
               child: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: FaIcon(
                   FontAwesomeIcons.arrowLeft,
                   color: FlutterFlowTheme.of(context).primary,
@@ -84,7 +80,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -112,7 +108,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
               }
               List<UsersRecord> containerUsersRecordList = snapshot.data!;
               return Container(
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -124,7 +120,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           color: FlutterFlowTheme.of(context).alternate,
@@ -133,7 +129,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 4.0, 8.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -145,7 +141,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
@@ -163,7 +159,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -186,7 +182,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 4.0),
                                         child: RichText(
                                           textScaler:
@@ -224,7 +220,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                         .getText(
                                                   'mjn2637n' /*  B */,
                                                 ),
-                                                style: TextStyle(),
+                                                style: const TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -237,7 +233,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 2.0, 0.0),
                                         child: Container(
                                           width: 100.0,
@@ -250,12 +246,12 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .gradientLeaderboardBottom
                                               ],
-                                              stops: [0.0, 1.0],
-                                              begin: AlignmentDirectional(
+                                              stops: const [0.0, 1.0],
+                                              begin: const AlignmentDirectional(
                                                   0.0, -1.0),
-                                              end: AlignmentDirectional(0, 1.0),
+                                              end: const AlignmentDirectional(0, 1.0),
                                             ),
-                                            borderRadius: BorderRadius.only(
+                                            borderRadius: const BorderRadius.only(
                                               bottomLeft: Radius.circular(0.0),
                                               bottomRight: Radius.circular(0.0),
                                               topLeft: Radius.circular(0.0),
@@ -264,7 +260,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -315,7 +311,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -338,7 +334,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 4.0),
                                         child: RichText(
                                           textScaler:
@@ -376,7 +372,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                         .getText(
                                                   'nugp44d9' /*  B */,
                                                 ),
-                                                style: TextStyle(),
+                                                style: const TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -389,26 +385,26 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             2.0, 0.0, 2.0, 0.0),
                                         child: Container(
                                           height: 75.0,
                                           decoration: BoxDecoration(
                                             gradient: LinearGradient(
                                               colors: [
-                                                Color(0xFF78A3E9),
+                                                const Color(0xFF78A3E9),
                                                 FlutterFlowTheme.of(context)
                                                     .gradientLeaderboardBottom
                                               ],
-                                              stops: [0.0, 1.0],
-                                              begin: AlignmentDirectional(
+                                              stops: const [0.0, 1.0],
+                                              begin: const AlignmentDirectional(
                                                   0.0, -1.0),
-                                              end: AlignmentDirectional(0, 1.0),
+                                              end: const AlignmentDirectional(0, 1.0),
                                             ),
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -438,7 +434,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
@@ -456,7 +452,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -479,7 +475,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 4.0),
                                         child: RichText(
                                           textScaler:
@@ -517,7 +513,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                         .getText(
                                                   'o7ngyap7' /*  B */,
                                                 ),
-                                                style: TextStyle(),
+                                                style: const TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -530,7 +526,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             2.0, 0.0, 0.0, 0.0),
                                         child: Container(
                                           width: 100.0,
@@ -543,15 +539,15 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .gradientLeaderboardBottom
                                               ],
-                                              stops: [0.0, 1.0],
-                                              begin: AlignmentDirectional(
+                                              stops: const [0.0, 1.0],
+                                              begin: const AlignmentDirectional(
                                                   0.0, -1.0),
-                                              end: AlignmentDirectional(0, 1.0),
+                                              end: const AlignmentDirectional(0, 1.0),
                                             ),
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -591,7 +587,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Builder(
                             builder: (context) {
                               final zebricek = functions
@@ -614,7 +610,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.all(8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -662,7 +658,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                                 .getText(
                                                               '3tislpl4' /* . místo */,
                                                             ),
-                                                            style: TextStyle(
+                                                            style: const TextStyle(
                                                               fontSize: 16.0,
                                                             ),
                                                           )
@@ -718,7 +714,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                                 .getText(
                                                               'a7orttoe' /* . místo */,
                                                             ),
-                                                            style: TextStyle(),
+                                                            style: const TextStyle(),
                                                           )
                                                         ],
                                                         style: FlutterFlowTheme
@@ -749,7 +745,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                         0))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
@@ -839,7 +835,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                                 .getText(
                                                               'uw1gvwux' /*  B */,
                                                             ),
-                                                            style: TextStyle(
+                                                            style: const TextStyle(
                                                               fontSize: 16.0,
                                                             ),
                                                           )
@@ -862,7 +858,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                         0))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           RichText(
@@ -903,7 +899,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                                 'j9pvqigq' /*  B */,
                                                               ),
                                                               style:
-                                                                  TextStyle(),
+                                                                  const TextStyle(),
                                                             )
                                                           ],
                                                           style: FlutterFlowTheme

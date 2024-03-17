@@ -2,16 +2,12 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -59,7 +55,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               color: FlutterFlowTheme.of(context).secondary,
             ),
             child: Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: FaIcon(
                 FontAwesomeIcons.solidBell,
                 color: FlutterFlowTheme.of(context).primary,
@@ -98,7 +94,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   color: FlutterFlowTheme.of(context).secondary,
                 ),
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: FaIcon(
                     FontAwesomeIcons.signOutAlt,
                     color: FlutterFlowTheme.of(context).primary,
@@ -114,7 +110,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(5.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -130,7 +126,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -157,7 +153,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 8.0, 0.0, 8.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => ClipRRect(
@@ -179,7 +175,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   Expanded(
                                     flex: 1,
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 8.0, 8.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -188,7 +184,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 20.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) =>
@@ -212,7 +208,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 4.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => Text(
@@ -297,7 +293,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       Expanded(
                                         flex: 1,
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -322,7 +318,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         flex: 3,
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 16.0, 8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -353,7 +349,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 8.0),
                                                 child: Row(
@@ -365,7 +361,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Text(
                                                         valueOrDefault<String>(
@@ -398,7 +394,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Text(
                                                         valueOrDefault<String>(
@@ -446,7 +442,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
                                                         .tertiary,
-                                                barRadius: Radius.circular(8.0),
+                                                barRadius: const Radius.circular(8.0),
                                                 padding: EdgeInsets.zero,
                                               ),
                                             ],
@@ -480,7 +476,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         Expanded(
                           flex: 1,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 4.0, 8.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -488,7 +484,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       '8fb5lxgv' /* Získané body */,
@@ -523,7 +519,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(5.0),
+                                        padding: const EdgeInsets.all(5.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -540,7 +536,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
                                               child: AuthUserStreamWidget(
@@ -619,9 +615,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -683,7 +679,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -756,7 +752,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         Expanded(
                           flex: 1,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 4.0, 8.0, 8.0, 8.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -764,7 +760,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'zr3uv6vg' /* Získané mince */,
@@ -790,7 +786,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.all(8.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -799,7 +795,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.all(5.0),
+                                            padding: const EdgeInsets.all(5.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -815,7 +811,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 0.0),
                                                   child: AuthUserStreamWidget(
@@ -895,9 +891,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -959,7 +955,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -979,7 +975,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 0.0),
                                                   child: RichText(

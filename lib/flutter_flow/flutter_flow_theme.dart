@@ -153,16 +153,16 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFFE0E3E7);
-  late Color backgroundComponents = Color(0xFF1D2428);
-  late Color buttonBackground = Color(0xFF3562A3);
-  late Color gradient1 = Color(0xFF3562A3);
-  late Color gradient2 = Color(0xFFDEF0FC);
-  late Color disabledButton = Color(0xFFD2D2D2);
-  late Color gradientLeaderboardTop = Color(0xFF78A3E9);
-  late Color gradientLeaderboardBottom = Color(0xFF3562A3);
-  late Color levelNotReached = Color(0xFFD2D2D2);
+  late Color primaryBtnText = const Color(0xFFFFFFFF);
+  late Color lineColor = const Color(0xFFE0E3E7);
+  late Color backgroundComponents = const Color(0xFF1D2428);
+  late Color buttonBackground = const Color(0xFF3562A3);
+  late Color gradient1 = const Color(0xFF3562A3);
+  late Color gradient2 = const Color(0xFFDEF0FC);
+  late Color disabledButton = const Color(0xFFD2D2D2);
+  late Color gradientLeaderboardTop = const Color(0xFF78A3E9);
+  late Color gradientLeaderboardBottom = const Color(0xFF3562A3);
+  late Color levelNotReached = const Color(0xFFD2D2D2);
 }
 
 abstract class Typography {
@@ -335,16 +335,16 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFF22282F);
-  late Color backgroundComponents = Color(0xFF1D2428);
-  late Color buttonBackground = Color(0xFF3562A3);
-  late Color gradient1 = Color(0xFF262D34);
-  late Color gradient2 = Color(0xFF3562A3);
-  late Color disabledButton = Color(0xFFD2D2D2);
-  late Color gradientLeaderboardTop = Color(0xFF78A3E9);
-  late Color gradientLeaderboardBottom = Color(0xFF3562A3);
-  late Color levelNotReached = Color(0xFF57636C);
+  late Color primaryBtnText = const Color(0xFFFFFFFF);
+  late Color lineColor = const Color(0xFF22282F);
+  late Color backgroundComponents = const Color(0xFF1D2428);
+  late Color buttonBackground = const Color(0xFF3562A3);
+  late Color gradient1 = const Color(0xFF262D34);
+  late Color gradient2 = const Color(0xFF3562A3);
+  late Color disabledButton = const Color(0xFFD2D2D2);
+  late Color gradientLeaderboardTop = const Color(0xFF78A3E9);
+  late Color gradientLeaderboardBottom = const Color(0xFF3562A3);
+  late Color levelNotReached = const Color(0xFF57636C);
 }
 
 extension TextStyleHelper on TextStyle {

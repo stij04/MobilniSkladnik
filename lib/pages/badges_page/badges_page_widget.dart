@@ -2,12 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'badges_page_model.dart';
 export 'badges_page_model.dart';
 
@@ -55,7 +51,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
               color: FlutterFlowTheme.of(context).secondary,
             ),
             child: Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: FaIcon(
                 FontAwesomeIcons.solidBell,
                 color: FlutterFlowTheme.of(context).primary,
@@ -94,7 +90,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                   color: FlutterFlowTheme.of(context).secondary,
                 ),
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: FaIcon(
                     FontAwesomeIcons.signOutAlt,
                     color: FlutterFlowTheme.of(context).primary,
@@ -110,7 +106,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(5.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -123,15 +119,15 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 2.0, 0.0, 4.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -239,7 +235,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                   BorderRadius.circular(8.0),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -262,7 +258,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                     flex: 2,
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   0.0,
@@ -279,7 +275,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                             valueOrDefault<
                                                                 String>(
                                                               cardOceneniRecord
-                                                                  ?.oceNazev,
+                                                                  .oceNazev,
                                                               'undefined',
                                                             ),
                                                             style: FlutterFlowTheme
@@ -300,7 +296,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         5.0,
@@ -342,7 +338,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                                           .languageCode,
                                                                     ),
                                                                     style:
-                                                                        TextStyle(),
+                                                                        const TextStyle(),
                                                                   )
                                                                 ],
                                                                 style: FlutterFlowTheme.of(
@@ -364,7 +360,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                             valueOrDefault<
                                                                 String>(
                                                               cardOceneniRecord
-                                                                  ?.ocePopis,
+                                                                  .ocePopis,
                                                               'undefined',
                                                             ),
                                                             style: FlutterFlowTheme
@@ -373,7 +369,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         5.0,
@@ -407,7 +403,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                                   TextSpan(
                                                                     text:
                                                                         formatNumber(
-                                                                      cardOceneniRecord!
+                                                                      cardOceneniRecord
                                                                           .oceMena,
                                                                       formatType:
                                                                           FormatType
@@ -494,16 +490,16 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 2.0, 0.0, 4.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -552,7 +548,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                       containerZiskOceneniRecordList =
                                       snapshot.data!;
                                   return Container(
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: StreamBuilder<List<OceneniRecord>>(
                                       stream: queryOceneniRecord(
                                         queryBuilder: (oceneniRecord) =>
@@ -605,7 +601,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(8.0),
+                                                padding: const EdgeInsets.all(8.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -629,7 +625,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                       flex: 2,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -660,7 +656,7 @@ class _BadgesPageWidgetState extends State<BadgesPageWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,

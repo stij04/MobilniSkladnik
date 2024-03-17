@@ -1,14 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'login_page_model.dart';
 export 'login_page_model.dart';
 
@@ -41,22 +39,22 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(0.0, 140.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 140.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(0.9, 0.9),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.9, 0.9),
+          end: const Offset(1.0, 1.0),
         ),
         TiltEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(-0.349, 0),
-          end: Offset(0, 0),
+          begin: const Offset(-0.349, 0),
+          end: const Offset(0, 0),
         ),
       ],
     ),
@@ -116,9 +114,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                       FlutterFlowTheme.of(context).gradient1,
                       FlutterFlowTheme.of(context).gradient2
                     ],
-                    stops: [0.0, 1.0],
-                    begin: AlignmentDirectional(0.0, -1.0),
-                    end: AlignmentDirectional(0, 1.0),
+                    stops: const [0.0, 1.0],
+                    begin: const AlignmentDirectional(0.0, -1.0),
+                    end: const AlignmentDirectional(0, 1.0),
                   ),
                 ),
               ),
@@ -128,12 +126,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 25.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 25.0),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -172,10 +170,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Container(
                     width: double.infinity,
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
@@ -184,15 +182,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                         BoxShadow(
                           blurRadius: 4.0,
                           color: FlutterFlowTheme.of(context).tertiary,
-                          offset: Offset(0.0, 2.0),
+                          offset: const Offset(0.0, 2.0),
                         )
                       ],
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: EdgeInsets.all(32.0),
+                        padding: const EdgeInsets.all(32.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -211,7 +209,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                   ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 24.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -222,15 +220,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
-                              child: Container(
+                              child: SizedBox(
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller: _model.emailAddressController,
                                   focusNode: _model.emailAddressFocusNode,
                                   autofocus: true,
-                                  autofillHints: [AutofillHints.email],
+                                  autofillHints: const [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText:
@@ -284,15 +282,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
-                              child: Container(
+                              child: SizedBox(
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller: _model.passwordController,
                                   focusNode: _model.passwordFocusNode,
                                   autofocus: true,
-                                  autofillHints: [AutofillHints.password],
+                                  autofillHints: const [AutofillHints.password],
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
                                     labelText:
@@ -359,7 +357,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -375,8 +373,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                     return;
                                   }
 
+                                  _model.fcmToken = await actions.getFcmToken();
+
+                                  await currentUserReference!
+                                      .update(createUsersRecordData(
+                                    fcmToken: _model.fcmToken,
+                                  ));
+
                                   context.goNamedAuth(
                                       'HomePage', context.mounted);
+
+                                  setState(() {});
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'xq3syzkz' /* Přihlásit */,
@@ -384,46 +391,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 44.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context)
-                                      .buttonBackground,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Roboto',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
-                                      ),
-                                  elevation: 3.0,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 16.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  _model.fcmToken = await actions.getFcmToken();
-
-                                  setState(() {});
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'rbbohlob' /* Přihlásit */,
-                                ),
-                                options: FFButtonOptions(
-                                  width: double.infinity,
-                                  height: 44.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .buttonBackground,
@@ -435,7 +405,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                             .primaryBtnText,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -443,15 +413,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                 ),
                               ),
                             ),
-                            Text(
-                              valueOrDefault<String>(
-                                _model.fcmToken,
-                                'null',
-                              ),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
-                            ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -464,8 +427,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: Text('Upozornění'),
-                                                content: Text(
+                                                title: const Text('Upozornění'),
+                                                content: const Text(
                                                     'Opravdu se chcete přihlásit k demo účtu?'),
                                                 actions: [
                                                   TextButton(
@@ -473,14 +436,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             false),
-                                                    child: Text('Ne'),
+                                                    child: const Text('Ne'),
                                                   ),
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             true),
-                                                    child: Text('Ano'),
+                                                    child: const Text('Ano'),
                                                   ),
                                                 ],
                                               );
