@@ -2,7 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -146,39 +146,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 children: [
                                   Expanded(
                                     flex: 1,
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 8.0, 0.0, 8.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Expanded(
-                                            child: Container(
-                                              decoration: const BoxDecoration(),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => SizedBox(
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.5,
-                                                  height: double.infinity,
-                                                  child:
-                                                      custom_widgets.SvgImage(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        0.5,
-                                                    height: double.infinity,
-                                                    imagePath: currentUserPhoto,
-                                                  ),
-                                                ),
-                                              ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Expanded(
+                                          child: Container(
+                                            width: double.infinity,
+                                            height: double.infinity,
+                                            decoration: const BoxDecoration(),
+                                            child: const FlutterFlowWebView(
+                                              content:
+                                                  'https://api.dicebear.com/7.x/personas/svg?seed=red6ij&mouth=bigSmile,lips,smile,smirk&body=rounded,checkered,squared',
+                                              bypass: false,
+                                              width: 300.0,
+                                              height: 202.0,
+                                              verticalScroll: false,
+                                              horizontalScroll: false,
                                             ),
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   Expanded(

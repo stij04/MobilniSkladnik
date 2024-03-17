@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'login_page_model.dart';
 export 'login_page_model.dart';
 
@@ -410,43 +411,51 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           bool>(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text(
-                                                FFLocalizations.of(context)
-                                                    .getVariableText(
-                                              csText: 'Upozornění',
-                                              enText: 'Notice',
-                                            )),
-                                            content: Text(
-                                                FFLocalizations.of(context)
-                                                    .getVariableText(
-                                              csText:
-                                                  'Opravdu se chcete přihlásit k demo účtu?',
-                                              enText:
-                                                  'Are you sure you want to login to the demo account?',
-                                            )),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, false),
-                                                child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                  csText: 'Ne',
-                                                  enText: 'No',
-                                                )),
-                                              ),
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, true),
-                                                child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                  csText: 'Ano',
-                                                  enText: 'Yes',
-                                                )),
-                                              ),
-                                            ],
+                                          return WebViewAware(
+                                            child: AlertDialog(
+                                              title: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getVariableText(
+                                                csText: 'Upozornění',
+                                                enText: 'Notice',
+                                              )),
+                                              content: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getVariableText(
+                                                csText:
+                                                    'Opravdu se chcete přihlásit k demo účtu?',
+                                                enText:
+                                                    'Are you sure you want to login to the demo account?',
+                                              )),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext,
+                                                          false),
+                                                  child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                    csText: 'Ne',
+                                                    enText: 'No',
+                                                  )),
+                                                ),
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext,
+                                                          true),
+                                                  child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                    csText: 'Ano',
+                                                    enText: 'Yes',
+                                                  )),
+                                                ),
+                                              ],
+                                            ),
                                           );
                                         },
                                       ) ??
