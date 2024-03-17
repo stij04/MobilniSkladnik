@@ -1,13 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/permissions_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'login_page_model.dart';
 export 'login_page_model.dart';
@@ -19,50 +16,12 @@ class LoginPageWidget extends StatefulWidget {
   State<LoginPageWidget> createState() => _LoginPageWidgetState();
 }
 
-class _LoginPageWidgetState extends State<LoginPageWidget>
-    with TickerProviderStateMixin {
+class _LoginPageWidgetState extends State<LoginPageWidget> {
   late LoginPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   late StreamSubscription<bool> _keyboardVisibilitySubscription;
   bool _isKeyboardVisible = false;
-
-  final animationsMap = {
-    'containerOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 1.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(0.0, 140.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(-0.349, 0),
-          end: const Offset(0, 0),
-        ),
-      ],
-    ),
-  };
 
   @override
   void initState() {
@@ -397,16 +356,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                   navigate = () => context.goNamedAuth(
                                       'HomePage', context.mounted);
                                   if (isAndroid) {
-                                    if (await getPermissionStatus(
-                                        notificationsPermission)) {
-                                      _model.fcmToken =
-                                          await actions.getFcmToken();
+                                    _model.fcmToken =
+                                        await actions.getFcmToken();
 
-                                      await currentUserReference!
-                                          .update(createUsersRecordData(
-                                        fcmToken: _model.fcmToken,
-                                      ));
-                                    }
+                                    await currentUserReference!
+                                        .update(createUsersRecordData(
+                                      fcmToken: _model.fcmToken,
+                                    ));
                                   }
 
                                   navigate();
@@ -527,8 +483,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                         ),
                       ),
                     ),
-                  ).animateOnPageLoad(
-                      animationsMap['containerOnPageLoadAnimation']!),
+                  ),
                 ),
               ],
             ),

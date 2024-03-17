@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -145,34 +146,39 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 children: [
                                   Expanded(
                                     flex: 1,
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 8.0, 0.0, 8.0),
-                                            child: AuthUserStreamWidget(
-                                              builder: (context) => ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  valueOrDefault<String>(
-                                                    currentUserPhoto,
-                                                    'https://creazilla-store.fra1.digitaloceanspaces.com/emojis/50481/person-emoji-clipart-md.png',
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 8.0, 0.0, 8.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Expanded(
+                                            child: Container(
+                                              decoration: const BoxDecoration(),
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => SizedBox(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.5,
+                                                  height: double.infinity,
+                                                  child:
+                                                      custom_widgets.SvgImage(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        0.5,
+                                                    height: double.infinity,
+                                                    imagePath: currentUserPhoto,
                                                   ),
-                                                  width: 300.0,
-                                                  height: 202.0,
-                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                   Expanded(
