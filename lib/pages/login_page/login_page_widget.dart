@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/permissions_util.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'login_page_model.dart';
@@ -361,6 +363,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                   0.0, 0.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  Function() navigate = () {};
                                   GoRouter.of(context).prepareAuthEvent();
 
                                   final user =
@@ -373,15 +376,22 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                     return;
                                   }
 
-                                  _model.fcmToken = await actions.getFcmToken();
-
-                                  await currentUserReference!
-                                      .update(createUsersRecordData(
-                                    fcmToken: _model.fcmToken,
-                                  ));
-
-                                  context.goNamedAuth(
+                                  navigate = () => context.goNamedAuth(
                                       'HomePage', context.mounted);
+                                  if (!kDebugMode) {
+                                    if (await getPermissionStatus(
+                                        notificationsPermission)) {
+                                      _model.fcmToken =
+                                          await actions.getFcmToken();
+
+                                      await currentUserReference!
+                                          .update(createUsersRecordData(
+                                        fcmToken: _model.fcmToken,
+                                      ));
+                                    }
+                                  }
+
+                                  navigate();
 
                                   setState(() {});
                                 },
