@@ -30,7 +30,7 @@ class SvgImage extends StatefulWidget {
 class _SvgImageState extends State<SvgImage> {
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
+    return SvgPicture.network(
       widget.imagePath,
     );
   }

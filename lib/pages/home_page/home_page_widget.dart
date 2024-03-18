@@ -2,7 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_web_view.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -146,40 +146,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 children: [
                                   Expanded(
                                     flex: 1,
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Expanded(
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 8.0, 0.0, 8.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Expanded(
                                             child: AuthUserStreamWidget(
-                                              builder: (context) =>
-                                                  FlutterFlowWebView(
-                                                content: valueOrDefault<String>(
-                                                  functions
-                                                      .convertImagePathToString(
-                                                          currentUserPhoto),
-                                                  'https://creazilla-store.fra1.digitaloceanspaces.com/emojis/50481/person-emoji-clipart-md.png',
+                                              builder: (context) => SizedBox(
+                                                width: double.infinity,
+                                                height: double.infinity,
+                                                child: custom_widgets.SvgImage(
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  imagePath: currentUserPhoto,
                                                 ),
-                                                bypass: false,
-                                                width:
-                                                    MediaQuery.sizeOf(context)
-                                                            .width *
-                                                        1.0,
-                                                height:
-                                                    MediaQuery.sizeOf(context)
-                                                            .height *
-                                                        1.0,
-                                                verticalScroll: false,
-                                                horizontalScroll: false,
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                   Expanded(

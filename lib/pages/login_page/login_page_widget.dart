@@ -5,8 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'login_page_model.dart';
 export 'login_page_model.dart';
 
@@ -21,22 +19,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
   late LoginPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  late StreamSubscription<bool> _keyboardVisibilitySubscription;
-  bool _isKeyboardVisible = false;
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => LoginPageModel());
-
-    if (!isWeb) {
-      _keyboardVisibilitySubscription =
-          KeyboardVisibilityController().onChange.listen((bool visible) {
-        setState(() {
-          _isKeyboardVisible = visible;
-        });
-      });
-    }
 
     _model.emailAddressController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -49,9 +36,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
   void dispose() {
     _model.dispose();
 
-    if (!isWeb) {
-      _keyboardVisibilitySubscription.cancel();
-    }
     super.dispose();
   }
 
@@ -101,54 +85,50 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                if (!(isWeb
-                    ? MediaQuery.viewInsetsOf(context).bottom > 0
-                    : _isKeyboardVisible))
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 25.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          SelectionArea(
-                              child: Text(
-                            FFLocalizations.of(context).getText(
-                              '9yjlvdmr' /* Mobilní */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .displaySmall
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  color: Colors.white,
-                                  fontSize: 42.0,
-                                  letterSpacing: 1.0,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                          )),
-                          SelectionArea(
-                              child: Text(
-                            FFLocalizations.of(context).getText(
-                              'bdehk8ux' /* skladník */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .displaySmall
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  color: Colors.white,
-                                  fontSize: 42.0,
-                                  letterSpacing: 1.0,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                          )),
-                        ],
-                      ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 25.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        SelectionArea(
+                            child: Text(
+                          FFLocalizations.of(context).getText(
+                            '9yjlvdmr' /* Mobilní */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: Colors.white,
+                                fontSize: 42.0,
+                                letterSpacing: 1.0,
+                                fontWeight: FontWeight.w900,
+                              ),
+                        )),
+                        SelectionArea(
+                            child: Text(
+                          FFLocalizations.of(context).getText(
+                            'bdehk8ux' /* skladník */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: Colors.white,
+                                fontSize: 42.0,
+                                letterSpacing: 1.0,
+                                fontWeight: FontWeight.w900,
+                              ),
+                        )),
+                      ],
                     ),
                   ),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Container(
@@ -411,51 +391,43 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           bool>(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return WebViewAware(
-                                            child: AlertDialog(
-                                              title: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getVariableText(
-                                                csText: 'Upozornění',
-                                                enText: 'Notice',
-                                              )),
-                                              content: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getVariableText(
-                                                csText:
-                                                    'Opravdu se chcete přihlásit k demo účtu?',
-                                                enText:
-                                                    'Are you sure you want to login to the demo account?',
-                                              )),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext,
-                                                          false),
-                                                  child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getVariableText(
-                                                    csText: 'Ne',
-                                                    enText: 'No',
-                                                  )),
-                                                ),
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext,
-                                                          true),
-                                                  child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getVariableText(
-                                                    csText: 'Ano',
-                                                    enText: 'Yes',
-                                                  )),
-                                                ),
-                                              ],
-                                            ),
+                                          return AlertDialog(
+                                            title: Text(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                              csText: 'Upozornění',
+                                              enText: 'Notice',
+                                            )),
+                                            content: Text(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                              csText:
+                                                  'Opravdu se chcete přihlásit k demo účtu?',
+                                              enText:
+                                                  'Are you sure you want to login to the demo account?',
+                                            )),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                  csText: 'Ne',
+                                                  enText: 'No',
+                                                )),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                  csText: 'Ano',
+                                                  enText: 'Yes',
+                                                )),
+                                              ),
+                                            ],
                                           );
                                         },
                                       ) ??
