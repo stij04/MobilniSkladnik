@@ -1,20 +1,5 @@
 {
-  "indexes": [
-    {
-      "collectionGroup": "vykon",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "VykUziId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "VykDatum",
-          "order": "DESCENDING"
-        }
-      ]
-    }
-  ],
+  "indexes": [],
   "fieldOverrides": [
     {
       "collectionGroup": "fcm_tokens",

@@ -132,6 +132,8 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'HomePage': const HomePageWidget(),
+      'LevelPage': const LevelPageWidget(),
+      'LeaderboardPage': const LeaderboardPageWidget(),
       'BadgesPage': const BadgesPageWidget(),
       'RewardPage': const RewardPageWidget(),
       'ProfilePage': const ProfilePageWidget(),
@@ -160,6 +162,26 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             label: FFLocalizations.of(context).getText(
               'mlaqyuk7' /* Domů */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: const FaIcon(
+              FontAwesomeIcons.sortNumericUp,
+              size: 24.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              '2zyqv62w' /* Úrovně */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(
+              Icons.leaderboard_rounded,
+              size: 24.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'wnw7f38f' /* Žebříček */,
             ),
             tooltip: '',
           ),

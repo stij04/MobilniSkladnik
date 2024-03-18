@@ -99,7 +99,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'LeaderboardPage',
           path: '/leaderboardPage',
-          builder: (context, params) => const LeaderboardPageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'LeaderboardPage')
+              : const LeaderboardPageWidget(),
         ),
         FFRoute(
           name: 'RewardPage',
@@ -121,24 +123,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const LoginPageWidget(),
         ),
         FFRoute(
-          name: 'ForgotPasswordPage',
-          path: '/forgotPasswordPage',
-          builder: (context, params) => const ForgotPasswordPageWidget(),
-        ),
-        FFRoute(
-          name: 'PointsHistoryPage',
-          path: '/pointsHistoryPage',
-          builder: (context, params) => const PointsHistoryPageWidget(),
-        ),
-        FFRoute(
           name: 'LevelPage',
           path: '/levelPage',
-          builder: (context, params) => const LevelPageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'LevelPage')
+              : const LevelPageWidget(),
         ),
         FFRoute(
           name: 'EditNicknamePage',
           path: '/editNicknamePage',
           builder: (context, params) => const EditNicknamePageWidget(),
+        ),
+        FFRoute(
+          name: 'NotificationPage',
+          path: '/notificationPage',
+          builder: (context, params) => const NotificationPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

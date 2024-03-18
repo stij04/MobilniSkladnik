@@ -6,10 +6,8 @@ export '/pages/leaderboard_page/leaderboard_page_widget.dart'
 export '/pages/reward_page/reward_page_widget.dart' show RewardPageWidget;
 export '/pages/profile_page/profile_page_widget.dart' show ProfilePageWidget;
 export '/pages/login_page/login_page_widget.dart' show LoginPageWidget;
-export '/pages/forgot_password_page/forgot_password_page_widget.dart'
-    show ForgotPasswordPageWidget;
-export '/pages/points_history_page/points_history_page_widget.dart'
-    show PointsHistoryPageWidget;
 export '/pages/level_page/level_page_widget.dart' show LevelPageWidget;
 export '/pages/edit_nickname_page/edit_nickname_page_widget.dart'
     show EditNicknamePageWidget;
+export '/pages/notification_page/notification_page_widget.dart'
+    show NotificationPageWidget;

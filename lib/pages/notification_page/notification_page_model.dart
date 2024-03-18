@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'points_history_page_widget.dart' show PointsHistoryPageWidget;
+import 'notification_page_widget.dart' show NotificationPageWidget;
 import 'package:flutter/material.dart';
 
-class PointsHistoryPageModel extends FlutterFlowModel<PointsHistoryPageWidget> {
+class NotificationPageModel extends FlutterFlowModel<NotificationPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

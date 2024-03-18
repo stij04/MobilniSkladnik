@@ -46,27 +46,18 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
-          leading: InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.safePop();
-            },
-            child: Container(
-              width: 100.0,
-              height: 100.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondary,
-              ),
-              child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
-                child: FaIcon(
-                  FontAwesomeIcons.arrowLeft,
-                  color: FlutterFlowTheme.of(context).primary,
-                  size: 24.0,
-                ),
+          leading: Container(
+            width: 100.0,
+            height: 100.0,
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).secondary,
+            ),
+            child: Align(
+              alignment: const AlignmentDirectional(0.0, 0.0),
+              child: FaIcon(
+                FontAwesomeIcons.solidBell,
+                color: FlutterFlowTheme.of(context).primary,
+                size: 24.0,
               ),
             ),
           ),
@@ -81,7 +72,36 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: const [],
+          actions: [
+            InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () async {
+                GoRouter.of(context).prepareAuthEvent();
+                await authManager.signOut();
+                GoRouter.of(context).clearRedirectLocation();
+
+                context.goNamedAuth('LoginPage', context.mounted);
+              },
+              child: Container(
+                width: 60.0,
+                height: 100.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondary,
+                ),
+                child: Align(
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.signOutAlt,
+                    color: FlutterFlowTheme.of(context).primary,
+                    size: 24.0,
+                  ),
+                ),
+              ),
+            ),
+          ],
           centerTitle: true,
           elevation: 2.0,
         ),

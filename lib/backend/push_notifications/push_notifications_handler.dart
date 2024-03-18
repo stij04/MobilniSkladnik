@@ -107,10 +107,9 @@ final parametersBuilderMap =
   'RewardPage': ParameterData.none(),
   'ProfilePage': ParameterData.none(),
   'LoginPage': ParameterData.none(),
-  'ForgotPasswordPage': ParameterData.none(),
-  'PointsHistoryPage': ParameterData.none(),
   'LevelPage': ParameterData.none(),
   'EditNicknamePage': ParameterData.none(),
+  'NotificationPage': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

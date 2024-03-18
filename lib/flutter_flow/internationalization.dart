@@ -456,70 +456,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // ForgotPasswordPage
-  {
-    'xmgqfntb': {
-      'cs': 'Zpět',
-      'en': 'Back',
-    },
-    'qvgb4o0l': {
-      'cs': 'Zapomenuté heslo',
-      'en': 'Forgot password',
-    },
-    'qrzr6yqt': {
-      'cs':
-          'Zašleme vám e-mail s odkazem na resetování hesla. Níže prosím zadejte e-mail spojený s vaším účtem.',
-      'en':
-          'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
-    },
-    '5imytm96': {
-      'cs': 'Vaše emailová adresa...',
-      'en': 'Your email address...',
-    },
-    't8shlyp9': {
-      'cs': 'Zadejte svůj e-mail...',
-      'en': 'Enter your email...',
-    },
-    'izxe0xlq': {
-      'cs': 'Poslat odkaz',
-      'en': 'Send link',
-    },
-    'avb5b8xt': {
-      'cs': 'Zpět',
-      'en': 'Back',
-    },
-    'f2xnn0zb': {
-      'cs': 'Domů',
-      'en': 'Home',
-    },
-  },
-  // PointsHistoryPage
-  {
-    'shf6clzz': {
-      'cs': 'Filtr',
-      'en': 'Filter',
-    },
-    'lprz0jfp': {
-      'cs': 'Získáno',
-      'en': '1st place',
-    },
-    'ttc0qy2h': {
-      'cs': ' b',
-      'en': '',
-    },
-    'vvkmj2bd': {
-      'cs': 'Body',
-      'en': '1st place',
-    },
-    'fnx6moks': {
-      'cs': 'Historie získaných bodů',
-      'en': 'Leaderboard',
-    },
-    'brevg0mw': {
-      'cs': 'Žebříček',
-      'en': 'Leaderboard',
-    },
-  },
   // LevelPage
   {
     'hrcpgo2o': {
@@ -571,7 +507,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '2zyqv62w': {
-      'cs': 'Žebříček',
+      'cs': 'Úrovně',
       'en': 'Leaderboard',
     },
   },
@@ -598,6 +534,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Save',
     },
     '0h8w2cxz': {
+      'cs': 'Žebříček',
+      'en': 'Leaderboard',
+    },
+  },
+  // NotificationPage
+  {
+    'v27mzux4': {
+      'cs': 'Notifikace',
+      'en': 'Edit nickname',
+    },
+    'obuk55ic': {
+      'cs': 'Nová úroveň dosažena!',
+      'en': '',
+    },
+    '4n9rekzf': {
+      'cs': 'Získáváte + ',
+      'en': '+ ',
+    },
+    'zqw93r3x': {
+      'cs': ' MS',
+      'en': ' MS',
+    },
+    'gaafmftn': {
+      'cs': 'Hello World',
+      'en': '',
+    },
+    'wn6qzekw': {
       'cs': 'Žebříček',
       'en': 'Leaderboard',
     },

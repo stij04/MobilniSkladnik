@@ -10,6 +10,12 @@ exports.checkUserLevel = functions
 
     const newValue = change.after.data();
     const oldValue = change.before.data();
+
+    if (newValue.UziBody === oldValue.UziBody) {
+      console.log("Změna se netýkala pole UziBody.");
+      return null;
+    }
+
     const uid = context.params.uid;
 
     const levels = await admin.firestore().collection("uroven").get();
@@ -22,8 +28,8 @@ exports.checkUserLevel = functions
         newValue.UziBody >= level.UroHranice &&
         (!oldValue.UziBody || oldValue.UziBody < level.UroHranice)
       ) {
-        if (!newLevel || level.UroPoradi > newLevel) {
-          newLevel = level.UroPoradi;
+        if (!newLevel || level.UroPoradi > newLevel.UroPoradi) {
+          newLevel = level;
         }
       }
     });
@@ -35,7 +41,7 @@ exports.checkUserLevel = functions
         const message = {
           notification: {
             title: "Nová úroveň dosažena!",
-            body: `Gratulujeme, dosáhli jste úrovně: ${newLevel}!`,
+            body: `Gratulujeme, dosáhli jste úrovně: ${newLevel.UroPoradi} – ${newLevel.UroNazev}.\nZískáváte ${newLevel.UroMena} MS!`,
           },
           data: {
             route: "LevelPage",
@@ -51,8 +57,9 @@ exports.checkUserLevel = functions
 
             const notificationData = {
               uid: uid,
-              title: message.notification.title,
-              body: message.notification.body,
+              UziId: oldValue.UziId,
+              UroId: newLevel.UroId,
+              hidden: false,
               timestamp: admin.firestore.FieldValue.serverTimestamp(),
             };
 
