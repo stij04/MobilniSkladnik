@@ -252,3 +252,7 @@ String generateNewAvatar() {
 
   return baseUrl + seed + avatarStyle;
 }
+
+String convertImagePathToString(String imagePath) {
+  return imagePath.toString();
+}

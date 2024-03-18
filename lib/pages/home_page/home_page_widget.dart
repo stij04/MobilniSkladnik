@@ -152,18 +152,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Expanded(
-                                          child: Container(
-                                            width: double.infinity,
-                                            height: double.infinity,
-                                            decoration: const BoxDecoration(),
-                                            child: const FlutterFlowWebView(
-                                              content:
-                                                  'https://api.dicebear.com/7.x/personas/svg?seed=red6ij&mouth=bigSmile,lips,smile,smirk&body=rounded,checkered,squared',
-                                              bypass: false,
-                                              width: 300.0,
-                                              height: 202.0,
-                                              verticalScroll: false,
-                                              horizontalScroll: false,
+                                          child: Align(
+                                            alignment:
+                                                const AlignmentDirectional(0.0, 0.0),
+                                            child: AuthUserStreamWidget(
+                                              builder: (context) =>
+                                                  FlutterFlowWebView(
+                                                content: valueOrDefault<String>(
+                                                  functions
+                                                      .convertImagePathToString(
+                                                          currentUserPhoto),
+                                                  'https://creazilla-store.fra1.digitaloceanspaces.com/emojis/50481/person-emoji-clipart-md.png',
+                                                ),
+                                                bypass: false,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height *
+                                                        1.0,
+                                                verticalScroll: false,
+                                                horizontalScroll: false,
+                                              ),
                                             ),
                                           ),
                                         ),
