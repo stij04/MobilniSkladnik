@@ -148,25 +148,44 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     flex: 1,
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 8.0, 0.0, 8.0),
+                                          8.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Expanded(
-                                            child: AuthUserStreamWidget(
-                                              builder: (context) => SizedBox(
-                                                width: double.infinity,
-                                                height: double.infinity,
-                                                child: custom_widgets.SvgImage(
+                                          if (isAndroid)
+                                            Expanded(
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => SizedBox(
                                                   width: double.infinity,
                                                   height: double.infinity,
-                                                  imagePath: currentUserPhoto,
+                                                  child:
+                                                      custom_widgets.SvgImage(
+                                                    width: double.infinity,
+                                                    height: double.infinity,
+                                                    imagePath: currentUserPhoto,
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
+                                          if (!isAndroid)
+                                            Expanded(
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 8.0, 0.0, 8.0),
+                                                child: AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      Image.network(
+                                                    currentUserPhoto,
+                                                    width: double.infinity,
+                                                    height: double.infinity,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
                                         ],
                                       ),
                                     ),

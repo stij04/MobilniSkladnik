@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -161,26 +162,38 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Expanded(
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          valueOrDefault<String>(
-                                            _model.avatarUrl != null &&
-                                                    _model.avatarUrl != ''
-                                                ? _model.avatarUrl
-                                                : currentUserPhoto,
-                                            'https://creazilla-store.fra1.digitaloceanspaces.com/emojis/50481/person-emoji-clipart-md.png',
+                                  if (isAndroid)
+                                    Expanded(
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => SizedBox(
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          child: custom_widgets.SvgImage(
+                                            width: double.infinity,
+                                            height: double.infinity,
+                                            imagePath:
+                                                _model.avatarUrl != null &&
+                                                        _model.avatarUrl != ''
+                                                    ? _model.avatarUrl!
+                                                    : currentUserPhoto,
                                           ),
-                                          width: 300.0,
-                                          height: 202.0,
+                                        ),
+                                      ),
+                                    ),
+                                  if (!isAndroid)
+                                    Expanded(
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => Image.network(
+                                          _model.avatarUrl != null &&
+                                                  _model.avatarUrl != ''
+                                              ? _model.avatarUrl!
+                                              : currentUserPhoto,
+                                          width: double.infinity,
+                                          height: double.infinity,
                                           fit: BoxFit.contain,
                                         ),
                                       ),
                                     ),
-                                  ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
