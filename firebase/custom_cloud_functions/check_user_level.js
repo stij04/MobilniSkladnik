@@ -41,7 +41,7 @@ exports.checkUserLevel = functions
         const message = {
           notification: {
             title: "Nová úroveň dosažena",
-            body: `Gratulujeme, dosáhli jste úrovně ${newLevel.UroPoradi} – ${newLevel.UroNazev}\nZískáváte ${newLevel.UroMena} MS`,
+            body: `Gratulujeme!\nDosáhli jste úrovně ${newLevel.UroPoradi} – ${newLevel.UroNazev}\nZískáváte ${newLevel.UroMena} MS`,
           },
           data: {
             route: "HomePage",

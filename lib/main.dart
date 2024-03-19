@@ -1,3 +1,5 @@
+import '/custom_code/actions/index.dart' as actions;
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -19,6 +21,10 @@ void main() async {
   await initFirebase();
 
   await FlutterFlowTheme.initialize();
+
+  // Start final custom actions code
+  await actions.setLandscapeMode();
+  // End final custom actions code
 
   runApp(const MyApp());
 }
@@ -167,7 +173,7 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: const FaIcon(
-              FontAwesomeIcons.sortNumericUp,
+              FontAwesomeIcons.angleDoubleUp,
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(

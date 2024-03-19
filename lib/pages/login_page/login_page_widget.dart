@@ -450,7 +450,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       final user =
                                           await authManager.signInWithEmail(
                                         context,
-                                        'sobotka@example.com',
+                                        'horak@example.com',
                                         '123456',
                                       );
                                       if (user == null) {

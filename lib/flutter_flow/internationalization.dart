@@ -275,7 +275,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wnw7f38f': {
       'cs': 'Žebříček',
-      'en': 'Leaderboard',
+      'en': 'Ranking',
     },
   },
   // RewardPage
@@ -544,19 +544,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Notifikace',
       'en': 'Notifications',
     },
-    'obuk55ic': {
+    'y0evhr2w': {
       'cs': 'Nová úroveň dosažena!',
       'en': 'New level reached!',
     },
-    '4n9rekzf': {
+    '6t23zwn3': {
       'cs': 'Získali jste + ',
       'en': 'You have gained + ',
     },
-    'zqw93r3x': {
+    'tb4ddm4k': {
       'cs': ' MS',
       'en': ' MS',
     },
-    'gaafmftn': {
+    '4jrtwtaq': {
       'cs': '',
       'en': '',
     },
