@@ -90,11 +90,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const HomePageWidget(),
         ),
         FFRoute(
-          name: 'BadgesPage',
-          path: '/badgesPage',
+          name: 'BadgePage',
+          path: '/badgePage',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'BadgesPage')
-              : const BadgesPageWidget(),
+              ? const NavBarPage(initialPage: 'BadgePage')
+              : const BadgePageWidget(),
         ),
         FFRoute(
           name: 'LeaderboardPage',

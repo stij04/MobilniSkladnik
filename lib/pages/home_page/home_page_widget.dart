@@ -119,148 +119,122 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: FlutterFlowTheme.of(context).tertiary,
-                    elevation: 4.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Expanded(
-                            flex: 2,
-                            child: Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.of(context).alternate,
-                              elevation: 2.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    flex: 1,
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 0.0, 0.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          if (isAndroid)
-                                            Expanded(
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => SizedBox(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Card(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  color: FlutterFlowTheme.of(context).tertiary,
+                  elevation: 4.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: FlutterFlowTheme.of(context).alternate,
+                            elevation: 2.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  flex: 1,
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 0.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        if (isAndroid)
+                                          Expanded(
+                                            child: AuthUserStreamWidget(
+                                              builder: (context) => SizedBox(
+                                                width: double.infinity,
+                                                height: double.infinity,
+                                                child: custom_widgets.SvgImage(
                                                   width: double.infinity,
                                                   height: double.infinity,
-                                                  child:
-                                                      custom_widgets.SvgImage(
-                                                    width: double.infinity,
-                                                    height: double.infinity,
-                                                    imagePath: currentUserPhoto,
-                                                  ),
+                                                  imagePath: currentUserPhoto,
                                                 ),
                                               ),
                                             ),
-                                          if (!isAndroid)
-                                            Expanded(
-                                              child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 8.0, 0.0, 8.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) =>
-                                                      Image.network(
-                                                    currentUserPhoto,
-                                                    width: double.infinity,
-                                                    height: double.infinity,
-                                                    fit: BoxFit.cover,
-                                                  ),
+                                          ),
+                                        if (!isAndroid)
+                                          Expanded(
+                                            child: Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 8.0),
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) =>
+                                                    Image.network(
+                                                  currentUserPhoto,
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
                                             ),
-                                        ],
-                                      ),
+                                          ),
+                                      ],
                                     ),
                                   ),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 8.0, 8.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 20.0),
-                                            child: AuthUserStreamWidget(
-                                              builder: (context) =>
-                                                  AutoSizeText(
-                                                currentUserDisplayName,
-                                                maxLines: 1,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleLarge
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 34.0,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                        ),
-                                              ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 8.0, 8.0, 8.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 20.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => AutoSizeText(
+                                              currentUserDisplayName,
+                                              maxLines: 1,
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleLarge
+                                                  .override(
+                                                    fontFamily: 'Roboto',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    fontSize: 34.0,
+                                                    fontWeight: FontWeight.w800,
+                                                  ),
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 4.0),
-                                            child: AuthUserStreamWidget(
-                                              builder: (context) => Text(
-                                                valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.uziJmeno,
-                                                    ''),
-                                                maxLines: 1,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleLarge
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                          AuthUserStreamWidget(
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 4.0),
+                                          child: AuthUserStreamWidget(
                                             builder: (context) => Text(
                                               valueOrDefault(
-                                                  currentUserDocument
-                                                      ?.uziPrijmeni,
+                                                  currentUserDocument?.uziJmeno,
                                                   ''),
                                               maxLines: 1,
                                               style:
@@ -274,94 +248,344 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       ),
                                             ),
                                           ),
-                                        ],
+                                        ),
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            valueOrDefault(
+                                                currentUserDocument
+                                                    ?.uziPrijmeni,
+                                                ''),
+                                            maxLines: 1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleLarge
+                                                .override(
+                                                  fontFamily: 'Roboto',
+                                                  fontSize: 18.0,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: StreamBuilder<List<SezonaRecord>>(
+                            stream: querySezonaRecord(
+                              queryBuilder: (sezonaRecord) =>
+                                  sezonaRecord.orderBy('SezStart'),
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: StreamBuilder<List<SezonaRecord>>(
-                              stream: querySezonaRecord(
-                                queryBuilder: (sezonaRecord) =>
-                                    sezonaRecord.orderBy('SezStart'),
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
+                                );
+                              }
+                              List<SezonaRecord> cardSezonaRecordList =
+                                  snapshot.data!;
+                              return Card(
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                color: FlutterFlowTheme.of(context).alternate,
+                                elevation: 2.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      flex: 1,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Expanded(
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: SvgPicture.asset(
+                                                  'assets/images/season.svg',
+                                                  width: double.infinity,
+                                                  height: 84.0,
+                                                  fit: BoxFit.contain,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
-                                  );
-                                }
-                                List<SezonaRecord> cardSezonaRecordList =
-                                    snapshot.data!;
-                                return Card(
+                                    Expanded(
+                                      flex: 3,
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 8.0, 16.0, 8.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              valueOrDefault<String>(
+                                                functions
+                                                    .getCurrentSeason(
+                                                        cardSezonaRecordList
+                                                            .toList())
+                                                    ?.sezNazev,
+                                                '–',
+                                              ),
+                                              maxLines: 1,
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .headlineSmall
+                                                  .override(
+                                                    fontFamily: 'Roboto',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    fontSize: 22.0,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 8.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            -1.0, 0.0),
+                                                    child: Text(
+                                                      valueOrDefault<String>(
+                                                        dateTimeFormat(
+                                                          'dd.MM.yyyy',
+                                                          functions
+                                                              .getCurrentSeason(
+                                                                  cardSezonaRecordList
+                                                                      .toList())
+                                                              ?.sezStart,
+                                                          locale:
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .languageCode,
+                                                        ),
+                                                        '–',
+                                                      ),
+                                                      maxLines: 1,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Roboto',
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            -1.0, 0.0),
+                                                    child: Text(
+                                                      valueOrDefault<String>(
+                                                        dateTimeFormat(
+                                                          'dd.MM.yyyy',
+                                                          functions
+                                                              .getCurrentSeason(
+                                                                  cardSezonaRecordList
+                                                                      .toList())
+                                                              ?.sezKonec,
+                                                          locale:
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .languageCode,
+                                                        ),
+                                                        '–',
+                                                      ),
+                                                      maxLines: 1,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Roboto',
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            LinearPercentIndicator(
+                                              percent: functions
+                                                  .getSeasonProgressValue(
+                                                      cardSezonaRecordList
+                                                          .toList()),
+                                              lineHeight: 12.0,
+                                              animation: true,
+                                              animateFromLastPercent: true,
+                                              progressColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .buttonBackground,
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
+                                              barRadius: const Radius.circular(8.0),
+                                              padding: EdgeInsets.zero,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Card(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  color: FlutterFlowTheme.of(context).tertiary,
+                  elevation: 4.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              8.0, 8.0, 4.0, 8.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    '8fb5lxgv' /* Získané body */,
+                                  ),
+                                  maxLines: 1,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .override(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
                                   color: FlutterFlowTheme.of(context).alternate,
                                   elevation: 2.0,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        flex: 1,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Expanded(
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: SvgPicture.asset(
-                                                    'assets/images/season.svg',
-                                                    width: double.infinity,
-                                                    height: 84.0,
-                                                    fit: BoxFit.contain,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/points.svg',
+                                            width: 40.0,
+                                            height: 40.0,
+                                            fit: BoxFit.contain,
                                           ),
                                         ),
-                                      ),
-                                      Expanded(
-                                        flex: 3,
-                                        child: Padding(
+                                        Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 8.0, 16.0, 8.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                valueOrDefault<String>(
-                                                  functions
-                                                      .getCurrentSeason(
-                                                          cardSezonaRecordList
-                                                              .toList())
-                                                      ?.sezNazev,
-                                                  '–',
-                                                ),
-                                                maxLines: 1,
+                                                  0.0, 10.0, 0.0, 0.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => RichText(
+                                              textScaler: MediaQuery.of(context)
+                                                  .textScaler,
+                                              text: TextSpan(
+                                                children: [
+                                                  TextSpan(
+                                                    text: formatNumber(
+                                                      valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.uziBody,
+                                                          0.0),
+                                                      formatType:
+                                                          FormatType.custom,
+                                                      format: '',
+                                                      locale: '',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Roboto',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 24.0,
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                        ),
+                                                  ),
+                                                  TextSpan(
+                                                    text: FFLocalizations.of(
+                                                            context)
+                                                        .getText(
+                                                      'tbmift75' /*  B */,
+                                                    ),
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      fontWeight:
+                                                          FontWeight.w800,
+                                                      fontSize: 24.0,
+                                                    ),
+                                                  )
+                                                ],
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
@@ -370,151 +594,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          fontSize: 22.0,
+                                                          fontSize: 24.0,
                                                           fontWeight:
-                                                              FontWeight.bold,
+                                                              FontWeight.w800,
                                                         ),
                                               ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 8.0, 0.0, 8.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          dateTimeFormat(
-                                                            'dd.MM.yyyy',
-                                                            functions
-                                                                .getCurrentSeason(
-                                                                    cardSezonaRecordList
-                                                                        .toList())
-                                                                ?.sezStart,
-                                                            locale: FFLocalizations
-                                                                    .of(context)
-                                                                .languageCode,
-                                                          ),
-                                                          '–',
-                                                        ),
-                                                        maxLines: 1,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                      ),
-                                                    ),
-                                                    Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          dateTimeFormat(
-                                                            'dd.MM.yyyy',
-                                                            functions
-                                                                .getCurrentSeason(
-                                                                    cardSezonaRecordList
-                                                                        .toList())
-                                                                ?.sezKonec,
-                                                            locale: FFLocalizations
-                                                                    .of(context)
-                                                                .languageCode,
-                                                          ),
-                                                          '–',
-                                                        ),
-                                                        maxLines: 1,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              LinearPercentIndicator(
-                                                percent: functions
-                                                    .getSeasonProgressValue(
-                                                        cardSezonaRecordList
-                                                            .toList()),
-                                                lineHeight: 12.0,
-                                                animation: true,
-                                                animateFromLastPercent: true,
-                                                progressColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .buttonBackground,
-                                                backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .tertiary,
-                                                barRadius: const Radius.circular(8.0),
-                                                padding: EdgeInsets.zero,
-                                              ),
-                                            ],
+                                              maxLines: 1,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: FlutterFlowTheme.of(context).tertiary,
-                    elevation: 4.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 4.0, 8.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 8.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '8fb5lxgv' /* Získané body */,
+                                      '9zlup11i' /* Aktuální úroveň */,
                                     ),
                                     maxLines: 1,
                                     style: FlutterFlowTheme.of(context)
@@ -526,55 +627,344 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                   ),
                                 ),
-                                Expanded(
-                                  flex: 1,
-                                  child: Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    elevation: 2.0,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: SvgPicture.asset(
-                                              'assets/images/points.svg',
-                                              width: 40.0,
-                                              height: 40.0,
-                                              fit: BoxFit.contain,
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: StreamBuilder<List<UrovenRecord>>(
+                                  stream: queryUrovenRecord(
+                                    queryBuilder: (urovenRecord) =>
+                                        urovenRecord.orderBy('UroHranice'),
+                                  ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 0.0),
-                                            child: AuthUserStreamWidget(
-                                              builder: (context) => RichText(
+                                        ),
+                                      );
+                                    }
+                                    List<UrovenRecord> cardUrovenRecordList =
+                                        snapshot.data!;
+                                    return Card(
+                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      elevation: 2.0,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            AuthUserStreamWidget(
+                                              builder: (context) =>
+                                                  CircularPercentIndicator(
+                                                percent:
+                                                    functions.getProgressValue(
+                                                        cardUrovenRecordList
+                                                            .toList(),
+                                                        valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.uziBody,
+                                                            0.0)),
+                                                radius:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.115,
+                                                lineWidth: 15.0,
+                                                animation: true,
+                                                animateFromLastPercent: true,
+                                                progressColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .buttonBackground,
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiary,
+                                                center: Text(
+                                                  functions
+                                                      .getCurrentLevelNumber(
+                                                          cardUrovenRecordList
+                                                              .toList(),
+                                                          valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.uziBody,
+                                                              0.0))
+                                                      .toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily: 'Roboto',
+                                                        fontSize: 26.0,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              4.0, 8.0, 8.0, 8.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'zr3uv6vg' /* Získané mince */,
+                                  ),
+                                  maxLines: 1,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .override(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Card(
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(5.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: SvgPicture.asset(
+                                                  'assets/images/currency.svg',
+                                                  width: 40.0,
+                                                  height: 40.0,
+                                                  fit: BoxFit.contain,
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
+                                                child: AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: formatNumber(
+                                                            valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.uziMena,
+                                                                0.0),
+                                                            formatType:
+                                                                FormatType
+                                                                    .custom,
+                                                            format: '',
+                                                            locale: '',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Roboto',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                fontSize: 24.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w800,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: FFLocalizations
+                                                                  .of(context)
+                                                              .getText(
+                                                            'ehe9cz27' /*  MS */,
+                                                          ),
+                                                          style: TextStyle(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            fontWeight:
+                                                                FontWeight.w800,
+                                                            fontSize: 24.0,
+                                                          ),
+                                                        )
+                                                      ],
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Roboto',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                fontSize: 24.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w800,
+                                                              ),
+                                                    ),
+                                                    maxLines: 1,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 8.0, 0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'x39rr9sk' /* Pozice v žebříčku */,
+                                    ),
+                                    maxLines: 1,
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: StreamBuilder<List<UsersRecord>>(
+                                  stream: queryUsersRecord(
+                                    queryBuilder: (usersRecord) => usersRecord
+                                        .orderBy('UziBody', descending: true),
+                                  ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<UsersRecord> cardUsersRecordList =
+                                        snapshot.data!;
+                                    return Card(
+                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      elevation: 2.0,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: SvgPicture.asset(
+                                                'assets/images/leaderboard.svg',
+                                                width: 40.0,
+                                                height: 40.0,
+                                                fit: BoxFit.contain,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 0.0),
+                                              child: RichText(
                                                 textScaler:
                                                     MediaQuery.of(context)
                                                         .textScaler,
                                                 text: TextSpan(
                                                   children: [
                                                     TextSpan(
-                                                      text: formatNumber(
-                                                        valueOrDefault(
-                                                            currentUserDocument
-                                                                ?.uziBody,
-                                                            0.0),
-                                                        formatType:
-                                                            FormatType.custom,
-                                                        format: '',
-                                                        locale: '',
-                                                      ),
+                                                      text: functions
+                                                          .getCurrentPozitionByUziId(
+                                                              cardUsersRecordList
+                                                                  .toList(),
+                                                              valueOrDefault(
+                                                                  currentUserDocument
+                                                                      ?.uziId,
+                                                                  0))
+                                                          .toString(),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -595,7 +985,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       text: FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'tbmift75' /*  B */,
+                                                        '0ipzu7o4' /* . místo */,
                                                       ),
                                                       style: TextStyle(
                                                         color:
@@ -625,439 +1015,22 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 maxLines: 1,
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 8.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '9zlup11i' /* Aktuální úroveň */,
-                                      ),
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .override(
-                                            fontFamily: 'Roboto',
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: StreamBuilder<List<UrovenRecord>>(
-                                    stream: queryUrovenRecord(
-                                      queryBuilder: (urovenRecord) =>
-                                          urovenRecord.orderBy('UroHranice'),
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<UrovenRecord> cardUrovenRecordList =
-                                          snapshot.data!;
-                                      return Card(
-                                        clipBehavior:
-                                            Clip.antiAliasWithSaveLayer,
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        elevation: 2.0,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          ],
                                         ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              AuthUserStreamWidget(
-                                                builder: (context) =>
-                                                    CircularPercentIndicator(
-                                                  percent: functions
-                                                      .getProgressValue(
-                                                          cardUrovenRecordList
-                                                              .toList(),
-                                                          valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.uziBody,
-                                                              0.0)),
-                                                  radius:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.115,
-                                                  lineWidth: 15.0,
-                                                  animation: true,
-                                                  animateFromLastPercent: true,
-                                                  progressColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .buttonBackground,
-                                                  backgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .tertiary,
-                                                  center: Text(
-                                                    functions
-                                                        .getCurrentLevelNumber(
-                                                            cardUrovenRecordList
-                                                                .toList(),
-                                                            valueOrDefault(
-                                                                currentUserDocument
-                                                                    ?.uziBody,
-                                                                0.0))
-                                                        .toString(),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          fontSize: 26.0,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  ),
+                                      ),
+                                    );
+                                  },
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                        Expanded(
-                          flex: 1,
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                4.0, 8.0, 8.0, 8.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'zr3uv6vg' /* Získané mince */,
-                                    ),
-                                    maxLines: 1,
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleLarge
-                                        .override(
-                                          fontFamily: 'Roboto',
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    elevation: 2.0,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.all(5.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: SvgPicture.asset(
-                                                    'assets/images/currency.svg',
-                                                    width: 40.0,
-                                                    height: 40.0,
-                                                    fit: BoxFit.contain,
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 10.0, 0.0, 0.0),
-                                                  child: AuthUserStreamWidget(
-                                                    builder: (context) =>
-                                                        RichText(
-                                                      textScaler:
-                                                          MediaQuery.of(context)
-                                                              .textScaler,
-                                                      text: TextSpan(
-                                                        children: [
-                                                          TextSpan(
-                                                            text: valueOrDefault(
-                                                                    currentUserDocument
-                                                                        ?.uziMena,
-                                                                    0.0)
-                                                                .toString(),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .headlineSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  fontSize:
-                                                                      24.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w800,
-                                                                ),
-                                                          ),
-                                                          TextSpan(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'ehe9cz27' /*  MS */,
-                                                            ),
-                                                            style: TextStyle(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w800,
-                                                              fontSize: 24.0,
-                                                            ),
-                                                          )
-                                                        ],
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  fontSize:
-                                                                      24.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w800,
-                                                                ),
-                                                      ),
-                                                      maxLines: 1,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 8.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'x39rr9sk' /* Pozice v žebříčku */,
-                                      ),
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .override(
-                                            fontFamily: 'Roboto',
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: StreamBuilder<List<UsersRecord>>(
-                                    stream: queryUsersRecord(
-                                      queryBuilder: (usersRecord) => usersRecord
-                                          .orderBy('UziBody', descending: true),
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<UsersRecord> cardUsersRecordList =
-                                          snapshot.data!;
-                                      return Card(
-                                        clipBehavior:
-                                            Clip.antiAliasWithSaveLayer,
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        elevation: 2.0,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: SvgPicture.asset(
-                                                  'assets/images/leaderboard.svg',
-                                                  width: 40.0,
-                                                  height: 40.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 10.0, 0.0, 0.0),
-                                                child: RichText(
-                                                  textScaler:
-                                                      MediaQuery.of(context)
-                                                          .textScaler,
-                                                  text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                        text: functions
-                                                            .getCurrentPozitionByUziId(
-                                                                cardUsersRecordList
-                                                                    .toList(),
-                                                                valueOrDefault(
-                                                                    currentUserDocument
-                                                                        ?.uziId,
-                                                                    0))
-                                                            .toString(),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  fontSize:
-                                                                      24.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w800,
-                                                                ),
-                                                      ),
-                                                      TextSpan(
-                                                        text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          '0ipzu7o4' /* . místo */,
-                                                        ),
-                                                        style: TextStyle(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                          fontSize: 24.0,
-                                                        ),
-                                                      )
-                                                    ],
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 24.0,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                        ),
-                                                  ),
-                                                  maxLines: 1,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

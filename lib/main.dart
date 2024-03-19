@@ -134,7 +134,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'HomePage': const HomePageWidget(),
       'LevelPage': const LevelPageWidget(),
       'LeaderboardPage': const LeaderboardPageWidget(),
-      'BadgesPage': const BadgesPageWidget(),
+      'BadgePage': const BadgePageWidget(),
       'RewardPage': const RewardPageWidget(),
       'ProfilePage': const ProfilePageWidget(),
     };

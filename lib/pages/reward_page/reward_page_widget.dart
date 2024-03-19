@@ -48,18 +48,27 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
-          leading: Container(
-            width: 100.0,
-            height: 100.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondary,
-            ),
-            child: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
-              child: FaIcon(
-                FontAwesomeIcons.solidBell,
-                color: FlutterFlowTheme.of(context).primary,
-                size: 24.0,
+          leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.pushNamed('NotificationPage');
+            },
+            child: Container(
+              width: 100.0,
+              height: 100.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondary,
+              ),
+              child: Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: FaIcon(
+                  FontAwesomeIcons.solidBell,
+                  color: FlutterFlowTheme.of(context).primary,
+                  size: 24.0,
+                ),
               ),
             ),
           ),
@@ -159,7 +168,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                   .bodyLarge
                                   .override(
                                     fontFamily: 'Roboto',
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.w500,
                                   ),
                               icon: FaIcon(
                                 FontAwesomeIcons.angleDown,
@@ -324,9 +333,18 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                               text: TextSpan(
                                                                 children: [
                                                                   TextSpan(
-                                                                    text: listViewOdmenaRecord
-                                                                        .odmCena
-                                                                        .toString(),
+                                                                    text:
+                                                                        formatNumber(
+                                                                      listViewOdmenaRecord
+                                                                          .odmCena,
+                                                                      formatType:
+                                                                          FormatType
+                                                                              .custom,
+                                                                      format:
+                                                                          '',
+                                                                      locale:
+                                                                          '',
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -675,9 +693,18 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                               text: TextSpan(
                                                                 children: [
                                                                   TextSpan(
-                                                                    text: listViewOdmenaRecord
-                                                                        .odmCena
-                                                                        .toString(),
+                                                                    text:
+                                                                        formatNumber(
+                                                                      listViewOdmenaRecord
+                                                                          .odmCena,
+                                                                      formatType:
+                                                                          FormatType
+                                                                              .custom,
+                                                                      format:
+                                                                          '',
+                                                                      locale:
+                                                                          '',
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -1026,9 +1053,18 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                               text: TextSpan(
                                                                 children: [
                                                                   TextSpan(
-                                                                    text: listViewOdmenaRecord
-                                                                        .odmCena
-                                                                        .toString(),
+                                                                    text:
+                                                                        formatNumber(
+                                                                      listViewOdmenaRecord
+                                                                          .odmCena,
+                                                                      formatType:
+                                                                          FormatType
+                                                                              .custom,
+                                                                      format:
+                                                                          '',
+                                                                      locale:
+                                                                          '',
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium

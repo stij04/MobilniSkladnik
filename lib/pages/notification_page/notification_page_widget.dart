@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/no_notification_component/no_notification_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -131,6 +132,9 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                           }
                           List<NotificationsRecord>
                               listViewNotificationsRecordList = snapshot.data!;
+                          if (listViewNotificationsRecordList.isEmpty) {
+                            return const NoNotificationComponentWidget();
+                          }
                           return ListView.builder(
                             padding: EdgeInsets.zero,
                             scrollDirection: Axis.vertical,
@@ -328,7 +332,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                                     text: FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '4n9rekzf' /* Získáváte +  */,
+                                                                      '4n9rekzf' /* Získali jste +  */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)

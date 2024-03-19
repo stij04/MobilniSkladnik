@@ -156,7 +156,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // BadgesPage
+  // BadgePage
   {
     'sejepopn': {
       'cs': 'Odznaky',
@@ -508,7 +508,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2zyqv62w': {
       'cs': 'Úrovně',
-      'en': 'Leaderboard',
+      'en': 'Levels',
     },
   },
   // EditNicknamePage
@@ -542,27 +542,41 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'v27mzux4': {
       'cs': 'Notifikace',
-      'en': 'Edit nickname',
+      'en': 'Notifications',
     },
     'obuk55ic': {
       'cs': 'Nová úroveň dosažena!',
-      'en': '',
+      'en': 'New level reached!',
     },
     '4n9rekzf': {
-      'cs': 'Získáváte + ',
-      'en': '+ ',
+      'cs': 'Získali jste + ',
+      'en': 'You have gained + ',
     },
     'zqw93r3x': {
       'cs': ' MS',
       'en': ' MS',
     },
     'gaafmftn': {
-      'cs': 'Hello World',
+      'cs': '',
       'en': '',
     },
     'wn6qzekw': {
-      'cs': 'Žebříček',
-      'en': 'Leaderboard',
+      'cs': 'Notifikace',
+      'en': 'Notifications',
+    },
+  },
+  // NoNotificationComponent
+  {
+    '9envknlb': {
+      'cs': 'Nemáte žádná upozornění',
+      'en': 'No notifications',
+    },
+  },
+  // NoBadgeComponent
+  {
+    '44nj10ck': {
+      'cs': 'Zatím jste nezískal žádné odznaky',
+      'en': 'No badges have been earned yet',
     },
   },
   // Miscellaneous

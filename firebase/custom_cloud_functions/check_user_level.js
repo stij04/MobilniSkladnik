@@ -40,11 +40,11 @@ exports.checkUserLevel = functions
       if (token) {
         const message = {
           notification: {
-            title: "Nová úroveň dosažena!",
-            body: `Gratulujeme, dosáhli jste úrovně: ${newLevel.UroPoradi} – ${newLevel.UroNazev}.\nZískáváte ${newLevel.UroMena} MS!`,
+            title: "Nová úroveň dosažena",
+            body: `Gratulujeme, dosáhli jste úrovně ${newLevel.UroPoradi} – ${newLevel.UroNazev}\nZískáváte ${newLevel.UroMena} MS`,
           },
           data: {
-            route: "LevelPage",
+            route: "HomePage",
           },
           token: token,
         };

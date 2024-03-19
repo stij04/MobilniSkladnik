@@ -49,18 +49,27 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
-          leading: Container(
-            width: 100.0,
-            height: 100.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondary,
-            ),
-            child: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
-              child: FaIcon(
-                FontAwesomeIcons.solidBell,
-                color: FlutterFlowTheme.of(context).primary,
-                size: 24.0,
+          leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.pushNamed('NotificationPage');
+            },
+            child: Container(
+              width: 100.0,
+              height: 100.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondary,
+              ),
+              child: Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: FaIcon(
+                  FontAwesomeIcons.solidBell,
+                  color: FlutterFlowTheme.of(context).primary,
+                  size: 24.0,
+                ),
               ),
             ),
           ),

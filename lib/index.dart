@@ -1,6 +1,6 @@
 // Export pages
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
-export '/pages/badges_page/badges_page_widget.dart' show BadgesPageWidget;
+export '/pages/badge_page/badge_page_widget.dart' show BadgePageWidget;
 export '/pages/leaderboard_page/leaderboard_page_widget.dart'
     show LeaderboardPageWidget;
 export '/pages/reward_page/reward_page_widget.dart' show RewardPageWidget;

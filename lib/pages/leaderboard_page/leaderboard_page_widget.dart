@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -45,18 +46,27 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
-          leading: Container(
-            width: 100.0,
-            height: 100.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondary,
-            ),
-            child: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
-              child: FaIcon(
-                FontAwesomeIcons.solidBell,
-                color: FlutterFlowTheme.of(context).primary,
-                size: 24.0,
+          leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.pushNamed('NotificationPage');
+            },
+            child: Container(
+              width: 100.0,
+              height: 100.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondary,
+              ),
+              child: Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: FaIcon(
+                  FontAwesomeIcons.solidBell,
+                  color: FlutterFlowTheme.of(context).primary,
+                  size: 24.0,
+                ),
               ),
             ),
           ),
@@ -144,7 +154,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           color: FlutterFlowTheme.of(context).alternate,
-                          elevation: 4.0,
+                          elevation: 2.0,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),
@@ -160,46 +170,60 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            functions
+                                      if (isAndroid)
+                                        SizedBox(
+                                          width: double.infinity,
+                                          height: 80.0,
+                                          child: custom_widgets.SvgImage(
+                                            width: double.infinity,
+                                            height: 80.0,
+                                            imagePath: functions
                                                 .getItemFromIndex(
                                                     containerUsersRecordList
                                                         .toList(),
                                                     1)
                                                 .photoUrl,
-                                            width: 100.0,
-                                            height: 70.0,
-                                            fit: BoxFit.contain,
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            functions
-                                                .getItemFromIndex(
-                                                    containerUsersRecordList
-                                                        .toList(),
-                                                    1)
-                                                .displayName,
-                                            'undefined',
+                                      if (!isAndroid)
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 4.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              functions
+                                                  .getItemFromIndex(
+                                                      containerUsersRecordList
+                                                          .toList(),
+                                                      1)
+                                                  .photoUrl,
+                                              width: double.infinity,
+                                              height: 70.0,
+                                              fit: BoxFit.contain,
+                                            ),
                                           ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Roboto',
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
                                         ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          functions
+                                              .getItemFromIndex(
+                                                  containerUsersRecordList
+                                                      .toList(),
+                                                  1)
+                                              .displayName,
+                                          'undefined',
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -315,43 +339,60 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                         height: 37.0,
                                         fit: BoxFit.contain,
                                       ),
-                                      ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.network(
+                                      if (isAndroid)
+                                        SizedBox(
+                                          width: double.infinity,
+                                          height: 80.0,
+                                          child: custom_widgets.SvgImage(
+                                            width: double.infinity,
+                                            height: 80.0,
+                                            imagePath: functions
+                                                .getItemFromIndex(
+                                                    containerUsersRecordList
+                                                        .toList(),
+                                                    0)
+                                                .photoUrl,
+                                          ),
+                                        ),
+                                      if (!isAndroid)
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 4.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              functions
+                                                  .getItemFromIndex(
+                                                      containerUsersRecordList
+                                                          .toList(),
+                                                      0)
+                                                  .photoUrl,
+                                              width: double.infinity,
+                                              height: 70.0,
+                                              fit: BoxFit.contain,
+                                            ),
+                                          ),
+                                        ),
+                                      Text(
+                                        valueOrDefault<String>(
                                           functions
                                               .getItemFromIndex(
                                                   containerUsersRecordList
                                                       .toList(),
                                                   0)
-                                              .photoUrl,
-                                          width: 100.0,
-                                          height: 70.0,
-                                          fit: BoxFit.contain,
+                                              .displayName,
+                                          'undefined',
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            functions
-                                                .getItemFromIndex(
-                                                    containerUsersRecordList
-                                                        .toList(),
-                                                    0)
-                                                .displayName,
-                                            'undefined',
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Roboto',
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -453,46 +494,60 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            functions
+                                      if (isAndroid)
+                                        SizedBox(
+                                          width: double.infinity,
+                                          height: 80.0,
+                                          child: custom_widgets.SvgImage(
+                                            width: double.infinity,
+                                            height: 80.0,
+                                            imagePath: functions
                                                 .getItemFromIndex(
                                                     containerUsersRecordList
                                                         .toList(),
                                                     2)
                                                 .photoUrl,
-                                            width: 100.0,
-                                            height: 70.0,
-                                            fit: BoxFit.contain,
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            functions
-                                                .getItemFromIndex(
-                                                    containerUsersRecordList
-                                                        .toList(),
-                                                    2)
-                                                .displayName,
-                                            'undefined',
+                                      if (!isAndroid)
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 4.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              functions
+                                                  .getItemFromIndex(
+                                                      containerUsersRecordList
+                                                          .toList(),
+                                                      2)
+                                                  .photoUrl,
+                                              width: double.infinity,
+                                              height: 70.0,
+                                              fit: BoxFit.contain,
+                                            ),
                                           ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Roboto',
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
                                         ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          functions
+                                              .getItemFromIndex(
+                                                  containerUsersRecordList
+                                                      .toList(),
+                                                  2)
+                                              .displayName,
+                                          'undefined',
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -625,7 +680,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    elevation: 4.0,
+                                    elevation: 2.0,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),

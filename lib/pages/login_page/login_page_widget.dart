@@ -97,8 +97,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          SelectionArea(
-                              child: Text(
+                          Text(
                             FFLocalizations.of(context).getText(
                               '9yjlvdmr' /* Mobilní */,
                             ),
@@ -111,9 +110,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   letterSpacing: 1.0,
                                   fontWeight: FontWeight.w900,
                                 ),
-                          )),
-                          SelectionArea(
-                              child: Text(
+                          ),
+                          Text(
                             FFLocalizations.of(context).getText(
                               'bdehk8ux' /* skladník */,
                             ),
@@ -126,28 +124,19 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   letterSpacing: 1.0,
                                   fontWeight: FontWeight.w900,
                                 ),
-                          )),
+                          ),
                         ],
                       ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: Container(
-                      width: double.infinity,
-                      constraints: const BoxConstraints(
-                        maxWidth: 570.0,
-                      ),
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 4.0,
-                            color: FlutterFlowTheme.of(context).tertiary,
-                            offset: const Offset(0.0, 2.0),
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(12.0),
+                    child: Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      elevation: 4.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Align(
                         alignment: const AlignmentDirectional(0.0, 0.0),
