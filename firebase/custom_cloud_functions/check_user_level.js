@@ -53,7 +53,7 @@ exports.checkUserLevel = functions
           .messaging()
           .send(message)
           .then((response) => {
-            console.log("Úspěšně odeslaná notifikace:", response);
+            console.log("Úspěšně odeslaná notifikace: ", response);
 
             const notificationData = {
               uid: uid,
@@ -69,7 +69,7 @@ exports.checkUserLevel = functions
               .add(notificationData);
           })
           .catch((error) => {
-            console.log("Chyba při odesílání notifikace:", error);
+            console.log("Chyba při odesílání notifikace: ", error);
             return null;
           });
       } else {
