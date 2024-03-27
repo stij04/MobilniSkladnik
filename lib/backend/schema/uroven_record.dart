@@ -51,20 +51,10 @@ class UrovenRecord extends FirestoreRecord {
   double get uroMena => _uroMena ?? 0.0;
   bool hasUroMena() => _uroMena != null;
 
-  // "UroVytvoril" field.
-  int? _uroVytvoril;
-  int get uroVytvoril => _uroVytvoril ?? 0;
-  bool hasUroVytvoril() => _uroVytvoril != null;
-
   // "UroVytvoreno" field.
   DateTime? _uroVytvoreno;
   DateTime? get uroVytvoreno => _uroVytvoreno;
   bool hasUroVytvoreno() => _uroVytvoreno != null;
-
-  // "UroUpravil" field.
-  int? _uroUpravil;
-  int get uroUpravil => _uroUpravil ?? 0;
-  bool hasUroUpravil() => _uroUpravil != null;
 
   // "UroUpraveno" field.
   DateTime? _uroUpraveno;
@@ -79,9 +69,7 @@ class UrovenRecord extends FirestoreRecord {
     _uroPopis = snapshotData['UroPopis'] as String?;
     _uroHranice = castToType<double>(snapshotData['UroHranice']);
     _uroMena = castToType<double>(snapshotData['UroMena']);
-    _uroVytvoril = castToType<int>(snapshotData['UroVytvoril']);
     _uroVytvoreno = snapshotData['UroVytvoreno'] as DateTime?;
-    _uroUpravil = castToType<int>(snapshotData['UroUpravil']);
     _uroUpraveno = snapshotData['UroUpraveno'] as DateTime?;
   }
 
@@ -126,9 +114,7 @@ Map<String, dynamic> createUrovenRecordData({
   String? uroPopis,
   double? uroHranice,
   double? uroMena,
-  int? uroVytvoril,
   DateTime? uroVytvoreno,
-  int? uroUpravil,
   DateTime? uroUpraveno,
 }) {
   final firestoreData = mapToFirestore(
@@ -140,9 +126,7 @@ Map<String, dynamic> createUrovenRecordData({
       'UroPopis': uroPopis,
       'UroHranice': uroHranice,
       'UroMena': uroMena,
-      'UroVytvoril': uroVytvoril,
       'UroVytvoreno': uroVytvoreno,
-      'UroUpravil': uroUpravil,
       'UroUpraveno': uroUpraveno,
     }.withoutNulls,
   );
@@ -162,9 +146,7 @@ class UrovenRecordDocumentEquality implements Equality<UrovenRecord> {
         e1?.uroPopis == e2?.uroPopis &&
         e1?.uroHranice == e2?.uroHranice &&
         e1?.uroMena == e2?.uroMena &&
-        e1?.uroVytvoril == e2?.uroVytvoril &&
         e1?.uroVytvoreno == e2?.uroVytvoreno &&
-        e1?.uroUpravil == e2?.uroUpravil &&
         e1?.uroUpraveno == e2?.uroUpraveno;
   }
 
@@ -177,9 +159,7 @@ class UrovenRecordDocumentEquality implements Equality<UrovenRecord> {
         e?.uroPopis,
         e?.uroHranice,
         e?.uroMena,
-        e?.uroVytvoril,
         e?.uroVytvoreno,
-        e?.uroUpravil,
         e?.uroUpraveno
       ]);
 

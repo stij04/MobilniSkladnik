@@ -46,20 +46,10 @@ class SezonaRecord extends FirestoreRecord {
   bool get sezSkryto => _sezSkryto ?? false;
   bool hasSezSkryto() => _sezSkryto != null;
 
-  // "SezVytvoril" field.
-  int? _sezVytvoril;
-  int get sezVytvoril => _sezVytvoril ?? 0;
-  bool hasSezVytvoril() => _sezVytvoril != null;
-
   // "SezVytvoreno" field.
   DateTime? _sezVytvoreno;
   DateTime? get sezVytvoreno => _sezVytvoreno;
   bool hasSezVytvoreno() => _sezVytvoreno != null;
-
-  // "SezUpravil" field.
-  int? _sezUpravil;
-  int get sezUpravil => _sezUpravil ?? 0;
-  bool hasSezUpravil() => _sezUpravil != null;
 
   // "SezUpraveno" field.
   DateTime? _sezUpraveno;
@@ -73,9 +63,7 @@ class SezonaRecord extends FirestoreRecord {
     _sezStart = snapshotData['SezStart'] as DateTime?;
     _sezKonec = snapshotData['SezKonec'] as DateTime?;
     _sezSkryto = snapshotData['SezSkryto'] as bool?;
-    _sezVytvoril = castToType<int>(snapshotData['SezVytvoril']);
     _sezVytvoreno = snapshotData['SezVytvoreno'] as DateTime?;
-    _sezUpravil = castToType<int>(snapshotData['SezUpravil']);
     _sezUpraveno = snapshotData['SezUpraveno'] as DateTime?;
   }
 
@@ -119,9 +107,7 @@ Map<String, dynamic> createSezonaRecordData({
   DateTime? sezStart,
   DateTime? sezKonec,
   bool? sezSkryto,
-  int? sezVytvoril,
   DateTime? sezVytvoreno,
-  int? sezUpravil,
   DateTime? sezUpraveno,
 }) {
   final firestoreData = mapToFirestore(
@@ -132,9 +118,7 @@ Map<String, dynamic> createSezonaRecordData({
       'SezStart': sezStart,
       'SezKonec': sezKonec,
       'SezSkryto': sezSkryto,
-      'SezVytvoril': sezVytvoril,
       'SezVytvoreno': sezVytvoreno,
-      'SezUpravil': sezUpravil,
       'SezUpraveno': sezUpraveno,
     }.withoutNulls,
   );
@@ -153,9 +137,7 @@ class SezonaRecordDocumentEquality implements Equality<SezonaRecord> {
         e1?.sezStart == e2?.sezStart &&
         e1?.sezKonec == e2?.sezKonec &&
         e1?.sezSkryto == e2?.sezSkryto &&
-        e1?.sezVytvoril == e2?.sezVytvoril &&
         e1?.sezVytvoreno == e2?.sezVytvoreno &&
-        e1?.sezUpravil == e2?.sezUpravil &&
         e1?.sezUpraveno == e2?.sezUpraveno;
   }
 
@@ -167,9 +149,7 @@ class SezonaRecordDocumentEquality implements Equality<SezonaRecord> {
         e?.sezStart,
         e?.sezKonec,
         e?.sezSkryto,
-        e?.sezVytvoril,
         e?.sezVytvoreno,
-        e?.sezUpravil,
         e?.sezUpraveno
       ]);
 

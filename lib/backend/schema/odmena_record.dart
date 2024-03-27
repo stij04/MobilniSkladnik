@@ -46,20 +46,10 @@ class OdmenaRecord extends FirestoreRecord {
   bool get odmSkryto => _odmSkryto ?? false;
   bool hasOdmSkryto() => _odmSkryto != null;
 
-  // "OdmVytvoril" field.
-  int? _odmVytvoril;
-  int get odmVytvoril => _odmVytvoril ?? 0;
-  bool hasOdmVytvoril() => _odmVytvoril != null;
-
   // "OdmVytvoreno" field.
   DateTime? _odmVytvoreno;
   DateTime? get odmVytvoreno => _odmVytvoreno;
   bool hasOdmVytvoreno() => _odmVytvoreno != null;
-
-  // "OdmUpravil" field.
-  int? _odmUpravil;
-  int get odmUpravil => _odmUpravil ?? 0;
-  bool hasOdmUpravil() => _odmUpravil != null;
 
   // "OdmUpraveno" field.
   DateTime? _odmUpraveno;
@@ -73,9 +63,7 @@ class OdmenaRecord extends FirestoreRecord {
     _odmCena = castToType<double>(snapshotData['OdmCena']);
     _odmObrazek = snapshotData['OdmObrazek'] as String?;
     _odmSkryto = snapshotData['OdmSkryto'] as bool?;
-    _odmVytvoril = castToType<int>(snapshotData['OdmVytvoril']);
     _odmVytvoreno = snapshotData['OdmVytvoreno'] as DateTime?;
-    _odmUpravil = castToType<int>(snapshotData['OdmUpravil']);
     _odmUpraveno = snapshotData['OdmUpraveno'] as DateTime?;
   }
 
@@ -119,9 +107,7 @@ Map<String, dynamic> createOdmenaRecordData({
   double? odmCena,
   String? odmObrazek,
   bool? odmSkryto,
-  int? odmVytvoril,
   DateTime? odmVytvoreno,
-  int? odmUpravil,
   DateTime? odmUpraveno,
 }) {
   final firestoreData = mapToFirestore(
@@ -132,9 +118,7 @@ Map<String, dynamic> createOdmenaRecordData({
       'OdmCena': odmCena,
       'OdmObrazek': odmObrazek,
       'OdmSkryto': odmSkryto,
-      'OdmVytvoril': odmVytvoril,
       'OdmVytvoreno': odmVytvoreno,
-      'OdmUpravil': odmUpravil,
       'OdmUpraveno': odmUpraveno,
     }.withoutNulls,
   );
@@ -153,9 +137,7 @@ class OdmenaRecordDocumentEquality implements Equality<OdmenaRecord> {
         e1?.odmCena == e2?.odmCena &&
         e1?.odmObrazek == e2?.odmObrazek &&
         e1?.odmSkryto == e2?.odmSkryto &&
-        e1?.odmVytvoril == e2?.odmVytvoril &&
         e1?.odmVytvoreno == e2?.odmVytvoreno &&
-        e1?.odmUpravil == e2?.odmUpravil &&
         e1?.odmUpraveno == e2?.odmUpraveno;
   }
 
@@ -167,9 +149,7 @@ class OdmenaRecordDocumentEquality implements Equality<OdmenaRecord> {
         e?.odmCena,
         e?.odmObrazek,
         e?.odmSkryto,
-        e?.odmVytvoril,
         e?.odmVytvoreno,
-        e?.odmUpravil,
         e?.odmUpraveno
       ]);
 

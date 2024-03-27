@@ -57,15 +57,16 @@ exports.checkUserLevel = functions
 
             const notificationData = {
               uid: uid,
-              UziId: oldValue.UziId,
-              UroId: newLevel.UroId,
-              hidden: false,
-              timestamp: admin.firestore.FieldValue.serverTimestamp(),
+              NotUziId: oldValue.UziId,
+              NotUroId: newLevel.UroId,
+              NotPrecteno: false,
+              NotVytvoreno: admin.firestore.FieldValue.serverTimestamp(),
+              NotUpraveno: admin.firestore.FieldValue.serverTimestamp(),
             };
 
             return admin
               .firestore()
-              .collection("notifications")
+              .collection("notifikace")
               .add(notificationData);
           })
           .catch((error) => {

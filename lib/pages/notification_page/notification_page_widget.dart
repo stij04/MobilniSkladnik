@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/components/no_notification_component/no_notification_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'notification_page_model.dart';
@@ -101,19 +102,19 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                     padding: const EdgeInsets.all(8.0),
                     child: AuthUserStreamWidget(
                       builder: (context) =>
-                          StreamBuilder<List<NotificationsRecord>>(
-                        stream: queryNotificationsRecord(
-                          queryBuilder: (notificationsRecord) =>
-                              notificationsRecord
-                                  .where(
-                                    'UziId',
-                                    isEqualTo: valueOrDefault(
-                                        currentUserDocument?.uziId, 0),
-                                  )
-                                  .where(
-                                    'hidden',
-                                    isEqualTo: false,
-                                  ),
+                          StreamBuilder<List<NotifikaceRecord>>(
+                        stream: queryNotifikaceRecord(
+                          queryBuilder: (notifikaceRecord) => notifikaceRecord
+                              .where(
+                                'NotUziId',
+                                isEqualTo: valueOrDefault(
+                                    currentUserDocument?.uziId, 0),
+                              )
+                              .where(
+                                'NotPrecteno',
+                                isEqualTo: false,
+                              )
+                              .orderBy('NotVytvoreno', descending: true),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
@@ -130,26 +131,25 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                               ),
                             );
                           }
-                          List<NotificationsRecord>
-                              listViewNotificationsRecordList = snapshot.data!;
-                          if (listViewNotificationsRecordList.isEmpty) {
+                          List<NotifikaceRecord> listViewNotifikaceRecordList =
+                              snapshot.data!;
+                          if (listViewNotifikaceRecordList.isEmpty) {
                             return const NoNotificationComponentWidget();
                           }
                           return ListView.builder(
                             padding: EdgeInsets.zero,
                             scrollDirection: Axis.vertical,
-                            itemCount: listViewNotificationsRecordList.length,
+                            itemCount: listViewNotifikaceRecordList.length,
                             itemBuilder: (context, listViewIndex) {
-                              final listViewNotificationsRecord =
-                                  listViewNotificationsRecordList[
-                                      listViewIndex];
+                              final listViewNotifikaceRecord =
+                                  listViewNotifikaceRecordList[listViewIndex];
                               return StreamBuilder<List<UrovenRecord>>(
                                 stream: queryUrovenRecord(
                                   queryBuilder: (urovenRecord) =>
                                       urovenRecord.where(
                                     'UroId',
                                     isEqualTo:
-                                        listViewNotificationsRecord.uroId,
+                                        listViewNotifikaceRecord.notUroId,
                                   ),
                                   singleRecord: true,
                                 ),
@@ -280,12 +280,13 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
+                                                  child: AutoSizeText(
                                                     valueOrDefault<String>(
                                                       cardUrovenRecord
                                                           ?.uroNazev,
                                                       '–',
                                                     ),
+                                                    maxLines: 1,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -400,8 +401,8 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                   child: Text(
                                                     dateTimeFormat(
                                                       'dd.MM.yyyy H:mm',
-                                                      listViewNotificationsRecord
-                                                          .timestamp!,
+                                                      listViewNotifikaceRecord
+                                                          .notVytvoreno!,
                                                       locale:
                                                           FFLocalizations.of(
                                                                   context)
@@ -430,11 +431,11 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
-                                                    await listViewNotificationsRecord
+                                                    await listViewNotifikaceRecord
                                                         .reference
                                                         .update(
-                                                            createNotificationsRecordData(
-                                                      hidden: true,
+                                                            createNotifikaceRecordData(
+                                                      notPrecteno: true,
                                                     ));
                                                   },
                                                   child: Container(

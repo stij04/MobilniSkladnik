@@ -320,9 +320,13 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? Container(
                   color: const Color(0xFFF6FCFC),
-                  child: Image.asset(
-                    'assets/images/launcher_icon.webp',
-                    fit: BoxFit.contain,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/icon.jpg',
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 )
               : PushNotificationsHandler(child: page);

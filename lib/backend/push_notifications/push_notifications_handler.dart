@@ -72,9 +72,13 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   Widget build(BuildContext context) => _loading
       ? Container(
           color: const Color(0xFFF6FCFC),
-          child: Image.asset(
-            'assets/images/launcher_icon.webp',
-            fit: BoxFit.contain,
+          child: Center(
+            child: Image.asset(
+              'assets/images/icon.jpg',
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.contain,
+            ),
           ),
         )
       : widget.child;

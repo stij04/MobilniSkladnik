@@ -21,25 +21,20 @@ class VykonRecord extends FirestoreRecord {
   int get vykId => _vykId ?? 0;
   bool hasVykId() => _vykId != null;
 
-  // "VykDatum" field.
-  DateTime? _vykDatum;
-  DateTime? get vykDatum => _vykDatum;
-  bool hasVykDatum() => _vykDatum != null;
-
   // "VykUziId" field.
   int? _vykUziId;
   int get vykUziId => _vykUziId ?? 0;
   bool hasVykUziId() => _vykUziId != null;
 
-  // "VykPozId" field.
-  int? _vykPozId;
-  int get vykPozId => _vykPozId ?? 0;
-  bool hasVykPozId() => _vykPozId != null;
-
   // "VykSezId" field.
   int? _vykSezId;
   int get vykSezId => _vykSezId ?? 0;
   bool hasVykSezId() => _vykSezId != null;
+
+  // "VykDatum" field.
+  DateTime? _vykDatum;
+  DateTime? get vykDatum => _vykDatum;
+  bool hasVykDatum() => _vykDatum != null;
 
   // "VykKusy" field.
   int? _vykKusy;
@@ -56,15 +51,38 @@ class VykonRecord extends FirestoreRecord {
   double get vykBody => _vykBody ?? 0.0;
   bool hasVykBody() => _vykBody != null;
 
+  // "VykKoef" field.
+  double? _vykKoef;
+  double get vykKoef => _vykKoef ?? 0.0;
+  bool hasVykKoef() => _vykKoef != null;
+
+  // "VykKoefVaha" field.
+  double? _vykKoefVaha;
+  double get vykKoefVaha => _vykKoefVaha ?? 0.0;
+  bool hasVykKoefVaha() => _vykKoefVaha != null;
+
+  // "VykVytvoreno" field.
+  DateTime? _vykVytvoreno;
+  DateTime? get vykVytvoreno => _vykVytvoreno;
+  bool hasVykVytvoreno() => _vykVytvoreno != null;
+
+  // "VykUpraveno" field.
+  DateTime? _vykUpraveno;
+  DateTime? get vykUpraveno => _vykUpraveno;
+  bool hasVykUpraveno() => _vykUpraveno != null;
+
   void _initializeFields() {
     _vykId = castToType<int>(snapshotData['VykId']);
-    _vykDatum = snapshotData['VykDatum'] as DateTime?;
     _vykUziId = castToType<int>(snapshotData['VykUziId']);
-    _vykPozId = castToType<int>(snapshotData['VykPozId']);
     _vykSezId = castToType<int>(snapshotData['VykSezId']);
+    _vykDatum = snapshotData['VykDatum'] as DateTime?;
     _vykKusy = castToType<int>(snapshotData['VykKusy']);
     _vykKilogramy = castToType<double>(snapshotData['VykKilogramy']);
     _vykBody = castToType<double>(snapshotData['VykBody']);
+    _vykKoef = castToType<double>(snapshotData['VykKoef']);
+    _vykKoefVaha = castToType<double>(snapshotData['VykKoefVaha']);
+    _vykVytvoreno = snapshotData['VykVytvoreno'] as DateTime?;
+    _vykUpraveno = snapshotData['VykUpraveno'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -102,24 +120,30 @@ class VykonRecord extends FirestoreRecord {
 
 Map<String, dynamic> createVykonRecordData({
   int? vykId,
-  DateTime? vykDatum,
   int? vykUziId,
-  int? vykPozId,
   int? vykSezId,
+  DateTime? vykDatum,
   int? vykKusy,
   double? vykKilogramy,
   double? vykBody,
+  double? vykKoef,
+  double? vykKoefVaha,
+  DateTime? vykVytvoreno,
+  DateTime? vykUpraveno,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'VykId': vykId,
-      'VykDatum': vykDatum,
       'VykUziId': vykUziId,
-      'VykPozId': vykPozId,
       'VykSezId': vykSezId,
+      'VykDatum': vykDatum,
       'VykKusy': vykKusy,
       'VykKilogramy': vykKilogramy,
       'VykBody': vykBody,
+      'VykKoef': vykKoef,
+      'VykKoefVaha': vykKoefVaha,
+      'VykVytvoreno': vykVytvoreno,
+      'VykUpraveno': vykUpraveno,
     }.withoutNulls,
   );
 
@@ -132,25 +156,31 @@ class VykonRecordDocumentEquality implements Equality<VykonRecord> {
   @override
   bool equals(VykonRecord? e1, VykonRecord? e2) {
     return e1?.vykId == e2?.vykId &&
-        e1?.vykDatum == e2?.vykDatum &&
         e1?.vykUziId == e2?.vykUziId &&
-        e1?.vykPozId == e2?.vykPozId &&
         e1?.vykSezId == e2?.vykSezId &&
+        e1?.vykDatum == e2?.vykDatum &&
         e1?.vykKusy == e2?.vykKusy &&
         e1?.vykKilogramy == e2?.vykKilogramy &&
-        e1?.vykBody == e2?.vykBody;
+        e1?.vykBody == e2?.vykBody &&
+        e1?.vykKoef == e2?.vykKoef &&
+        e1?.vykKoefVaha == e2?.vykKoefVaha &&
+        e1?.vykVytvoreno == e2?.vykVytvoreno &&
+        e1?.vykUpraveno == e2?.vykUpraveno;
   }
 
   @override
   int hash(VykonRecord? e) => const ListEquality().hash([
         e?.vykId,
-        e?.vykDatum,
         e?.vykUziId,
-        e?.vykPozId,
         e?.vykSezId,
+        e?.vykDatum,
         e?.vykKusy,
         e?.vykKilogramy,
-        e?.vykBody
+        e?.vykBody,
+        e?.vykKoef,
+        e?.vykKoefVaha,
+        e?.vykVytvoreno,
+        e?.vykUpraveno
       ]);
 
   @override

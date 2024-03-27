@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -158,158 +159,167 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) =>
-                                      CircularPercentIndicator(
-                                    percent: functions.getProgressValue(
-                                        containerUrovenRecordList.toList(),
-                                        valueOrDefault(
-                                            currentUserDocument?.uziBody, 0.0)),
-                                    radius: 75.0,
-                                    lineWidth: 35.0,
-                                    animation: true,
-                                    animateFromLastPercent: true,
-                                    progressColor: FlutterFlowTheme.of(context)
-                                        .buttonBackground,
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                    center: Text(
-                                      functions
-                                          .getCurrentLevelNumber(
-                                              containerUrovenRecordList
-                                                  .toList(),
-                                              valueOrDefault(
-                                                  currentUserDocument?.uziBody,
-                                                  0.0))
-                                          .toString(),
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily: 'Roboto',
-                                            fontSize: 40.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 6.0),
+                                      0.0, 16.0, 0.0, 16.0),
                                   child: AuthUserStreamWidget(
-                                    builder: (context) => Text(
-                                      functions.getCurrentLevelName(
+                                    builder: (context) =>
+                                        CircularPercentIndicator(
+                                      percent: functions.getProgressValue(
                                           containerUrovenRecordList.toList(),
                                           valueOrDefault(
                                               currentUserDocument?.uziBody,
                                               0.0)),
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .override(
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w900,
-                                          ),
+                                      radius: 75.0,
+                                      lineWidth: 35.0,
+                                      animation: true,
+                                      animateFromLastPercent: true,
+                                      progressColor:
+                                          FlutterFlowTheme.of(context)
+                                              .buttonBackground,
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context).tertiary,
+                                      center: Text(
+                                        functions
+                                            .getCurrentLevelNumber(
+                                                containerUrovenRecordList
+                                                    .toList(),
+                                                valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.uziBody,
+                                                    0.0))
+                                            .toString(),
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              fontSize: 40.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 4.0),
-                                  child: RichText(
-                                    textScaler:
-                                        MediaQuery.of(context).textScaler,
-                                    text: TextSpan(
-                                      children: [
-                                        TextSpan(
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            '8ejxvqwo' /* Další úroveň:  */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                        ),
-                                        TextSpan(
-                                          text: functions.getNextLevel(
-                                              containerUrovenRecordList
-                                                  .toList(),
-                                              valueOrDefault(
-                                                  currentUserDocument?.uziBody,
-                                                  0.0)),
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        )
-                                      ],
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 6.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => AutoSizeText(
+                                        functions.getCurrentLevelName(
+                                            containerUrovenRecordList.toList(),
+                                            valueOrDefault(
+                                                currentUserDocument?.uziBody,
+                                                0.0)),
+                                        maxLines: 1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w900,
+                                            ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: RichText(
-                                    textScaler:
-                                        MediaQuery.of(context).textScaler,
-                                    text: TextSpan(
-                                      children: [
-                                        TextSpan(
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'al0y6t07' /* Pro další úroveň zbývá získat:... */,
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 4.0),
+                                    child: RichText(
+                                      textScaler:
+                                          MediaQuery.of(context).textScaler,
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              '8ejxvqwo' /* Další úroveň:  */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                        ),
-                                        TextSpan(
-                                          text: formatNumber(
-                                            functions.getRemainingPoints(
+                                          TextSpan(
+                                            text: functions.getNextLevel(
                                                 containerUrovenRecordList
                                                     .toList(),
                                                 valueOrDefault(
                                                     currentUserDocument
                                                         ?.uziBody,
                                                     0.0)),
-                                            formatType: FormatType.custom,
-                                            format: '',
-                                            locale: '',
-                                          ),
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'wy007f6v' /*  B */,
-                                          ),
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        )
-                                      ],
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          )
+                                        ],
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 16.0),
+                                    child: RichText(
+                                      textScaler:
+                                          MediaQuery.of(context).textScaler,
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'al0y6t07' /* Pro další úroveň zbývá získat:... */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                          ),
+                                          TextSpan(
+                                            text: formatNumber(
+                                              functions.getRemainingPoints(
+                                                  containerUrovenRecordList
+                                                      .toList(),
+                                                  valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.uziBody,
+                                                      0.0)),
+                                              formatType: FormatType.custom,
+                                              format: '',
+                                              locale: '',
+                                            ),
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          TextSpan(
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'wy007f6v' /*  B */,
+                                            ),
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          )
+                                        ],
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -493,34 +503,102 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       8.0, 0.0, 16.0, 0.0),
-                                              child: Column(
+                                              child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: [
-                                                  Row(
+                                                  Expanded(
+                                                    child:
+                                                        SingleChildScrollView(
+                                                      primary: false,
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          AutoSizeText(
+                                                            urovneItem.uroNazev,
+                                                            maxLines: 1,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Roboto',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w800,
+                                                                ),
+                                                          ),
+                                                          RichText(
+                                                            textScaler:
+                                                                MediaQuery.of(
+                                                                        context)
+                                                                    .textScaler,
+                                                            text: TextSpan(
+                                                              children: [
+                                                                TextSpan(
+                                                                  text: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '5wyzk7i5' /* Po nasbírání  */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium,
+                                                                ),
+                                                                TextSpan(
+                                                                  text:
+                                                                      formatNumber(
+                                                                    urovneItem
+                                                                        .uroHranice,
+                                                                    formatType:
+                                                                        FormatType
+                                                                            .custom,
+                                                                    format: '',
+                                                                    locale: '',
+                                                                  ),
+                                                                  style:
+                                                                      const TextStyle(),
+                                                                ),
+                                                                TextSpan(
+                                                                  text: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'sip59qzb' /*  bodů */,
+                                                                  ),
+                                                                  style:
+                                                                      const TextStyle(),
+                                                                )
+                                                              ],
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium,
+                                                            ),
+                                                          ),
+                                                        ].divide(const SizedBox(
+                                                            height: 8.0)),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
-                                                            .spaceBetween,
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
                                                     children: [
-                                                      Text(
-                                                        urovneItem.uroNazev,
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Roboto',
-                                                              fontSize: 18.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w800,
-                                                            ),
-                                                      ),
                                                       RichText(
                                                         textScaler:
                                                             MediaQuery.of(
@@ -611,59 +689,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                       ),
                                                     ],
                                                   ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      RichText(
-                                                        textScaler:
-                                                            MediaQuery.of(
-                                                                    context)
-                                                                .textScaler,
-                                                        text: TextSpan(
-                                                          children: [
-                                                            TextSpan(
-                                                              text: FFLocalizations
-                                                                      .of(context)
-                                                                  .getText(
-                                                                '5wyzk7i5' /* Po nasbírání  */,
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium,
-                                                            ),
-                                                            TextSpan(
-                                                              text:
-                                                                  formatNumber(
-                                                                urovneItem
-                                                                    .uroHranice,
-                                                                formatType:
-                                                                    FormatType
-                                                                        .custom,
-                                                                format: '',
-                                                                locale: '',
-                                                              ),
-                                                              style:
-                                                                  const TextStyle(),
-                                                            ),
-                                                            TextSpan(
-                                                              text: FFLocalizations
-                                                                      .of(context)
-                                                                  .getText(
-                                                                'sip59qzb' /*  bodů */,
-                                                              ),
-                                                              style:
-                                                                  const TextStyle(),
-                                                            )
-                                                          ],
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ],
                                               ),
                                             ),
                                           ),

@@ -12,7 +12,9 @@ import 'schema/zisk_oceneni_record.dart';
 import 'schema/odmena_record.dart';
 import 'schema/uroven_record.dart';
 import 'schema/sezona_record.dart';
-import 'schema/notifications_record.dart';
+import 'schema/notifikace_record.dart';
+import 'schema/zisk_urovne_record.dart';
+import 'schema/nakup_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -27,7 +29,9 @@ export 'schema/zisk_oceneni_record.dart';
 export 'schema/odmena_record.dart';
 export 'schema/uroven_record.dart';
 export 'schema/sezona_record.dart';
-export 'schema/notifications_record.dart';
+export 'schema/notifikace_record.dart';
+export 'schema/zisk_urovne_record.dart';
+export 'schema/nakup_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -288,38 +292,112 @@ Future<List<SezonaRecord>> querySezonaRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query NotificationsRecords (as a Stream and as a Future).
-Future<int> queryNotificationsRecordCount({
+/// Functions to query NotifikaceRecords (as a Stream and as a Future).
+Future<int> queryNotifikaceRecordCount({
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      NotificationsRecord.collection,
+      NotifikaceRecord.collection,
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<NotificationsRecord>> queryNotificationsRecord({
+Stream<List<NotifikaceRecord>> queryNotifikaceRecord({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      NotificationsRecord.collection,
-      NotificationsRecord.fromSnapshot,
+      NotifikaceRecord.collection,
+      NotifikaceRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<NotificationsRecord>> queryNotificationsRecordOnce({
+Future<List<NotifikaceRecord>> queryNotifikaceRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      NotificationsRecord.collection,
-      NotificationsRecord.fromSnapshot,
+      NotifikaceRecord.collection,
+      NotifikaceRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ZiskUrovneRecords (as a Stream and as a Future).
+Future<int> queryZiskUrovneRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ZiskUrovneRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ZiskUrovneRecord>> queryZiskUrovneRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ZiskUrovneRecord.collection,
+      ZiskUrovneRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ZiskUrovneRecord>> queryZiskUrovneRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ZiskUrovneRecord.collection,
+      ZiskUrovneRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query NakupRecords (as a Stream and as a Future).
+Future<int> queryNakupRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      NakupRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<NakupRecord>> queryNakupRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      NakupRecord.collection,
+      NakupRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<NakupRecord>> queryNakupRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      NakupRecord.collection,
+      NakupRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
@@ -389,6 +467,21 @@ Future<List<T>> queryCollectionOnce<T>(
       .where((d) => d != null)
       .map((d) => d!)
       .toList());
+}
+
+extension FilterExtension on Filter {
+  Filter filterIn(String field, List? list) => (list?.isEmpty ?? true)
+      ? Filter(field, whereIn: null)
+      : Filter(field, whereIn: list);
+
+  Filter filterNotIn(String field, List? list) => (list?.isEmpty ?? true)
+      ? Filter(field, whereNotIn: null)
+      : Filter(field, whereNotIn: list);
+
+  Filter filterArrayContainsAny(String field, List? list) =>
+      (list?.isEmpty ?? true)
+          ? Filter(field, arrayContainsAny: null)
+          : Filter(field, arrayContainsAny: list);
 }
 
 extension QueryExtension on Query {

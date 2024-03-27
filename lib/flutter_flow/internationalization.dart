@@ -109,11 +109,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'l7o6231s': {
       'cs': 'Domovská stránka',
-      'en': 'Home page',
+      'en': 'Home Page',
     },
     '8fb5lxgv': {
       'cs': 'Získané body',
-      'en': 'Points earned',
+      'en': 'Earned Points',
     },
     'tbmift75': {
       'cs': ' B',
@@ -125,11 +125,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9zlup11i': {
       'cs': 'Aktuální úroveň',
-      'en': 'Current level',
+      'en': 'Current Level',
     },
     'zr3uv6vg': {
       'cs': 'Získané mince',
-      'en': 'Earned coins',
+      'en': 'Earned Coins',
     },
     'ehe9cz27': {
       'cs': ' MS',
@@ -141,7 +141,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'x39rr9sk': {
       'cs': 'Pozice v žebříčku',
-      'en': 'Ranking position',
+      'en': 'Ranking Position',
     },
     '0ipzu7o4': {
       'cs': '. místo',
@@ -482,18 +482,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Pro další úroveň zbývá získat: 650 bodů',
       'en': '',
     },
-    '3kg2746e': {
-      'cs': '+ ',
-      'en': '+ ',
-    },
-    '3h1stjxf': {
-      'cs': ' MS',
-      'en': ' MS',
-    },
-    'qghl5s1h': {
-      'cs': 'Hello World',
-      'en': '',
-    },
     '5wyzk7i5': {
       'cs': 'Po nasbírání ',
       'en': 'After collecting ',
@@ -503,6 +491,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': ' points',
     },
     'ezkpqvz1': {
+      'cs': 'Hello World',
+      'en': '',
+    },
+    '3kg2746e': {
+      'cs': '+ ',
+      'en': '+ ',
+    },
+    '3h1stjxf': {
+      'cs': ' MS',
+      'en': ' MS',
+    },
+    'qghl5s1h': {
       'cs': 'Hello World',
       'en': '',
     },
