@@ -26,6 +26,8 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LevelPageModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'LevelPage'});
   }
 
   @override
@@ -53,6 +55,9 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
+              logFirebaseEvent('LEVEL_Container_8gix70zb_ON_TAP');
+              logFirebaseEvent('Container_navigate_to');
+
               context.pushNamed('NotificationPage');
             },
             child: Container(
@@ -79,6 +84,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
                 ),
           ),
@@ -89,6 +95,8 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
+                logFirebaseEvent('LEVEL_Container_y6578k4w_ON_TAP');
+                logFirebaseEvent('Container_auth');
                 GoRouter.of(context).prepareAuthEvent();
                 await authManager.signOut();
                 GoRouter.of(context).clearRedirectLocation();
@@ -201,6 +209,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                             .override(
                                               fontFamily: 'Roboto',
                                               fontSize: 40.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -224,6 +233,7 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                             .headlineLarge
                                             .override(
                                               fontFamily: 'Roboto',
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w900,
                                             ),
                                       ),
@@ -246,7 +256,11 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                               '8ejxvqwo' /* Další úroveň:  */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Roboto',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           TextSpan(
                                             text: functions.getNextLevel(
@@ -262,7 +276,11 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ),
@@ -283,7 +301,11 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                               'al0y6t07' /* Pro další úroveň zbývá získat:... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Roboto',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           TextSpan(
                                             text: formatNumber(
@@ -313,7 +335,11 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ),
@@ -483,6 +509,8 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                                         .secondaryBackground,
                                                                     fontSize:
                                                                         18.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w900,
@@ -534,6 +562,8 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                                       'Roboto',
                                                                   fontSize:
                                                                       18.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w800,
@@ -554,7 +584,13 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Roboto',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                 ),
                                                                 TextSpan(
                                                                   text:
@@ -582,7 +618,13 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                               ],
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMedium,
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Roboto',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
                                                           ),
                                                         ].divide(const SizedBox(
@@ -621,6 +663,8 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
@@ -646,6 +690,8 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
@@ -666,6 +712,8 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
@@ -681,6 +729,8 @@ class _LevelPageWidgetState extends State<LevelPageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,

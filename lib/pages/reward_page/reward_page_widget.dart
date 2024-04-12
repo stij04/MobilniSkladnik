@@ -27,6 +27,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => RewardPageModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'RewardPage'});
   }
 
   @override
@@ -54,6 +56,9 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
+              logFirebaseEvent('REWARD_Container_aavu0feo_ON_TAP');
+              logFirebaseEvent('Container_navigate_to');
+
               context.pushNamed('NotificationPage');
             },
             child: Container(
@@ -80,6 +85,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
                 ),
           ),
@@ -90,6 +96,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
+                logFirebaseEvent('REWARD_Container_slir0f0o_ON_TAP');
+                logFirebaseEvent('Container_auth');
                 GoRouter.of(context).prepareAuthEvent();
                 await authManager.signOut();
                 GoRouter.of(context).clearRedirectLocation();
@@ -168,6 +176,7 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                   .bodyLarge
                                   .override(
                                     fontFamily: 'Roboto',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                               icon: FaIcon(
@@ -284,6 +293,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                               fontFamily:
                                                                   'Roboto',
                                                               fontSize: 18.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold,
@@ -353,6 +364,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                               'Roboto',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
                                                                         ),
@@ -369,6 +382,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Roboto',
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
                                                                         ),
@@ -382,6 +397,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                           'Roboto',
                                                                       fontSize:
                                                                           14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
@@ -401,6 +418,10 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                         .odmCena)
                                                                 ? null
                                                                 : () async {
+                                                                    logFirebaseEvent(
+                                                                        'REWARD_PAGE_PAGE_KOUPIT_BTN_ON_TAP');
+                                                                    logFirebaseEvent(
+                                                                        'Button_alert_dialog');
                                                                     var confirmDialogResponse =
                                                                         await showDialog<bool>(
                                                                               context: context,
@@ -435,6 +456,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                             ) ??
                                                                             false;
                                                                     if (confirmDialogResponse) {
+                                                                      logFirebaseEvent(
+                                                                          'Button_alert_dialog');
                                                                       await showDialog(
                                                                         context:
                                                                             context,
@@ -460,6 +483,9 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                     } else {
                                                                       return;
                                                                     }
+
+                                                                    logFirebaseEvent(
+                                                                        'Button_backend_call');
 
                                                                     await currentUserReference!
                                                                         .update({
@@ -644,6 +670,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                               fontFamily:
                                                                   'Roboto',
                                                               fontSize: 18.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold,
@@ -713,6 +741,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                               'Roboto',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
                                                                         ),
@@ -729,6 +759,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Roboto',
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
                                                                         ),
@@ -742,6 +774,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                           'Roboto',
                                                                       fontSize:
                                                                           14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
@@ -761,6 +795,10 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                         .odmCena)
                                                                 ? null
                                                                 : () async {
+                                                                    logFirebaseEvent(
+                                                                        'REWARD_PAGE_PAGE_KOUPIT_BTN_ON_TAP');
+                                                                    logFirebaseEvent(
+                                                                        'Button_alert_dialog');
                                                                     var confirmDialogResponse =
                                                                         await showDialog<bool>(
                                                                               context: context,
@@ -795,6 +833,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                             ) ??
                                                                             false;
                                                                     if (confirmDialogResponse) {
+                                                                      logFirebaseEvent(
+                                                                          'Button_alert_dialog');
                                                                       await showDialog(
                                                                         context:
                                                                             context,
@@ -820,6 +860,9 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                     } else {
                                                                       return;
                                                                     }
+
+                                                                    logFirebaseEvent(
+                                                                        'Button_backend_call');
 
                                                                     await currentUserReference!
                                                                         .update({
@@ -1004,6 +1047,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                               fontFamily:
                                                                   'Roboto',
                                                               fontSize: 18.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold,
@@ -1073,6 +1118,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                               'Roboto',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
                                                                         ),
@@ -1089,6 +1136,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Roboto',
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
                                                                         ),
@@ -1102,6 +1151,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                           'Roboto',
                                                                       fontSize:
                                                                           14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
@@ -1121,6 +1172,10 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                         .odmCena)
                                                                 ? null
                                                                 : () async {
+                                                                    logFirebaseEvent(
+                                                                        'REWARD_PAGE_PAGE_KOUPIT_BTN_ON_TAP');
+                                                                    logFirebaseEvent(
+                                                                        'Button_alert_dialog');
                                                                     var confirmDialogResponse =
                                                                         await showDialog<bool>(
                                                                               context: context,
@@ -1155,6 +1210,8 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                             ) ??
                                                                             false;
                                                                     if (confirmDialogResponse) {
+                                                                      logFirebaseEvent(
+                                                                          'Button_alert_dialog');
                                                                       await showDialog(
                                                                         context:
                                                                             context,
@@ -1180,6 +1237,9 @@ class _RewardPageWidgetState extends State<RewardPageWidget> {
                                                                     } else {
                                                                       return;
                                                                     }
+
+                                                                    logFirebaseEvent(
+                                                                        'Button_backend_call');
 
                                                                     await currentUserReference!
                                                                         .update({

@@ -24,6 +24,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BadgePageModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'BadgePage'});
   }
 
   @override
@@ -51,6 +53,9 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
+              logFirebaseEvent('BADGE_Container_l1wlwsoj_ON_TAP');
+              logFirebaseEvent('Container_navigate_to');
+
               context.pushNamed('NotificationPage');
             },
             child: Container(
@@ -77,6 +82,7 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
                 ),
           ),
@@ -87,6 +93,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
+                logFirebaseEvent('BADGE_Container_fzjf2ncf_ON_TAP');
+                logFirebaseEvent('Container_auth');
                 GoRouter.of(context).prepareAuthEvent();
                 await authManager.signOut();
                 GoRouter.of(context).clearRedirectLocation();
@@ -146,6 +154,7 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                   .override(
                                     fontFamily: 'Roboto',
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -294,6 +303,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 18.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
@@ -328,6 +339,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                             'Roboto',
                                                                         fontSize:
                                                                             12.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -354,6 +367,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                         'Roboto',
                                                                     fontSize:
                                                                         12.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
@@ -370,7 +385,13 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodySmall,
+                                                              .bodySmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Roboto',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                         Padding(
                                                           padding:
@@ -401,6 +422,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                             'Roboto',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -424,6 +447,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                             'Roboto',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -442,6 +467,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                             'Roboto',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -456,6 +483,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
@@ -513,6 +542,7 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                   .override(
                                     fontFamily: 'Roboto',
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -650,6 +680,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                       .primary,
                                                                   fontSize:
                                                                       20.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                           Padding(
@@ -665,7 +697,13 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                   .ocePopis,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodySmall,
+                                                                  .bodySmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Roboto',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
                                                           ),
                                                           RichText(
@@ -689,6 +727,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                             'Roboto',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -712,6 +752,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                             'Roboto',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -730,6 +772,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                             'Roboto',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -744,6 +788,8 @@ class _BadgePageWidgetState extends State<BadgePageWidget> {
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,

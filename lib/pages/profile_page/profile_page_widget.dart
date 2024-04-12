@@ -28,6 +28,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfilePageModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'ProfilePage'});
   }
 
   @override
@@ -55,6 +57,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
+              logFirebaseEvent('PROFILE_Container_7b91dvfn_ON_TAP');
+              logFirebaseEvent('Container_navigate_to');
+
               context.pushNamed('NotificationPage');
             },
             child: Container(
@@ -81,6 +86,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
                 ),
           ),
@@ -91,6 +97,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
+                logFirebaseEvent('PROFILE_Container_yo1jyjkn_ON_TAP');
+                logFirebaseEvent('Container_auth');
                 GoRouter.of(context).prepareAuthEvent();
                 await authManager.signOut();
                 GoRouter.of(context).clearRedirectLocation();
@@ -151,6 +159,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   .override(
                                     fontFamily: 'Roboto',
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -208,6 +217,10 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                         0.0, 8.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
+                                        logFirebaseEvent(
+                                            'PROFILE_GENEROVAT_NOVÉHO_AVATARA_BTN_ON_');
+                                        logFirebaseEvent(
+                                            'Button_update_page_state');
                                         setState(() {
                                           _model.avatarUrl =
                                               functions.generateNewAvatar();
@@ -236,6 +249,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                         elevation: 3.0,
@@ -263,12 +277,19 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                         .isSaveButtonDisabled
                                                     ? null
                                                     : () async {
+                                                        logFirebaseEvent(
+                                                            'PROFILE_PAGE_PAGE_ULOŽIT_BTN_ON_TAP');
+                                                        logFirebaseEvent(
+                                                            'Button_backend_call');
+
                                                         await currentUserReference!
                                                             .update(
                                                                 createUsersRecordData(
                                                           photoUrl:
                                                               _model.avatarUrl,
                                                         ));
+                                                        logFirebaseEvent(
+                                                            'Button_update_page_state');
                                                         setState(() {
                                                           _model.isReturnButtonDisabled =
                                                               true;
@@ -304,6 +325,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                                     context)
                                                                 .primaryBtnText,
                                                         fontSize: 14.0,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(
@@ -335,6 +357,10 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                         .isReturnButtonDisabled
                                                     ? null
                                                     : () async {
+                                                        logFirebaseEvent(
+                                                            'PROFILE_PAGE_PAGE_VTÁTIT_ZPĚT_BTN_ON_TAP');
+                                                        logFirebaseEvent(
+                                                            'Button_update_page_state');
                                                         setState(() {
                                                           _model.avatarUrl =
                                                               currentUserPhoto;
@@ -372,6 +398,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                                     context)
                                                                 .primaryBtnText,
                                                         fontSize: 14.0,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(
@@ -432,6 +459,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   .override(
                                     fontFamily: 'Roboto',
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -464,6 +492,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Roboto',
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
                                         ),
@@ -508,6 +537,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Roboto',
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
@@ -544,6 +574,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Roboto',
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
                                         ),
@@ -562,6 +593,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Roboto',
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
@@ -578,6 +610,10 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'PROFILE_PAGE_PAGE_Card_7bi5hugd_ON_TAP');
+                              logFirebaseEvent('Card_navigate_to');
+
                               context.pushNamed('EditNicknamePage');
                             },
                             child: Card(
@@ -608,6 +644,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Roboto',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -627,6 +664,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Roboto',
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -679,6 +717,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 .override(
                                   fontFamily: 'Roboto',
                                   fontSize: 18.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
                                 ),
                           ),
@@ -743,6 +782,10 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
+                                      logFirebaseEvent(
+                                          'PROFILE_Container_ommw16rl_ON_TAP');
+                                      logFirebaseEvent(
+                                          'Container_set_dark_mode_settings');
                                       setDarkModeSetting(
                                           context, ThemeMode.light);
                                     },
@@ -791,6 +834,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                             context)
                                                         .primaryBtnText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -807,6 +851,10 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
+                                      logFirebaseEvent(
+                                          'PROFILE_Container_bxcejm64_ON_TAP');
+                                      logFirebaseEvent(
+                                          'Container_set_dark_mode_settings');
                                       setDarkModeSetting(
                                           context, ThemeMode.dark);
                                     },
@@ -866,6 +914,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                                 context)
                                                             .primaryText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),

@@ -63,6 +63,7 @@ class _NoNotificationComponentWidgetState
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Roboto',
                     fontSize: 16.0,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),

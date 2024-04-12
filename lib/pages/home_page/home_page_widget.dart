@@ -28,6 +28,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'HomePage'});
   }
 
   @override
@@ -55,6 +57,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
+              logFirebaseEvent('HOME_PAGE_PAGE_Container_by28ybz9_ON_TAP');
+              logFirebaseEvent('Container_navigate_to');
+
               context.pushNamed('NotificationPage');
             },
             child: Container(
@@ -81,6 +86,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
                 ),
           ),
@@ -91,6 +97,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
+                logFirebaseEvent('HOME_PAGE_PAGE_Container_gaxcbr8z_ON_TAP');
+                logFirebaseEvent('Container_auth');
                 GoRouter.of(context).prepareAuthEvent();
                 await authManager.signOut();
                 GoRouter.of(context).clearRedirectLocation();
@@ -147,6 +155,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'HOME_PAGE_PAGE_Card_ch3cuaxz_ON_TAP');
+                              logFirebaseEvent('Card_navigate_to');
+
                               context.pushNamed('ProfilePage');
                             },
                             child: Card(
@@ -233,6 +245,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                   .of(context)
                                                               .primary,
                                                           fontSize: 34.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w800,
                                                         ),
@@ -256,6 +269,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         .override(
                                                           fontFamily: 'Roboto',
                                                           fontSize: 18.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
@@ -275,6 +289,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       .override(
                                                         fontFamily: 'Roboto',
                                                         fontSize: 18.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
@@ -375,6 +390,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             context)
                                                         .primary,
                                                     fontSize: 22.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                             ),
@@ -414,6 +430,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Roboto',
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w500,
                                                           ),
@@ -446,6 +463,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Roboto',
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w500,
                                                           ),
@@ -521,6 +539,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       .override(
                                         fontFamily: 'Roboto',
                                         fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
                                       ),
                                 ),
@@ -533,7 +552,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'HOME_PAGE_PAGE_Card_3whnj1ra_ON_TAP');
+                                    logFirebaseEvent('Card_navigate_to');
+
                                     context.pushNamed('LeaderboardPage');
+
+                                    logFirebaseEvent(
+                                        'Card_google_analytics_event');
+                                    logFirebaseEvent(
+                                      'leaderboard_page',
+                                      parameters: {
+                                        'user_email': currentUserEmail,
+                                      },
+                                    );
                                   },
                                   child: Card(
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -598,6 +630,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 24.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w800,
@@ -619,21 +653,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           ),
                                                         )
                                                       ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Roboto',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w800,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Roboto',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            fontSize: 24.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w800,
+                                                          ),
                                                     ),
                                                     maxLines: 1,
                                                   ),
@@ -662,6 +695,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         .override(
                                           fontFamily: 'Roboto',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -699,6 +733,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'HOME_PAGE_PAGE_Card_oggq7ap0_ON_TAP');
+                                        logFirebaseEvent('Card_navigate_to');
+
                                         context.pushNamed('LevelPage');
                                       },
                                       child: Card(
@@ -762,6 +800,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         .override(
                                                           fontFamily: 'Roboto',
                                                           fontSize: 26.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w800,
                                                         ),
@@ -802,6 +841,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       .override(
                                         fontFamily: 'Roboto',
                                         fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
                                       ),
                                 ),
@@ -814,6 +854,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'HOME_PAGE_PAGE_Card_745bmwvh_ON_TAP');
+                                    logFirebaseEvent('Card_navigate_to');
+
                                     context.pushNamed('RewardPage');
                                   },
                                   child: Card(
@@ -881,6 +925,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 24.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w800,
@@ -902,21 +948,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           ),
                                                         )
                                                       ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Roboto',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w800,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Roboto',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            fontSize: 24.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w800,
+                                                          ),
                                                     ),
                                                     maxLines: 1,
                                                   ),
@@ -945,6 +990,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         .override(
                                           fontFamily: 'Roboto',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -982,6 +1028,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'HOME_PAGE_PAGE_Card_8hbtbmml_ON_TAP');
+                                        logFirebaseEvent('Card_navigate_to');
+
                                         context.pushNamed('LeaderboardPage');
                                       },
                                       child: Card(
@@ -1045,6 +1095,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       .primary,
                                                                   fontSize:
                                                                       24.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w800,
@@ -1076,6 +1128,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                   .of(context)
                                                               .primary,
                                                           fontSize: 24.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w800,
                                                         ),

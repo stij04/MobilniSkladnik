@@ -25,6 +25,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     super.initState();
     _model = createModel(context, () => LoginPageModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'LoginPage'});
     _model.emailAddressController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
@@ -156,6 +157,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     .override(
                                       fontFamily: 'Roboto',
                                       fontSize: 32.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
                               ),
@@ -167,8 +169,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     'j3avg6pr' /* Vyplňte níže uvedené informace... */,
                                   ),
                                   textAlign: TextAlign.center,
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Roboto',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                               Padding(
@@ -188,7 +194,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         'u43wq1g4' /* Email */,
                                       ),
                                       labelStyle: FlutterFlowTheme.of(context)
-                                          .labelLarge,
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            letterSpacing: 0.0,
+                                          ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
@@ -229,8 +239,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyLarge,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          letterSpacing: 0.0,
+                                        ),
                                     keyboardType: TextInputType.emailAddress,
                                     validator: _model
                                         .emailAddressControllerValidator
@@ -255,7 +269,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         'pnskayw3' /* Heslo */,
                                       ),
                                       labelStyle: FlutterFlowTheme.of(context)
-                                          .labelLarge,
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            letterSpacing: 0.0,
+                                          ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
@@ -312,8 +330,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                       ),
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyLarge,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          letterSpacing: 0.0,
+                                        ),
                                     validator: _model
                                         .passwordControllerValidator
                                         .asValidator(context),
@@ -325,7 +347,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     0.0, 0.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'LOGIN_PAGE_PAGE_PŘIHLÁSIT_BTN_ON_TAP');
                                     Function() navigate = () {};
+                                    logFirebaseEvent('Button_auth');
                                     GoRouter.of(context).prepareAuthEvent();
 
                                     final user =
@@ -341,8 +366,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     navigate = () => context.goNamedAuth(
                                         'HomePage', context.mounted);
                                     if (isAndroid) {
+                                      logFirebaseEvent('Button_custom_action');
                                       _model.fcmToken =
                                           await actions.getFcmToken();
+                                      logFirebaseEvent('Button_backend_call');
 
                                       await currentUserReference!
                                           .update(createUsersRecordData(
@@ -372,6 +399,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
+                                          letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
                                     borderSide: const BorderSide(
@@ -391,6 +419,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'LOGIN_PAGE_PAGE_Text_4emd4m5u_ON_TAP');
+                                    logFirebaseEvent('Text_alert_dialog');
                                     var confirmDialogResponse =
                                         await showDialog<bool>(
                                               context: context,
@@ -445,6 +476,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             ) ??
                                             false;
                                     if (confirmDialogResponse) {
+                                      logFirebaseEvent('Text_auth');
                                       GoRouter.of(context).prepareAuthEvent();
 
                                       final user =
@@ -467,8 +499,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     FFLocalizations.of(context).getText(
                                       'pn5npwvg' /* Přihlásit se k demo účtu */,
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                               ),

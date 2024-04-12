@@ -7,8 +7,6 @@ class BadgePageModel extends FlutterFlowModel<BadgePageWidget> {
 
   final unfocusNode = FocusNode();
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -16,8 +14,4 @@ class BadgePageModel extends FlutterFlowModel<BadgePageWidget> {
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

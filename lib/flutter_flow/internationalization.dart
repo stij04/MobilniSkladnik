@@ -521,6 +521,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'cs': 'Zde můžete upravit svou přezdívku',
       'en': 'You can edit your nickname here',
     },
+    '9gdol40f': {
+      'cs': 'Tuto přezdívku již používá jiný uživatel',
+      'en': 'This nickname is already taken',
+    },
     'zq1boycl': {
       'cs': '',
       'en': '',

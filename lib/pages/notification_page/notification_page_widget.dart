@@ -25,6 +25,9 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NotificationPageModel());
+
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'NotificationPage'});
   }
 
   @override
@@ -52,6 +55,8 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
+              logFirebaseEvent('NOTIFICATION_Container_mrx30t4n_ON_TAP');
+              logFirebaseEvent('Container_navigate_back');
               context.safePop();
             },
             child: Container(
@@ -78,6 +83,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
                 ),
           ),
@@ -233,21 +239,20 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                             .toString(),
                                                         '–⁠⁠⁠⁠⁠',
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Roboto',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w900,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Roboto',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            fontSize: 18.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w900,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -272,6 +277,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                       .override(
                                                         fontFamily: 'Roboto',
                                                         fontSize: 14.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -293,6 +299,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                         .override(
                                                           fontFamily: 'Roboto',
                                                           fontSize: 18.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w800,
                                                         ),
@@ -323,6 +330,8 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
@@ -351,6 +360,8 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
@@ -371,26 +382,27 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
                                                               ),
                                                         )
                                                       ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Roboto',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Roboto',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -410,7 +422,11 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Roboto',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                               ],
@@ -431,6 +447,11 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
+                                                    logFirebaseEvent(
+                                                        'NOTIFICATION_Container_h80h3une_ON_TAP');
+                                                    logFirebaseEvent(
+                                                        'Container_backend_call');
+
                                                     await listViewNotifikaceRecord
                                                         .reference
                                                         .update(

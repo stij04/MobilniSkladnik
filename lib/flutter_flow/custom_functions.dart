@@ -252,3 +252,20 @@ String generateNewAvatar() {
 
   return baseUrl + seed + avatarStyle;
 }
+
+bool isNicknameUnique(
+  String? nickname,
+  List<UsersRecord>? users,
+) {
+  if (nickname == null || users == null) {
+    return true;
+  }
+
+  for (UsersRecord user in users) {
+    if (user.displayName == nickname) {
+      return false;
+    }
+  }
+
+  return true;
+}

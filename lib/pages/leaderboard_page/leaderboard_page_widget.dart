@@ -25,6 +25,9 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LeaderboardPageModel());
+
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'LeaderboardPage'});
   }
 
   @override
@@ -52,6 +55,9 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
+              logFirebaseEvent('LEADERBOARD_Container_3vq7vw15_ON_TAP');
+              logFirebaseEvent('Container_navigate_to');
+
               context.pushNamed('NotificationPage');
             },
             child: Container(
@@ -78,6 +84,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                   fontFamily: 'Roboto',
                   color: FlutterFlowTheme.of(context).primary,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
                 ),
           ),
@@ -88,6 +95,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
+                logFirebaseEvent('LEADERBOARD_Container_w6x5zyzb_ON_TAP');
+                logFirebaseEvent('Container_auth');
                 GoRouter.of(context).prepareAuthEvent();
                 await authManager.signOut();
                 GoRouter.of(context).clearRedirectLocation();
@@ -222,6 +231,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                             .override(
                                               fontFamily: 'Roboto',
                                               fontSize: 18.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -254,6 +264,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Roboto',
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
@@ -271,6 +282,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Roboto',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                           ),
@@ -319,6 +331,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                             context)
                                                         .primaryBtnText,
                                                     fontSize: 35.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w900,
                                                     fontStyle: FontStyle.italic,
                                                   ),
@@ -391,6 +404,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                             .override(
                                               fontFamily: 'Roboto',
                                               fontSize: 18.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -423,6 +437,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Roboto',
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
@@ -440,6 +455,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Roboto',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                           ),
@@ -480,6 +496,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                             context)
                                                         .primaryBtnText,
                                                     fontSize: 45.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w900,
                                                     fontStyle: FontStyle.italic,
                                                   ),
@@ -546,6 +563,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                             .override(
                                               fontFamily: 'Roboto',
                                               fontSize: 18.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
@@ -578,6 +596,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Roboto',
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
@@ -595,6 +614,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Roboto',
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                           ),
@@ -637,6 +657,7 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                             context)
                                                         .primaryBtnText,
                                                     fontSize: 25.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w900,
                                                     fontStyle: FontStyle.italic,
                                                   ),
@@ -722,6 +743,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                                       .primaryText,
                                                                   fontSize:
                                                                       16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .normal,
@@ -745,6 +768,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                               fontFamily:
                                                                   'Roboto',
                                                               fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                             ),
                                                       ),
                                                     ),
@@ -778,6 +803,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                                       .primaryText,
                                                                   fontSize:
                                                                       20.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w900,
@@ -799,6 +826,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                               fontFamily:
                                                                   'Roboto',
                                                               fontSize: 20.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w900,
@@ -833,6 +862,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                               fontFamily:
                                                                   'Roboto',
                                                               fontSize: 20.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w900,
@@ -850,18 +881,18 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                       zebricekItem.displayName,
                                                       textAlign:
                                                           TextAlign.center,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Roboto',
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Roboto',
+                                                            fontSize: 16.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                          ),
                                                     ),
                                                   ),
                                               ],
@@ -902,6 +933,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                                       'Roboto',
                                                                   fontSize:
                                                                       16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                           TextSpan(
@@ -922,6 +955,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                               fontFamily:
                                                                   'Roboto',
                                                               fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                             ),
                                                       ),
                                                     ),
@@ -962,6 +997,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                                         'Roboto',
                                                                     fontSize:
                                                                         20.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w900,
@@ -984,6 +1021,8 @@ class _LeaderboardPageWidgetState extends State<LeaderboardPageWidget> {
                                                                 fontFamily:
                                                                     'Roboto',
                                                                 fontSize: 20.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w900,
