@@ -8,12 +8,9 @@ import '../../flutter_flow/flutter_flow_util.dart';
 
 import '/backend/backend.dart';
 import 'anonymous_auth.dart';
-import 'apple_auth.dart';
 import 'email_auth.dart';
 import 'firebase_user_provider.dart';
-import 'google_auth.dart';
 import 'jwt_token_auth.dart';
-import 'github_auth.dart';
 
 export '../base_auth_user_provider.dart';
 
@@ -43,11 +40,8 @@ class FirebasePhoneAuthManager extends ChangeNotifier {
 class FirebaseAuthManager extends AuthManager
     with
         EmailSignInManager,
-        GoogleSignInManager,
-        AppleSignInManager,
         AnonymousSignInManager,
         JwtSignInManager,
-        GithubSignInManager,
         PhoneSignInManager {
   // Set when using phone verification (after phone number is provided).
   String? _phoneAuthVerificationCode;
@@ -162,18 +156,6 @@ class FirebaseAuthManager extends AuthManager
     BuildContext context,
   ) =>
       _signInOrCreateAccount(context, anonymousSignInFunc, 'ANONYMOUS');
-
-  @override
-  Future<BaseAuthUser?> signInWithApple(BuildContext context) =>
-      _signInOrCreateAccount(context, appleSignIn, 'APPLE');
-
-  @override
-  Future<BaseAuthUser?> signInWithGoogle(BuildContext context) =>
-      _signInOrCreateAccount(context, googleSignInFunc, 'GOOGLE');
-
-  @override
-  Future<BaseAuthUser?> signInWithGithub(BuildContext context) =>
-      _signInOrCreateAccount(context, githubSignInFunc, 'GITHUB');
 
   @override
   Future<BaseAuthUser?> signInWithJwtToken(
